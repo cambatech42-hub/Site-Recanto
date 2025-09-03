@@ -2,32 +2,24 @@ import React, { useState } from 'react';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  navigate: (path: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ navigate }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  // Use the `navigate` function from props for client-side routing
+  const handlePageLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    if (!href) return;
-
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-
-    // Always close mobile menu on nav click
+    navigate(href);
     setIsOpen(false);
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 shadow-md backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" onClick={handleNavClick} className="text-2xl font-serif font-bold text-primary-green cursor-pointer">
+        <a href="#home" onClick={() => setIsOpen(false)} className="text-3xl font-serif font-bold text-primary-green cursor-pointer">
           Recanto do Lago
         </a>
         <nav className="hidden md:flex items-center space-x-8">
@@ -35,8 +27,16 @@ const Header: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={handleNavClick}
-              className="text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+              onClick={(e) => {
+                if (link.href.startsWith('/')) {
+                  handlePageLinkClick(e, link.href);
+                } else {
+                  // For anchor links, let the browser handle scrolling.
+                  // Just close the mobile menu if it's open.
+                  setIsOpen(false);
+                }
+              }}
+              className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
             >
               {link.name}
             </a>
@@ -65,8 +65,14 @@ const Header: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={handleNavClick}
-                className="text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+                onClick={(e) => {
+                  if (link.href.startsWith('/')) {
+                    handlePageLinkClick(e, link.href);
+                  } else {
+                    setIsOpen(false);
+                  }
+                }}
+                className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
               >
                 {link.name}
               </a>
