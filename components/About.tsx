@@ -11,7 +11,7 @@ const About: React.FC = () => {
           </div>
           <div>
             <h2 className="text-4xl font-serif font-bold text-primary-green mb-6">
-              Nossa História123
+              Nossa História
             </h2>
             <p className="text-lg text-gray-700 mb-4 leading-relaxed">
               Aninhada no coração de Cambará do Sul, a Pousada Recanto do Lago nasceu do sonho de compartilhar a beleza estonteante da Serra Gaúcha. Oferecemos um refúgio de paz e conforto, onde cada detalhe é pensado para proporcionar uma experiência autêntica e inesquecível.
