@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
       id="home" 
       className="h-screen bg-cover bg-center flex items-center justify-center bg-fixed" 
       style={{ 
-        backgroundImage: "url('https://picsum.photos/seed/pousada-hero/1920/1080')",
+        backgroundImage: "url('https://source.unsplash.com/1920x1080/?cabin-lake-forest')",
         backgroundPositionY: offsetY * 0.5 + 'px',
       }}
     >
@@ -28,8 +28,8 @@ const Hero: React.FC = () => {
         <p className="text-xl md:text-2xl mb-8 font-sans drop-shadow-md">
           Sua Pousada em Cambará do Sul
         </p>
-        <a href="#about">
-            <Button variant="primary">Conheça a Pousada</Button>
+        <a href="#contact">
+            <Button variant="primary">Reservar Agora</Button>
         </a>
       </div>
     </section>

@@ -72,7 +72,9 @@ const Activities: React.FC = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-            <Button variant="secondary">Ver todos os passeios</Button>
+            <a href="https://wa.me/5554999300535" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary">Entre em Contato</Button>
+            </a>
         </div>
       </div>
     </section>

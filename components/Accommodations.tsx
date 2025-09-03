@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ACCOMMODATIONS_DATA } from '../constants';
 import { Accommodation } from '../types';
+import Button from './ui/Button';
 
 const AmenityIcon: React.FC<{ amenity: string }> = ({ amenity }) => {
     // Simple SVG icons for demonstration
@@ -86,6 +87,14 @@ const Accommodations: React.FC = () => {
           {ACCOMMODATIONS_DATA.map((acc, index) => (
             <AccommodationCard key={index} accommodation={acc} />
           ))}
+        </div>
+        <div className="text-center mt-12">
+            <a href="#contact">
+                <Button variant="primary">Ver Disponibilidade</Button>
+            </a>
+            <p className="mt-4 text-gray-600">
+                ou fale conosco diretamente pelo <a href="https://wa.me/5554999300535" target="_blank" rel="noopener noreferrer" className="font-bold text-primary-green hover:underline">WhatsApp</a>.
+            </p>
         </div>
       </div>
     </section>
