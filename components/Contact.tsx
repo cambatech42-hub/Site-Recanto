@@ -18,23 +18,40 @@ const Contact: React.FC = () => {
     phone: '',
     message: '',
   });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+        setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
+  
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.name.trim()) newErrors.name = 'O nome completo é obrigatório.';
+    if (!formData.email.trim()) newErrors.email = 'O e-mail é obrigatório.';
+    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Por favor, insira um e-mail válido.';
+    if (!formData.message.trim()) newErrors.message = 'A sua mensagem é obrigatória.';
+    return newErrors;
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setSubmissionStatus({ type: 'error', message: 'Por favor, preencha todos os campos obrigatórios.' });
+    setSubmissionStatus(null);
+    const formErrors = validateForm();
+    
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
       return;
     }
 
     setIsSubmitting(true);
-    setSubmissionStatus(null);
+    setErrors({});
 
     // Simulação de chamada de API
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -81,11 +98,13 @@ const Contact: React.FC = () => {
                  <form onSubmit={handleSubmit} noValidate>
                     <div className="mb-4">
                         <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Nome Completo</label>
-                        <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-gold transition-shadow" required />
+                        <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className={`w-full px-4 py-2 bg-white border rounded-md focus:outline-none focus:ring-2 transition-shadow ${errors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-accent-gold'}`} required aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined} />
+                        {errors.name && <p id="name-error" className="text-red-600 text-sm mt-1">{errors.name}</p>}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">E-mail</label>
-                        <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-gold transition-shadow" required />
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className={`w-full px-4 py-2 bg-white border rounded-md focus:outline-none focus:ring-2 transition-shadow ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-accent-gold'}`} required aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} />
+                        {errors.email && <p id="email-error" className="text-red-600 text-sm mt-1">{errors.email}</p>}
                     </div>
                      <div className="mb-4">
                         <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">Telefone <span className="text-sm text-gray-500">(Opcional)</span></label>
@@ -93,15 +112,16 @@ const Contact: React.FC = () => {
                     </div>
                     <div className="mb-6">
                         <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">Sua Mensagem</label>
-                        <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleInputChange} className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-gold transition-shadow" required></textarea>
+                        <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleInputChange} className={`w-full px-4 py-2 bg-white border rounded-md focus:outline-none focus:ring-2 transition-shadow ${errors.message ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-accent-gold'}`} required aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined}></textarea>
+                        {errors.message && <p id="message-error" className="text-red-600 text-sm mt-1">{errors.message}</p>}
                     </div>
                     <div className="text-right">
                         <Button type="submit" variant="primary" disabled={isSubmitting}>
                             {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                         </Button>
                     </div>
-                    {submissionStatus && (
-                        <div className={`mt-4 text-center p-3 rounded-md ${submissionStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {submissionStatus && submissionStatus.type === 'success' && (
+                        <div className="mt-4 text-center p-3 rounded-md bg-green-100 text-green-800">
                             {submissionStatus.message}
                         </div>
                     )}
