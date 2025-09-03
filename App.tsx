@@ -6,6 +6,7 @@ import About from './components/About';
 import Accommodations from './components/Accommodations';
 import Activities from './components/Activities';
 import Gallery from './components/Gallery';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Accommodations />
         <Activities />
         <Gallery />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

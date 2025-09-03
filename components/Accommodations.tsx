@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ACCOMMODATIONS_DATA } from '../constants';
 import { Accommodation } from '../types';
 
@@ -15,9 +14,49 @@ const AmenityIcon: React.FC<{ amenity: string }> = ({ amenity }) => {
 
 
 const AccommodationCard: React.FC<{ accommodation: Accommodation }> = ({ accommodation }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer for fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = cardRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+  
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-      <img src={accommodation.image} alt={accommodation.name} className="w-full h-56 object-cover" />
+    <div 
+      ref={cardRef} 
+      className={`
+        bg-white rounded-lg shadow-lg overflow-hidden transform group
+        transition-all duration-700 ease-out hover:shadow-2xl
+        ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+      `}
+    >
+      <div className="h-56 overflow-hidden">
+        <img 
+          src={accommodation.image} 
+          alt={accommodation.name} 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
       <div className="p-6">
         <h3 className="text-2xl font-serif font-bold text-primary-green mb-2">{accommodation.name}</h3>
         <p className="text-gray-600 mb-4">{accommodation.description}</p>

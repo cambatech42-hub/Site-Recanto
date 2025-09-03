@@ -16,3 +16,9 @@ export interface NavLink {
     name: string;
     href: string;
 }
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  avatar: string;
+}

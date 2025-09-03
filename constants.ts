@@ -1,11 +1,12 @@
 
-import { Accommodation, Activity, NavLink } from './types';
+import { Accommodation, Activity, NavLink, Testimonial } from './types';
 
 export const NAV_LINKS: NavLink[] = [
   { name: 'Início', href: '#home' },
   { name: 'A Pousada', href: '#about' },
   { name: 'Acomodações', href: '#accommodations' },
   { name: 'Passeios', href: '#activities' },
+  { name: 'Depoimentos', href: '#testimonials' },
   { name: 'Contato', href: '#contact' },
 ];
 
@@ -47,3 +48,21 @@ export const ACTIVITIES_DATA: Activity[] = [
     image: 'https://picsum.photos/seed/canion/600/400',
   },
 ];
+
+export const TESTIMONIALS_DATA: Testimonial[] = [
+    {
+        quote: "Uma experiência simplesmente mágica! A Pousada Recanto do Lago superou todas as nossas expectativas. O atendimento é impecável e a vista do chalé é de tirar o fôlego. Voltaremos com certeza!",
+        author: "Mariana Costa",
+        avatar: "https://picsum.photos/seed/avatar1/100/100",
+    },
+    {
+        quote: "Lugar perfeito para se desconectar e recarregar as energias. A paz que encontramos aqui é indescritível. Café da manhã delicioso e equipe muito atenciosa. Recomendo a todos!",
+        author: "João Almeida",
+        avatar: "https://picsum.photos/seed/avatar2/100/100",
+    },
+    {
+        quote: "A localização é privilegiada, bem no coração de paisagens incríveis. Fizemos o passeio de balão e foi inesquecível. A pousada oferece todo o conforto necessário para uma estadia perfeita.",
+        author: "Família Oliveira",
+        avatar: "https://picsum.photos/seed/avatar3/100/100",
+    }
+]

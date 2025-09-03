@@ -1,14 +1,51 @@
-
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ACTIVITIES_DATA } from '../constants';
 import { Activity } from '../types';
 import Button from './ui/Button';
 
 const ActivityCard: React.FC<{ activity: Activity }> = ({ activity }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer for fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = cardRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden group">
+    <div 
+      ref={cardRef} 
+      className={`
+        bg-white rounded-lg shadow-lg overflow-hidden group 
+        transform transition-all duration-700 ease-out
+        ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+      `}
+    >
       <div className="relative h-64 overflow-hidden">
-        <img src={activity.image} alt={activity.name} className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" />
+        <img 
+            src={activity.image} 
+            alt={activity.name} 
+            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
+        />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300"></div>
         <h3 className="absolute bottom-4 left-4 text-3xl font-serif font-bold text-white drop-shadow-md">{activity.name}</h3>
       </div>

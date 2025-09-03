@@ -1,29 +1,43 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NAV_LINKS } from '../constants';
 import Button from './ui/Button';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (!href) return;
+
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
+    // Always close mobile menu on nav click
+    setIsOpen(false);
+  };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 shadow-md backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-serif font-bold text-primary-green">
+        <a href="#home" onClick={handleNavClick} className="text-2xl font-serif font-bold text-primary-green cursor-pointer">
           Recanto do Lago
         </a>
         <nav className="hidden md:flex items-center space-x-8">
           {NAV_LINKS.map((link) => (
-            <a key={link.name} href={link.href} className="text-dark-text font-semibold hover:text-primary-green transition-colors">
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={handleNavClick}
+              className="text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+            >
               {link.name}
             </a>
           ))}
@@ -48,7 +62,12 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
             {NAV_LINKS.map((link) => (
-              <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-dark-text font-semibold hover:text-primary-green transition-colors">
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleNavClick}
+                className="text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+              >
                 {link.name}
               </a>
             ))}

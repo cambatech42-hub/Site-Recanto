@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const ContactInfoItem: React.FC<{ icon: JSX.Element; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
@@ -40,12 +39,17 @@ const Contact: React.FC = () => {
                 <a href="mailto:contato@recantodolago.com.br" className="hover:text-accent-gold">contato@recantodolago.com.br</a>
             </ContactInfoItem>
           </div>
-          <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden flex items-center justify-center text-gray-500">
-             <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: "url('https://picsum.photos/seed/map/800/600')"}}>
-                <div className="w-full h-full bg-primary-green/30 flex items-center justify-center">
-                    <span className="text-white bg-black/50 px-4 py-2 rounded">Carregando Mapa...</span>
-                </div>
-            </div>
+          <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden">
+             <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.289112932903!2d-50.0810182244874!3d-28.99986597548171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951f55910ef285a1%3A0xdcc7c88c97fd21d!2sPousada%20Recanto%20do%20Lago%20-%20Cambar%C3%A1%20do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1672856262451!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Pousada Recanto do Lago no Google Maps"
+              ></iframe>
           </div>
         </div>
       </div>
