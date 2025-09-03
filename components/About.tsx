@@ -1,23 +1,7 @@
+
 import React from 'react';
-import Button from './ui/Button';
 
 const About: React.FC = () => {
-  const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    if (!href) return;
-
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -36,17 +20,6 @@ const About: React.FC = () => {
               Aqui, a hospitalidade calorosa se une à natureza exuberante. Nossos hóspedes podem relaxar à beira do lago, explorar paisagens de tirar o fôlego e criar memórias que durarão para sempre. Venha viver a magia dos cânions conosco.
             </p>
           </div>
-        </div>
-        <div className="text-center mt-16">
-            <h3 className="text-2xl font-serif text-primary-green mb-6">Pronto para viver essa experiência?</h3>
-            <div className="flex justify-center items-center flex-wrap gap-4">
-                <a href="#accommodations" onClick={handleScrollClick}>
-                    <Button variant="primary">Conheça Nossas Acomodações</Button>
-                </a>
-                <a href="https://wa.me/5554999300535" target="_blank" rel="noopener noreferrer">
-                    <Button variant="secondary">Fale Conosco</Button>
-                </a>
-            </div>
         </div>
       </div>
     </section>

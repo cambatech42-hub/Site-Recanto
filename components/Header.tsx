@@ -43,9 +43,7 @@ const Header: React.FC = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-            <a href="#contact" onClick={handleNavClick}>
-                <Button variant="secondary">Reservar Agora</Button>
-            </a>
+            <Button variant="secondary">Reservar Agora</Button>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
@@ -73,9 +71,7 @@ const Header: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#contact" onClick={handleNavClick}>
-                <Button variant="secondary">Reservar Agora</Button>
-            </a>
+            <Button variant="secondary">Reservar Agora</Button>
           </nav>
         </div>
       )}
