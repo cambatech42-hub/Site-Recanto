@@ -38,14 +38,33 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   if ('href' in props) {
     // Here, `props` is narrowed to `ButtonAsAnchor`.
-    // We destructure `variant` and other common props so they are not passed to the DOM element.
-    const { children, variant, className, ...rest } = props;
+    const { children, variant, className, href, onClick, ...rest } = props;
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      // Handle smooth scrolling for in-page anchor links
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      // If a custom onClick is provided, call it as well
+      if (onClick) {
+        // FIX: Corrected a type error where TypeScript's control-flow analysis failed to narrow
+        // the type of the destructured `onClick` property. An explicit type assertion to
+        // `React.MouseEventHandler<HTMLAnchorElement>` is used to ensure the event handler is
+        // called with the correct event type, resolving the conflict within the discriminated union.
+        (onClick as React.MouseEventHandler<HTMLAnchorElement>)(e);
+      }
+    };
+
     // FIX: A type assertion is used on `rest` to resolve a TypeScript error. This is necessary because
     // TypeScript has limitations in narrowing union types with conflicting properties (like event handlers)
     // when using the spread operator in JSX. This ensures type safety.
-    const anchorProps = rest as Omit<ButtonAsAnchor, 'children' | 'variant' | 'className'>;
+    const anchorProps = rest as Omit<ButtonAsAnchor, 'children' | 'variant' | 'className' | 'href' | 'onClick'>;
     return (
-      <a {...anchorProps} className={combinedClassName}>
+      <a href={href} {...anchorProps} className={combinedClassName} onClick={handleClick}>
         {children}
       </a>
     );
