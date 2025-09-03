@@ -1,7 +1,7 @@
-
 import React from 'react';
-import { TESTIMONIALS_DATA } from '../constants';
+import { TESTIMONIALS_DATA, RESERVATION_URL } from '../constants';
 import { Testimonial } from '../types';
+import Button from './ui/Button';
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   return (
@@ -36,6 +36,9 @@ const Testimonials: React.FC = () => {
           {TESTIMONIALS_DATA.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
+        </div>
+        <div className="text-center mt-16">
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
         </div>
       </div>
     </section>

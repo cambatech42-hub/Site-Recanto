@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
 
 const Header: React.FC = () => {
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-            <Button variant="secondary">Reservar Agora</Button>
+            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="secondary">Reservar Agora</Button>
+            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
           </nav>
         </div>
       )}

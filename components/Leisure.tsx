@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ACTIVITIES_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
-import { Activity } from '../types';
-import Button from './ui/Button';
+import { LEISURE_ACTIVITIES_DATA, RESERVATION_URL } from '../constants';
+import { LeisureActivity } from '../types';
 import DetailModal from './DetailModal';
+import Button from './ui/Button';
 
-const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ activity, onClick }) => {
+const LeisureCard: React.FC<{ activity: LeisureActivity; onClick: () => void }> = ({ activity, onClick }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -31,30 +31,32 @@ const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ a
       }
     };
   }, []);
-
+  
   return (
     <div 
       ref={cardRef} 
       onClick={onClick}
       className={`
-        bg-white rounded-lg shadow-lg overflow-hidden group flex flex-col
-        transform transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-1 cursor-pointer
-        ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+        bg-white rounded-lg shadow-lg overflow-hidden transform group flex flex-col
+        transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
       `}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="h-56 overflow-hidden">
         <img 
-            src={activity.image} 
-            alt={activity.name} 
-            className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
+          src={activity.image} 
+          alt={activity.name} 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300"></div>
-        <h3 className="absolute bottom-4 left-4 text-3xl font-serif font-bold text-white drop-shadow-md">{activity.name}</h3>
       </div>
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 text-center flex-grow flex flex-col items-center">
+        <div className="bg-accent-gold/10 text-accent-gold p-3 rounded-full -mt-12 mb-4 shadow-md">
+          {activity.icon}
+        </div>
+        <h3 className="text-2xl font-serif font-bold text-primary-green mb-2">{activity.name}</h3>
         <p className="text-gray-600 flex-grow">{activity.description}</p>
         <div className="mt-auto pt-4">
             <span className="font-semibold text-accent-gold hover:text-yellow-700 transition-colors duration-300 inline-flex items-center group-hover:underline">
@@ -67,10 +69,10 @@ const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ a
   );
 };
 
-const Activities: React.FC = () => {
-  const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
+const Leisure: React.FC = () => {
+  const [selectedActivity, setSelectedActivity] = useState<LeisureActivity | null>(null);
 
-  const openModal = (activity: Activity) => {
+  const openModal = (activity: LeisureActivity) => {
     setSelectedActivity(activity);
   };
 
@@ -80,26 +82,25 @@ const Activities: React.FC = () => {
 
   return (
     <>
-      <section id="activities" className="py-20 bg-white">
+      <section id="leisure" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-primary-green">Explore Cambará do Sul</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif font-bold text-primary-green">Lazer e Estrutura</h2>
             <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-              Aventuras inesquecíveis esperam por você na terra dos cânions.
+              Atividades para todas as idades, sem precisar sair da Pousada.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ACTIVITIES_DATA.map((activity, index) => (
-              <ActivityCard key={index} activity={activity} onClick={() => openModal(activity)} />
+            {LEISURE_ACTIVITIES_DATA.map((activity, index) => (
+              <LeisureCard key={index} activity={activity} onClick={() => openModal(activity)} />
             ))}
           </div>
-          <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
-            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+          <div className="text-center mt-16">
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
           </div>
         </div>
       </section>
-
+      
       {selectedActivity && (
         <DetailModal
           isOpen={!!selectedActivity}
@@ -113,4 +114,4 @@ const Activities: React.FC = () => {
   );
 };
 
-export default Activities;
+export default Leisure;

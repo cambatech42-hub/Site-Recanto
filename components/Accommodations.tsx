@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ACCOMMODATIONS_DATA } from '../constants';
+import { ACCOMMODATIONS_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
 import { Accommodation } from '../types';
+import DetailModal from './DetailModal';
+import Button from './ui/Button';
 
 const AmenityIcon: React.FC<{ amenity: string }> = ({ amenity }) => {
     // Simple SVG icons for demonstration
@@ -13,7 +15,7 @@ const AmenityIcon: React.FC<{ amenity: string }> = ({ amenity }) => {
 };
 
 
-const AccommodationCard: React.FC<{ accommodation: Accommodation }> = ({ accommodation }) => {
+const AccommodationCard: React.FC<{ accommodation: Accommodation; onClick: () => void }> = ({ accommodation, onClick }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -43,10 +45,10 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation }> = ({ accommo
   
   return (
     <div 
-      ref={cardRef} 
+      ref={cardRef}
       className={`
         bg-white rounded-lg shadow-lg overflow-hidden transform group flex flex-col
-        transition-all duration-700 ease-out hover:shadow-2xl
+        transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-1
         ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
       `}
     >
@@ -67,28 +69,59 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation }> = ({ accommo
                 </span>
             ))}
         </div>
+        <div className="mt-auto pt-4">
+            <Button onClick={onClick} variant="secondary" className="w-full">
+                Saiba Mais
+            </Button>
+        </div>
       </div>
     </div>
   );
 };
 
 const Accommodations: React.FC = () => {
+  const [selectedAccommodation, setSelectedAccommodation] = useState<Accommodation | null>(null);
+
+  const openModal = (accommodation: Accommodation) => {
+    setSelectedAccommodation(accommodation);
+  };
+
+  const closeModal = () => {
+    setSelectedAccommodation(null);
+  };
+
   return (
-    <section id="accommodations" className="py-20 bg-background-beige">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-primary-green">Nossas Acomodações</h2>
-          <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-            Conforto e charme em meio à natureza. Escolha o refúgio perfeito para sua estadia.
-          </p>
+    <>
+      <section id="accommodations" className="py-20 bg-background-beige">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-primary-green">Nossas Acomodações</h2>
+            <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+              Conforto e charme em meio à natureza. Escolha o refúgio perfeito para sua estadia.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ACCOMMODATIONS_DATA.map((acc, index) => (
+              <AccommodationCard key={index} accommodation={acc} onClick={() => openModal(acc)} />
+            ))}
+          </div>
+          <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
+            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {ACCOMMODATIONS_DATA.map((acc, index) => (
-            <AccommodationCard key={index} accommodation={acc} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+
+      {selectedAccommodation && (
+        <DetailModal
+          isOpen={!!selectedAccommodation}
+          onClose={closeModal}
+          title={selectedAccommodation.name}
+          details={selectedAccommodation.details}
+          gallery={selectedAccommodation.gallery}
+        />
+      )}
+    </>
   );
 };
 

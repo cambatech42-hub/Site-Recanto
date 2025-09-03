@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './ui/Button';
+import { WHATSAPP_URL, RESERVATION_URL, EMAIL_ADDRESS } from '../constants';
 
 const ContactInfoItem: React.FC<{ icon: JSX.Element; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
     <div className="flex items-start mb-6">
@@ -31,13 +33,16 @@ const Contact: React.FC = () => {
             <ContactInfoItem 
                 icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
                 title="Telefone / WhatsApp">
-                <a href="tel:+5554999998888" className="hover:text-accent-gold">+55 (54) 99999-8888</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold">+55 (54) 99930-0535</a>
             </ContactInfoItem>
             <ContactInfoItem 
                 icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
                 title="Email">
-                <a href="mailto:contato@recantodolago.com.br" className="hover:text-accent-gold">contato@recantodolago.com.br</a>
+                <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-accent-gold">{EMAIL_ADDRESS}</a>
             </ContactInfoItem>
+            <div className="mt-10">
+                <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Faça sua Reserva Online</Button>
+            </div>
           </div>
           <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden">
              <iframe

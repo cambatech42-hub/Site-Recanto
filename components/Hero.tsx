@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import Button from './ui/Button';
+import { RESERVATION_URL } from '../constants';
 
 const Hero: React.FC = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -28,9 +28,7 @@ const Hero: React.FC = () => {
         <p className="text-xl md:text-2xl mb-8 font-sans drop-shadow-md">
           Sua Pousada em Cambará do Sul
         </p>
-        <a href="#about">
-            <Button variant="primary">Conheça a Pousada</Button>
-        </a>
+        <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar agora</Button>
       </div>
     </section>
   );
