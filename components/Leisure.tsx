@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LEISURE_DATA } from '../constants';
 import { LeisureActivity } from '../types';
+import Button from './ui/Button';
 
 // Modal Component for Leisure Gallery
 const LeisureModal: React.FC<{ activity: LeisureActivity; onClose: () => void }> = ({ activity, onClose }) => {
@@ -146,6 +147,15 @@ const Leisure: React.FC = () => {
             {LEISURE_DATA.map((item, index) => (
               <LeisureCard key={index} item={item} onClick={() => openModal(item)} />
             ))}
+          </div>
+          <div className="text-center mt-16">
+            <h3 className="text-2xl font-serif text-primary-green mb-6">A aventura não para por aqui.</h3>
+            <a href="https://wa.me/5554999300535" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary">Fale Conosco</Button>
+            </a>
+            <p className="mt-4 text-gray-600">
+                Garanta momentos inesquecíveis. <a href="#contact" className="font-bold text-primary-green hover:underline">Faça sua reserva</a>.
+            </p>
           </div>
         </div>
       </section>

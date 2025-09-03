@@ -10,6 +10,7 @@ export interface Activity {
   name: string;
   description: string;
   image: string;
+  gallery: string[];
 }
 
 export interface NavLink {
