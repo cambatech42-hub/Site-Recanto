@@ -16,6 +16,14 @@
         scroll-behavior: smooth;
         scroll-padding-top: 80px; /* Ajuste conforme a altura do seu header */
       }
+      /* Estilo de aplicativo para a página de guia */
+      .app-guide-page::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+      }
+      .app-guide-page {
+        -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE e Edge */
+        scrollbar-width: none;  /* Oculta a barra de rolagem no Firefox */
+      }
     </style>
     <script>
       tailwind.config = {

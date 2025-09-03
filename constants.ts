@@ -16,6 +16,7 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Depoimentos', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Contato', href: '#contact' },
+  { name: 'Guia', href: '/guia' },
 ];
 
 export const ACCOMMODATIONS_DATA: Accommodation[] = [
