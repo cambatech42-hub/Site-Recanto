@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 shadow-md backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 py-7 flex justify-between items-center">
         <a 
           href="#home" 
           onClick={(e) => handleNavClick(e, '#home')} 

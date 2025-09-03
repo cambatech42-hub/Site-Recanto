@@ -8,7 +8,6 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}?text=${WHATSAPP_MESSA
 export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
 
 export const NAV_LINKS: NavLink[] = [
-  { name: 'Início', href: '#home' },
   { name: 'A Pousada', href: '#about' },
   { name: 'Acomodações', href: '#accommodations' },
   { name: 'Lazer', href: '#leisure' },
