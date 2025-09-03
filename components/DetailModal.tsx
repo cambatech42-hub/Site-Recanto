@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface DetailModalProps {
   isOpen: boolean;
@@ -11,17 +11,17 @@ interface DetailModalProps {
 const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, title, details, gallery = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (gallery.length > 0) {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % gallery.length);
     }
-  };
+  }, [gallery.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     if (gallery.length > 0) {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + gallery.length) % gallery.length);
     }
-  };
+  }, [gallery.length]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -41,7 +41,7 @@ const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, title, detai
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
-  }, [isOpen, onClose, gallery.length]);
+  }, [isOpen, onClose, nextImage, prevImage]);
 
   if (!isOpen) return null;
 
