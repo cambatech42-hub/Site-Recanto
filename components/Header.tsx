@@ -1,41 +1,61 @@
 
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsOpen(false);
+  };
+
+  const renderNavLink = (link: { name: string; href: string }) => {
+    if (link.href.startsWith('/')) {
+      return (
+        <Link
+          key={link.name}
+          to={link.href}
+          onClick={() => setIsOpen(false)}
+          className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+        >
+          {link.name}
+        </Link>
+      );
+    } else {
+      return (
+        <a
+          key={link.name}
+          href={link.href}
+          onClick={(e) => handleNavClick(e, link.href)}
+          className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+        >
+          {link.name}
+        </a>
+      );
+    }
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 shadow-md backdrop-blur-sm">
       <div className="container mx-auto px-6 py-7 flex justify-between items-center">
-        <a 
-          href="#home" 
-          onClick={(e) => handleNavClick(e, '#home')} 
+        <Link 
+          to="/" 
           className="text-3xl font-serif font-bold text-primary-green cursor-pointer"
         >
           Recanto do Lago
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center space-x-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
-            >
-              {link.name}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
         <div className="hidden md:block">
             <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
@@ -56,16 +76,7 @@ const Header: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
-              >
-                {link.name}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => renderNavLink(link))}
             <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
           </nav>
         </div>

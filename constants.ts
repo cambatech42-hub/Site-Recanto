@@ -7,8 +7,9 @@ export const WHATSAPP_MESSAGE = encodeURIComponent('Olá! Gostaria de mais infor
 export const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
 
-export const NAV_LINKS: NavLink[] = [
-  { name: 'A Pousada', href: '#about' },
+export const NAV_LINKS = [
+  { name: 'Início', href: '#home' },
+  { name: 'Sobre', href: '#about' },
   { name: 'Acomodações', href: '#accommodations' },
   { name: 'Lazer', href: '#leisure' },
   { name: 'Passeios', href: '#activities' },
