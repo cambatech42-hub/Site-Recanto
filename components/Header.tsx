@@ -50,9 +50,13 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-7 flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-3xl font-serif font-bold text-primary-green cursor-pointer"
+          className="cursor-pointer"
         >
-          Recanto do Lago
+          <img 
+            src="/5.jpeg" 
+            alt="Recanto do Lago" 
+            className="h-12 w-auto object-contain"
+          />
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
           {NAV_LINKS.map((link) => renderNavLink(link))}
