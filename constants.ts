@@ -20,39 +20,63 @@ export const NAV_LINKS = [
 
 export const ACCOMMODATIONS_DATA: Accommodation[] = [
   {
-    name: 'Chalé Vista do Lago',
-    description: 'Um refúgio romântico com vista deslumbrante para o lago, lareira e banheira de hidromassagem.',
-    image: 'https://picsum.photos/seed/chale1/600/400',
-    amenities: ['Wi-Fi', 'Lareira', 'Hidromassagem', 'Varanda'],
-    details: 'Nosso chalé mais exclusivo, perfeito para casais em busca de privacidade e romance. Com 60m², possui uma cama king-size, lareira a lenha, banheira de hidromassagem dupla com vista panorâmica para o lago, e uma varanda privativa para apreciar o pôr do sol. O café da manhã pode ser servido diretamente no chalé mediante solicitação.',
+    name: 'Chalé Deluxe',
+    description: 'Acomoda até 3 pessoas com 1 cama de casal e opção de cama extra (solteiro). Perfeito para casais ou pequenas famílias.',
+    image: '/IMG_8976.JPG',
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
+    details: 'Os chalés deluxe oferecem conforto e praticidade para até 3 pessoas. Equipados com ar-condicionado, Wi-Fi gratuito, televisão, frigobar, roupa de cama e banho incluídas, além de estacionamento privativo gratuito. O café da manhã é servido no galpão com um delicioso buffet colonial.',
     gallery: [
-        'https://picsum.photos/seed/chale1-g1/800/600',
-        'https://picsum.photos/seed/chale1-g2/800/600',
-        'https://picsum.photos/seed/chale1-g3/800/600',
+        '/IMG_8976.JPG',
+        '/IMG_8978.JPG',
+        '/IMG_8979.JPG',
     ]
   },
   {
-    name: 'Cabana da Floresta',
-    description: 'Imersa na natureza, esta cabana oferece tranquilidade e conforto com um toque rústico e elegante.',
-    image: 'https://picsum.photos/seed/chale2/600/400',
-    amenities: ['Wi-Fi', 'Cozinha compacta', 'Deck', 'Ar Condicionado'],
-    details: 'Ideal para quem busca uma conexão profunda com a natureza sem abrir mão do conforto. A cabana de 50m² está cercada por araucárias e possui um deck de madeira perfeito para observação de pássaros. Equipada com cozinha compacta, cama queen-size e ar condicionado quente e frio.',
+    name: 'Chalé Standard',
+    description: 'Ideal para famílias, acomoda até 4 pessoas com 1 cama de casal e 2 camas de solteiro.',
+    image: '/IMG_8980.JPG',
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
+    details: 'Os Chalés Standard são perfeitos para famílias de até 4 pessoas. Possuem 1 cama de casal e 2 camas de solteiro, todos os quartos com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho incluídas, além de estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        'https://picsum.photos/seed/chale2-g1/800/600',
-        'https://picsum.photos/seed/chale2-g2/800/600',
-        'https://picsum.photos/seed/chale2-g3/800/600',
+        '/IMG_8980.JPG',
+        '/IMG_8982.JPG',
+        '/IMG_8983.JPG',
     ]
   },
   {
-    name: 'Suíte Cânion',
-    description: 'Espaçosa e moderna, nossa suíte principal é perfeita para famílias que buscam conforto e sofisticação.',
-    image: 'https://picsum.photos/seed/chale3/600/400',
-    amenities: ['Wi-Fi', 'TV a Cabo', 'Frigobar', 'Acessibilidade'],
-    details: 'A Suíte Cânion é a nossa maior acomodação, com 70m² e capacidade para até 4 pessoas. Possui um quarto principal com cama king-size e uma sala de estar com um confortável sofá-cama. Totalmente acessível para cadeirantes, a suíte conta com TV a cabo, frigobar e uma ampla janela com vista para os campos da região.',
+    name: 'Chalé Master',
+    description: 'Acomodação romântica para casais, com 1 cama de casal e chuveiro a gás para maior conforto.',
+    image: '/IMG_8984.JPG',
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Chuveiro a gás'],
+    details: 'Os chalés Master acomodam até 2 pessoas em 1 cama de casal confortável. Equipados com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho incluídas, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        'https://picsum.photos/seed/chale3-g1/800/600',
-        'https://picsum.photos/seed/chale3-g2/800/600',
-        'https://picsum.photos/seed/chale3-g3/800/600',
+        '/IMG_8984.JPG',
+        '/IMG_8985.JPG',
+        '/IMG_8986.JPG',
+    ]
+  },
+  {
+    name: 'Chalé Master Luxo',
+    description: 'Chalé premium para casais com banheira de hidromassagem e mini cozinha equipada com utensílios.',
+    image: '/IMG_8987.JPG',
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
+    details: 'Os chalés Master Luxo são nossa opção mais sofisticada para casais. Acomodam até 2 pessoas em 1 cama de casal e possuem banheira de hidromassagem e mini cozinha com utensílios. Incluem ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
+    gallery: [
+        '/IMG_8987.JPG',
+        '/IMG_8989.JPG',
+        '/IMG_8990.JPG',
+    ]
+  },
+  {
+    name: 'Chalé Prime',
+    description: 'Nossa acomodação mais exclusiva com banheira de hidromassagem e mini cozinha completa para uma experiência única.',
+    image: '/IMG_8991.JPG',
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
+    details: 'Os chalés Prime representam o máximo em conforto e exclusividade. Acomodam até 2 pessoas em 1 cama de casal e oferecem banheira de hidromassagem e mini cozinha com utensílios completos. Equipados com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
+    gallery: [
+        '/IMG_8991.JPG',
+        '/IMG_8992.JPG',
+        '/IMG_8993.JPG',
     ]
   },
 ];
@@ -70,7 +94,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
                 d: "M17 9a6 6 0 11-12 0 6 6 0 0112 0zM11 15l5 5M5 9h12M11 3v12" 
             })
         ),
-        details: 'Nossa quadra de tênis de saibro está disponível para todos os hóspedes. O cenário natural proporciona uma experiência única para praticar o esporte. Agende seu horário na recepção. Raquetes e bolas podem ser alugadas.',
+        details: 'Nossa quadra de tênis está disponível para todos os hóspedes. O cenário natural proporciona uma experiência única para praticar o esporte. Agende seu horário na recepção.',
         gallery: [
             'https://picsum.photos/seed/tenis-g1/800/600',
             'https://picsum.photos/seed/tenis-g2/800/600',
@@ -145,10 +169,10 @@ export const ACTIVITIES_DATA: Activity[] = [
     ],
   },
   {
-    name: 'Trilhas nos Cânions',
-    description: 'Aventure-se pelas bordas dos majestosos Cânions Itaimbezinho e Fortaleza com guias experientes.',
+    name: 'Passeio de Quadriciclo',
+    description: 'Prepare-se para uma experiência única e emocionante! Nosso passeio de quadriciclo combina adrenalina e natureza em uma aventura inesquecível que leva você até uma das mais belas cachoeiras da região.',
     image: 'https://picsum.photos/seed/canion/600/400',
-    details: 'Organizamos passeios guiados para as principais trilhas do Parque Nacional de Aparados da Serra e do Parque Nacional da Serra Geral. As trilhas mais famosas são a do Vértice e a do Cotovelo (no Itaimbezinho) e a Trilha do Mirante e da Pedra do Segredo (no Fortaleza).',
+    details: 'Durante o percurso, você atravessará paisagens deslumbrantes até chegar ao destino final: uma cachoeira cristalina cercada por vegetação exuberante, perfeita para relaxar e se conectar com a natureza. Inclui: quadriciclo equipado, equipamentos de segurança e instrutor experiente. Venha viver esta aventura única conosco!',
     gallery: [
       'https://picsum.photos/seed/canion-g1/800/600',
       'https://picsum.photos/seed/canion-g2/800/600',
