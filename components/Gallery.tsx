@@ -3,14 +3,25 @@ import Button from './ui/Button';
 import { RESERVATION_URL } from '../constants';
 
 const galleryImages = [
-  'https://picsum.photos/seed/gallery1/600/600',
-  'https://picsum.photos/seed/gallery2/600/800',
-  'https://picsum.photos/seed/gallery3/800/600',
-  'https://picsum.photos/seed/gallery4/600/600',
-  'https://picsum.photos/seed/gallery5/800/600',
-  'https://picsum.photos/seed/gallery6/600/800',
-  'https://picsum.photos/seed/gallery7/600/600',
-  'https://picsum.photos/seed/gallery8/600/800',
+  '/IMG_8976.JPG',
+  '/IMG_8978.JPG',
+  '/IMG_8979.JPG',
+  '/IMG_8980.JPG',
+  '/IMG_8982.JPG',
+  '/IMG_8983.JPG',
+  '/IMG_8984.JPG',
+  '/IMG_8985.JPG',
+  '/IMG_8986.JPG',
+  '/IMG_8987.JPG',
+  '/IMG_8989.JPG',
+  '/IMG_8990.JPG',
+  '/IMG_8991.JPG',
+  '/IMG_8992.JPG',
+  '/IMG_8993.JPG',
+  '/IMG_8994.JPG',
+  '/IMG_8995.JPG',
+  '/IMG_8996.JPG',
+  '/IMG_8997.JPG',
 ];
 
 interface ImageModalProps {
