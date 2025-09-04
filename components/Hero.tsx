@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       }}
     >
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative text-center text-white px-4 z-10">
+      <div className="relative text-center text-white px-4 z-10 mt-16">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 drop-shadow-lg">
           Bem-vindo ao Recanto do Lago
         </h1>
