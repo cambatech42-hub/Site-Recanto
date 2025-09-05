@@ -14,7 +14,14 @@
       /* Adiciona rolagem suave e compensa a altura do header fixo */
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 110px; /* Ajuste conforme a altura do seu header */
+        scroll-padding-top: 120px; /* Ajustado para header h-24 (96px) + margem */
+      }
+      
+      /* Melhorias de responsividade */
+      @media (max-width: 768px) {
+        html {
+          scroll-padding-top: 100px; /* Menor em mobile devido ao header compacto */
+        }
       }
       /* Estilo de aplicativo para a página de guia */
       .app-guide-page::-webkit-scrollbar {

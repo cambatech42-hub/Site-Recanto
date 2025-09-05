@@ -98,20 +98,20 @@ const Accommodations: React.FC = () => {
 
   return (
     <>
-      <section id="accommodations" className="py-20 bg-background-beige">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-primary-green">Nossas Acomodações</h2>
-            <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+      <section id="accommodations" className="py-16 md:py-20 bg-background-beige">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">Nossas Acomodações</h2>
+            <p className="text-base md:text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
               Conforto e charme em meio à natureza. Escolha o refúgio perfeito para sua estadia.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {ACCOMMODATIONS_DATA.map((acc, index) => (
               <AccommodationCard key={index} accommodation={acc} onClick={() => openModal(acc)} />
             ))}
           </div>
-          <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
+          <div className="text-center mt-12 md:mt-16 flex justify-center items-center flex-wrap gap-4">
             <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
             <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
           </div>

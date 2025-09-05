@@ -82,20 +82,20 @@ const Leisure: React.FC = () => {
 
   return (
     <>
-      <section id="leisure" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-primary-green">Lazer e Estrutura</h2>
-            <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+      <section id="leisure" className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">Lazer e Estrutura</h2>
+            <p className="text-base md:text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
               Atividades para todas as idades, sem precisar sair da Pousada.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {LEISURE_ACTIVITIES_DATA.map((activity, index) => (
               <LeisureCard key={index} activity={activity} onClick={() => openModal(activity)} />
             ))}
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-12 md:mt-16">
             <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
           </div>
         </div>
