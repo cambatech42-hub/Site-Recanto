@@ -10,6 +10,7 @@ export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
 export const NAV_LINKS = [
   { name: 'Início', href: '#home' },
   { name: 'Sobre', href: '#about' },
+  { name: 'Café da Manhã', href: '#breakfast' },
   { name: 'Acomodações', href: '#accommodations' },
   { name: 'Lazer', href: '#leisure' },
   { name: 'Passeios', href: '#activities' },
@@ -206,7 +207,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "O café da manhã está incluso?",
-        answer: "Sim, um delicioso e completo café da manhã colonial está incluso na diária. Servimos produtos frescos e locais, como pães, bolos, queijos, frutas e sucos naturais, para você começar o dia com energia."
+        answer: "Sim! Nosso café da manhã colonial completo está incluso na diária e é um dos nossos grandes diferenciais. Servimos uma mesa farta com produtos caseiros: pães frescos assados diariamente, bolos e cucas tradicionais, geleias artesanais, queijos e embutidos locais, frutas da estação, sucos naturais e muito mais. Uma verdadeira experiência gastronômica da Serra Gaúcha das 7h30 às 10h00."
     },
     {
         question: "A pousada aceita animais de estimação?",

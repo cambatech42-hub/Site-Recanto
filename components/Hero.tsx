@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           transform: `translateY(${offsetY * 0.3}px)`
         }}
       >
-        <source src="/geralexterna/RECANTO DO LAGO WIDE INTERNET.mp4" type="video/mp4" />
+        <source src="/geralexterna/RECANTO%20DO%20LAGO%20WIDE%20INTERNET.mp4" type="video/mp4" />
         {/* Fallback para navegadores que não suportam vídeo */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
