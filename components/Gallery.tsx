@@ -3,25 +3,30 @@ import Button from './ui/Button';
 import { RESERVATION_URL } from '../constants';
 
 const galleryImages = [
-  '/IMG_8976.JPG',
-  '/IMG_8978.JPG',
-  '/IMG_8979.JPG',
-  '/IMG_8980.JPG',
-  '/IMG_8982.JPG',
-  '/IMG_8983.JPG',
-  '/IMG_8984.JPG',
-  '/IMG_8985.JPG',
-  '/IMG_8986.JPG',
-  '/IMG_8987.JPG',
-  '/IMG_8989.JPG',
-  '/IMG_8990.JPG',
-  '/IMG_8991.JPG',
-  '/IMG_8992.JPG',
-  '/IMG_8993.JPG',
-  '/IMG_8994.JPG',
-  '/IMG_8995.JPG',
-  '/IMG_8996.JPG',
-  '/IMG_8997.JPG',
+  // Imagens do café da manhã
+  '/cafe/cafe1.jpg',
+  '/cafe/cafe2.jpg',
+  '/cafe/cafe10.jpg',
+  '/cafe/cafe15.jpg',
+  '/cafe/cafe20.jpg',
+  // Imagens do lago
+  '/lago/IMG_8976.JPG',
+  '/lago/IMG_8985.JPG',
+  '/lago/IMG_8986.JPG',
+  '/lago/lago.jpg',
+  '/lago/lago1.jpg',
+  '/lago/lago30.jpg',
+  // Imagens das acomodações
+  '/master/master.jpg',
+  '/masterluxo/masterluxo1.jpg',
+  '/deluxe/deluxe1.jpg',
+  '/Prime/prime1.jpg',
+  // Imagens aéreas
+  '/aereas/aerea1.jpg',
+  '/aereas/aerea5.jpg',
+  '/aereas/aerea10.jpg',
+  // Outras imagens
+  '/quadriciclo/IMG_8997.JPG',
 ];
 
 interface ImageModalProps {

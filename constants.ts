@@ -23,61 +23,70 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   {
     name: 'Chalé Deluxe',
     description: 'Acomoda até 3 pessoas com 1 cama de casal e opção de cama extra (solteiro). Perfeito para casais ou pequenas famílias.',
-    image: '/IMG_8976.JPG',
+    image: '/deluxe/deluxe1.jpg',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
     details: 'Os chalés deluxe oferecem conforto e praticidade para até 3 pessoas. Equipados com ar-condicionado, Wi-Fi gratuito, televisão, frigobar, roupa de cama e banho incluídas, além de estacionamento privativo gratuito. O café da manhã é servido no galpão com um delicioso buffet colonial.',
     gallery: [
-        '/IMG_8976.JPG',
-        '/IMG_8978.JPG',
-        '/IMG_8979.JPG',
+        '/deluxe/deluxe1.jpg',
+        '/deluxe/deluxe3.jpg',
+        '/deluxe/deluxe4.jpg',
+        '/deluxe/deluxeentrada.jpg',
+        '/deluxe/deluxeinterna.jpg'
     ]
   },
   {
     name: 'Chalé Standard',
     description: 'Ideal para famílias, acomoda até 4 pessoas com 1 cama de casal e 2 camas de solteiro.',
-    image: '/IMG_8980.JPG',
+    image: '/deluxe/cabanasdeluxe.jpg',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
     details: 'Os Chalés Standard são perfeitos para famílias de até 4 pessoas. Possuem 1 cama de casal e 2 camas de solteiro, todos os quartos com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho incluídas, além de estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        '/IMG_8980.JPG',
-        '/IMG_8982.JPG',
-        '/IMG_8983.JPG',
+        '/deluxe/cabanasdeluxe.jpg',
+        '/deluxe/deluxeentrada1.jpg',
+        '/deluxe/deluxeexterna.jpg',
+        '/deluxe/deluxeneve.jpg'
     ]
   },
   {
     name: 'Chalé Master',
     description: 'Acomodação romântica para casais, com 1 cama de casal e chuveiro a gás para maior conforto.',
-    image: '/IMG_8984.JPG',
+    image: '/master/master.jpg',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Chuveiro a gás'],
     details: 'Os chalés Master acomodam até 2 pessoas em 1 cama de casal confortável. Equipados com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho incluídas, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        '/IMG_8984.JPG',
-        '/IMG_8985.JPG',
-        '/IMG_8986.JPG',
+        '/master/master.jpg',
+        '/master/cabana7.jpg',
+        '/master/cabana71.jpg',
+        '/master/masterban.jpg',
+        '/master/mastergeral.jpg'
     ]
   },
   {
     name: 'Chalé Master Luxo',
     description: 'Chalé premium para casais com banheira de hidromassagem e mini cozinha equipada com utensílios.',
-    image: '/IMG_8987.JPG',
+    image: '/masterluxo/masterluxo1.jpg',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
     details: 'Os chalés Master Luxo são nossa opção mais sofisticada para casais. Acomodam até 2 pessoas em 1 cama de casal e possuem banheira de hidromassagem e mini cozinha com utensílios. Incluem ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        '/IMG_8987.JPG',
-        '/IMG_8989.JPG',
-        '/IMG_8990.JPG',
+        '/masterluxo/masterluxo1.jpg',
+        '/masterluxo/masterluxo2.jpg',
+        '/masterluxo/IMG_8978.JPG',
+        '/masterluxo/IMG_8979.JPG',
+        '/masterluxo/IMG_8980.JPG'
     ]
   },
   {
     name: 'Chalé Prime',
     description: 'Nossa acomodação mais exclusiva com banheira de hidromassagem e mini cozinha completa para uma experiência única.',
-    image: '/IMG_8991.JPG',
+    image: '/Prime/prime1.jpg',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
     details: 'Os chalés Prime representam o máximo em conforto e exclusividade. Acomodam até 2 pessoas em 1 cama de casal e oferecem banheira de hidromassagem e mini cozinha com utensílios completos. Equipados com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        '/IMG_8991.JPG',
-        '/IMG_8992.JPG',
-        '/IMG_8993.JPG',
+        '/Prime/prime1.jpg',
+        '/Prime/primehidro.jpg',
+        '/Prime/primemesa.jpg',
+        '/Prime/primesofaecama.jpg',
+        '/Prime/primevista.jpg'
     ]
   },
 ];

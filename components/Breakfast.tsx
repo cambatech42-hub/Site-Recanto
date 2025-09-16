@@ -8,12 +8,12 @@ const Breakfast: React.FC = () => {
   const breakfastImages = [
     '/cafe/cafe1.jpg',
     '/cafe/cafe2.jpg',
-    '/cafe/cafe3.HEIC',
-    '/cafe/cafe4.HEIC',
-    '/cafe/cafe6.heic',
-    '/cafe/cafe7.heic',
-    '/cafe/cafe8.heic',
-    '/cafe/cafe9.heic'
+    '/cafe/cafe3.jpg',
+    '/cafe/cafe4.jpg',
+    '/cafe/cafe5.jpg',
+    '/cafe/cafe6.jpg',
+    '/cafe/cafe7.jpg',
+    '/cafe/cafe8.jpg'
   ];
 
   const breakfastHighlights = [
