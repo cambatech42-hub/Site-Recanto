@@ -1,16 +1,39 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
+      
+      // Se estamos em uma página de blog post, navega para home e depois faz scroll
+      if (location.pathname.startsWith('/blog/')) {
+        navigate('/');
+        // Aguarda um pequeno delay para a página carregar e depois faz o scroll
+        setTimeout(() => {
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            const headerHeight = window.innerWidth >= 768 ? 96 : 80;
+            const offset = headerHeight + 20;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+        return;
+      }
+      
       const targetElement = document.querySelector(href);
       if (targetElement) {
         const headerHeight = window.innerWidth >= 768 ? 96 : 80; // h-24 = 96px, h-20 = 80px
@@ -34,7 +57,7 @@ const Header: React.FC = () => {
           key={link.name}
           to={link.href}
           onClick={() => setIsOpen(false)}
-          className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+          className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
         >
           {link.name}
         </Link>
@@ -45,7 +68,7 @@ const Header: React.FC = () => {
           key={link.name}
           href={link.href}
           onClick={(e) => handleNavClick(e, link.href)}
-          className="text-lg text-dark-text font-semibold hover:text-primary-green transition-colors cursor-pointer"
+          className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
         >
           {link.name}
         </a>
@@ -62,11 +85,11 @@ const Header: React.FC = () => {
         >
           <img 
             src="/outros/logo.PNG" 
-            alt="Recanto do Lago" 
+            alt="Pousada Recanto do Lago - Hospedagem em Cambará do Sul perto dos Cânions" 
             className="h-28 md:h-36 w-auto object-contain mt-1 md:mt-2"
           />
         </Link>
-        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
         <div className="hidden md:block">

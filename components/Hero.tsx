@@ -44,7 +44,15 @@ const Hero: React.FC = () => {
         <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-sans drop-shadow-md max-w-4xl mx-auto">
           Sua Pousada em Cambará do Sul
         </p>
-        <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar agora</Button>
+        <Button 
+          variant="primary" 
+          href={RESERVATION_URL} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-xl md:text-2xl px-8 md:px-12 py-4 md:py-6 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
+        >
+          Reservar agora
+        </Button>
       </div>
     </section>
   );

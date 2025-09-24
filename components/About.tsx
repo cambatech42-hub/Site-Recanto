@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="w-full h-64 sm:h-80 md:h-full overflow-hidden rounded-lg shadow-xl">
-            <img src="https://picsum.photos/seed/pousada-about/800/600" alt="Fachada da Pousada Recanto do Lago" className="w-full h-full object-cover" />
+            <img src="https://picsum.photos/seed/pousada-about/800/600" alt="Pousada rural Recanto do Lago em Cambará do Sul - Vista da fachada com chalés na natureza" className="w-full h-full object-cover" />
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green mb-4 md:mb-6">

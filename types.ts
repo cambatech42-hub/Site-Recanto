@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface Accommodation {
   name: string;
   description: string;
@@ -30,7 +32,7 @@ export interface LeisureActivity {
   name: string;
   description: string;
   image: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   gallery?: string[];
   details?: string;
 }
@@ -38,4 +40,16 @@ export interface LeisureActivity {
 export interface FAQItem {
   question: string;
   answer: string;
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  category: 'passeios' | 'dicas' | 'eventos' | 'curiosidades';
+  date: string;
+  readTime: number;
+  tags: string[];
 }

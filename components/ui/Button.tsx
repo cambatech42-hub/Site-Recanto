@@ -27,7 +27,7 @@ type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 const Button: React.FC<ButtonProps> = (props) => {
   const { variant = 'primary', className, children } = props;
   
-  const baseStyles = 'inline-block text-center px-6 py-3 font-bold rounded-md shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'inline-block text-center px-4 py-2 text-sm font-semibold rounded-md shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantStyles = {
     primary: 'bg-primary-green text-white hover:bg-green-900 focus:ring-primary-green',

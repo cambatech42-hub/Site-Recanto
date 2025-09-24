@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accommodation, Activity, NavLink, Testimonial, LeisureActivity, FAQItem } from './types';
+import { Accommodation, Activity, NavLink, Testimonial, LeisureActivity, FAQItem, BlogPost } from './types';
 
 export const PHONE_NUMBER = '5554999300535';
 export const EMAIL_ADDRESS = 'recantodolagopousada@hotmail.com';
@@ -9,11 +9,12 @@ export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
 
 export const NAV_LINKS = [
   { name: 'Início', href: '#home' },
-  { name: 'Sobre', href: '#about' },
-  { name: 'Café da Manhã', href: '#breakfast' },
   { name: 'Acomodações', href: '#accommodations' },
+  { name: 'Café da Manhã', href: '#breakfast' },
   { name: 'Lazer', href: '#leisure' },
   { name: 'Passeios', href: '#activities' },
+  { name: 'Sobre', href: '#about' },
+  { name: 'Blog', href: '#blog' },
   { name: 'Depoimentos', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Contato', href: '#contact' },
@@ -233,5 +234,74 @@ export const FAQ_DATA: FAQItem[] = [
     {
         question: "Qual é a política de cancelamento?",
         answer: "Para cancelamentos feitos com até 15 dias de antecedência da data de check-in, oferecemos reembolso total do valor pago. Para cancelamentos com menos de 15 dias, o valor pago fica como crédito para uma futura hospedagem (válido por 6 meses). Em caso de não comparecimento (no-show), não há reembolso ou crédito."
+    }
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+    {
+        id: '1',
+        title: 'Cânion Itaimbezinho: Guia Completo para sua Visita',
+        excerpt: 'Descubra tudo sobre o famoso Cânion Itaimbezinho, uma das principais atrações de Cambará do Sul. Dicas de trilhas, horários e como aproveitar ao máximo sua visita.',
+        content: 'O Cânion Itaimbezinho é uma das maravilhas naturais mais impressionantes do Brasil, localizado no Parque Nacional de Aparados da Serra. Com seus 5,8 km de extensão e até 720 metros de profundidade, oferece vistas espetaculares que deixam qualquer visitante sem palavras.\n\nPara chegar ao cânion, você pode optar por diferentes trilhas. A Trilha do Vértice é a mais popular e acessível, com apenas 1,4 km de caminhada leve, ideal para toda a família. Já a Trilha da Cachoeira do Véu de Noiva oferece uma experiência mais aventureira, com 3 km de caminhada que leva até uma das cachoeiras mais bonitas da região.\n\nO parque funciona de terça a domingo, das 8h às 17h. Recomendamos chegar cedo para evitar multidões e aproveitar a melhor luz para fotografias. Não esqueça de levar água, protetor solar e usar calçados adequados para trilha.\n\nA entrada custa R$ 17 para adultos e é gratuita para crianças até 11 anos e idosos acima de 60 anos. O estacionamento é gratuito e fica a poucos metros da entrada do parque.',
+        image: '/aereas/aerea1.jpg',
+        category: 'passeios',
+        date: '2024-01-15',
+        readTime: 5,
+        tags: ['cânion', 'trilha', 'natureza', 'aparados da serra']
+    },
+    {
+        id: '2',
+        title: 'Onde Comer em Cambará do Sul: Restaurantes Imperdíveis',
+        excerpt: 'Conheça os melhores tipos de restaurantes de Cambará do Sul, desde a tradicional culinária gaúcha até opções vegetarianas. Sabores que complementam perfeitamente sua viagem.',
+        content: 'A gastronomia de Cambará do Sul é um capítulo à parte na experiência de visitar a região. A cidade oferece desde restaurantes tradicionais gaúchos até opções mais contemporâneas, sempre valorizando ingredientes locais e da serra gaúcha.\n\n<img src="/cafe/cafe15.jpg" alt="Café colonial tradicional da serra gaúcha - Pousada Recanto do Lago Cambará do Sul" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nOs restaurantes especializados em churrasco tradicional são uma marca registrada da região. Você encontrará estabelecimentos que servem cordeiro assado, costela no fogo de chão e outras especialidades da culinária gaúcha. O ambiente rústico e acolhedor é característico desses locais.\n\n<img src="/cafe/cafe20.jpg" alt="Pratos típicos gaúchos - Culinária regional Cambará do Sul" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nPara quem busca uma experiência mais refinada, há restaurantes que oferecem pratos da culinária regional com toques contemporâneos. Muitos deles aproveitam a localização privilegiada para oferecer refeições com vista para as montanhas e cânions.\n\nOs vegetarianos e veganos também encontram boas opções na cidade. Vários estabelecimentos servem pratos naturais e orgânicos, além de oferecerem cafés coloniais tradicionais da região serrana.\n\n<img src="/cafe/cafe25.jpg" alt="Mesa de café colonial serra gaúcha - Hospedagem com café da manhã Cambará do Sul" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nNão esqueça de experimentar as especialidades locais como o pinhão (típico do inverno), queijos artesanais da região, mel silvestre e os vinhos produzidos na Serra Gaúcha. Muitos restaurantes oferecem degustações desses produtos típicos, especialmente durante o café colonial.',
+        image: '/cafe/cafe1.jpg',
+        category: 'dicas',
+        date: '2024-01-10',
+        readTime: 4,
+        tags: ['gastronomia', 'restaurantes', 'culinária gaúcha', 'comida local']
+    },
+    {
+        id: '3',
+        title: 'Festival de Inverno de Cambará do Sul 2024',
+        excerpt: 'O tradicional Festival de Inverno está chegando! Confira a programação completa com shows, gastronomia e atividades para toda a família durante o mês de julho.',
+        content: 'O Festival de Inverno de Cambará do Sul é um dos eventos mais aguardados do ano na região. Durante todo o mês de julho, a cidade se transforma em um grande palco cultural, oferecendo uma programação diversificada para todos os gostos.\n\nEste ano, o festival contará com shows de artistas nacionais e regionais, apresentações de dança folclórica, exposições de arte local e uma feira gastronômica com o melhor da culinária serrana.\n\nEntre os destaques da programação estão os shows de música gaúcha no anfiteatro natural da cidade, as apresentações de dança alemã que celebram a herança cultural da região, e os workshops de artesanato local.\n\nA feira gastronômica funcionará todos os fins de semana do mês, oferecendo desde pratos típicos gaúchos até opções vegetarianas e veganas. Não perca a oportunidade de experimentar o famoso "quentão serrano" e os doces coloniais.\n\nPara as crianças, haverá atividades especiais como oficinas de pintura, contação de histórias e apresentações teatrais. O evento é gratuito e acontece em diversos pontos da cidade.\n\nRecomendamos fazer reservas antecipadas nas pousadas, pois julho é alta temporada na região devido ao festival e às férias de inverno.',
+        image: '/geralexterna/entrada.jpg',
+        category: 'eventos',
+        date: '2024-01-08',
+        readTime: 3,
+        tags: ['festival', 'inverno', 'música', 'cultura', 'julho']
+    },
+    {
+        id: '4',
+        title: 'A História dos Cânions: Como se Formaram essas Maravilhas',
+        excerpt: 'Entenda o processo geológico fascinante que deu origem aos cânions de Cambará do Sul há milhões de anos. Uma viagem no tempo através da ciência.',
+        content: 'Os cânions de Cambará do Sul são resultado de um processo geológico fascinante que começou há mais de 130 milhões de anos. Sua formação está intimamente ligada à separação dos continentes sul-americano e africano.\n\nTudo começou durante o período Cretáceo, quando intensas atividades vulcânicas cobriram a região com espessas camadas de basalto. Essas rochas vulcânicas formaram o que hoje conhecemos como Planalto da Serra Geral.\n\nO processo de formação dos cânions propriamente dito iniciou-se há cerca de 10 milhões de anos, quando mudanças climáticas e tectônicas causaram o soerguimento da região. Os rios que antes corriam tranquilamente sobre o planalto começaram a escavar profundamente as rochas basálticas.\n\nA erosão diferencial foi fundamental neste processo. As camadas mais resistentes de basalto formaram as paredes verticais dos cânions, enquanto as rochas mais moles foram carregadas pelas águas, criando os vales profundos que vemos hoje.\n\nO Cânion Itaimbezinho, por exemplo, foi esculpido principalmente pelo Rio do Boi, que ao longo de milhões de anos cavou um desfiladeiro de até 720 metros de profundidade. As cachoeiras que vemos hoje são resultado deste processo contínuo de erosão.\n\nEsta formação geológica única torna os cânions de Cambará do Sul verdadeiros museus a céu aberto, onde podemos observar milhões de anos da história da Terra gravados nas rochas.',
+        image: '/aereas/aerea5.jpg',
+        category: 'curiosidades',
+        date: '2024-01-05',
+        readTime: 6,
+        tags: ['geologia', 'formação', 'história', 'ciência', 'basalto']
+    },
+    {
+        id: '5',
+        title: 'Trilha da Cachoeira Véu de Noiva: Aventura Garantida',
+        excerpt: 'Uma das trilhas mais bonitas da região leva até a impressionante Cachoeira Véu de Noiva. Saiba como se preparar para esta aventura inesquecível.',
+        content: 'A Trilha da Cachoeira Véu de Noiva é considerada uma das mais belas e desafiadoras de Cambará do Sul. Com aproximadamente 3 km de extensão (ida), a trilha oferece paisagens espetaculares e termina em uma das cachoeiras mais impressionantes da região.\n\n<img src="/aereas/aerea8.jpg" alt="Vista aérea dos cânions Cambará do Sul - Turismo natureza perto da Pousada Recanto do Lago" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA trilha tem início próximo ao centro da cidade e possui nível de dificuldade moderado. O percurso leva aproximadamente 2 horas para ser completado (ida), passando por diferentes tipos de vegetação típica da região serrana.\n\nDurante o caminho, você atravessará riachos cristalinos, caminhará por trechos de mata nativa e terá vistas panorâmicas dos campos e morros característicos da região. É importante usar calçados adequados para trilha, pois alguns trechos podem estar escorregadios, especialmente após chuvas.\n\n<img src="/lago/lago2.jpg" alt="Paisagem natural trilhas Cambará do Sul - Ecoturismo perto dos cânions" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA Cachoeira Véu de Noiva possui uma queda impressionante e forma uma piscina natural na base, onde é possível se refrescar (quando as condições climáticas permitirem). O nome da cachoeira vem do formato de sua queda d\'água, que lembra um véu de noiva esvoaçante.\n\nRecomendações importantes: leve água suficiente, protetor solar, repelente e lanche. A trilha não possui estrutura de apoio ao longo do percurso, então é essencial estar bem preparado. Recomenda-se sempre informar alguém sobre seu roteiro e horário previsto de retorno.\n\n<img src="/lago/lago33.jpg" alt="Cachoeira Véu de Noiva Cambará do Sul - Trilhas e natureza perto da pousada" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA melhor época para fazer a trilha é durante os meses mais secos (abril a setembro), quando as chances de chuva são menores e a visibilidade é melhor.',
+        image: '/lago/lago1.jpg',
+        category: 'passeios',
+        date: '2024-01-03',
+        readTime: 4,
+        tags: ['trilha', 'cachoeira', 'aventura', 'natureza', 'véu de noiva']
+    },
+    {
+        id: '6',
+        title: 'Clima em Cambará do Sul: O que Esperar em Cada Estação',
+        excerpt: 'Planeje sua viagem conhecendo o clima de Cambará do Sul ao longo do ano. Dicas de quando visitar e o que levar na mala para cada estação.',
+        content: 'O clima de Cambará do Sul é subtropical úmido, com características bem definidas em cada estação do ano. Entender essas variações é fundamental para planejar sua viagem e aproveitar ao máximo a região.\n\nNo verão (dezembro a março), as temperaturas variam entre 15°C e 28°C. É a época mais chuvosa do ano, com chuvas frequentes à tarde. Apesar disso, é uma excelente época para visitar cachoeiras e fazer trilhas pela manhã. Leve roupas leves, capa de chuva e calçados impermeáveis.\n\nO outono (março a junho) é considerado uma das melhores épocas para visitar a região. As temperaturas ficam entre 8°C e 22°C, com menos chuvas e dias mais ensolarados. As cores da vegetação ficam especialmente bonitas nesta época. É ideal para todas as atividades ao ar livre.\n\nO inverno (junho a setembro) é a estação mais fria, com temperaturas entre 2°C e 18°C. Pode ocorrer geada e, em anos excepcionais, até neve. É a época mais seca do ano, perfeita para trilhas e passeios aos cânions. A visibilidade costuma ser excelente. Leve roupas bem quentes, incluindo casacos impermeáveis.\n\nA primavera (setembro a dezembro) traz o renascimento da natureza, com temperaturas entre 10°C e 25°C. As chuvas voltam gradualmente, mas ainda há muitos dias ensolarados. É uma época linda para fotografias, com flores silvestres colorindo a paisagem.\n\nIndependente da época, sempre leve protetor solar, pois a altitude (cerca de 1000m) intensifica os raios UV. Roupas em camadas são sempre uma boa opção devido às variações de temperatura.',
+        image: '/neve/neve1.JPG',
+        category: 'dicas',
+        date: '2024-01-01',
+        readTime: 5,
+        tags: ['clima', 'estações', 'temperatura', 'planejamento', 'quando visitar']
     }
 ];

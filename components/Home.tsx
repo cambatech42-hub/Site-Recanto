@@ -6,6 +6,7 @@ import Accommodations from './Accommodations';
 import Leisure from './Leisure';
 import Activities from './Activities';
 import Gallery from './Gallery';
+import Blog from './Blog';
 import Testimonials from './Testimonials';
 import FAQ from './FAQ';
 import Contact from './Contact';
@@ -14,12 +15,12 @@ const Home: React.FC = () => {
   return (
     <main>
       <Hero />
-      <About />
-      <Breakfast />
       <Accommodations />
+      <Breakfast />
       <Leisure />
       <Activities />
-      <Gallery />
+      <About />
+      <Blog />
       <Testimonials />
       <FAQ />
       <Contact />
