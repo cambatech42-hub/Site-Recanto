@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './components/Header';
 import Home from './components/Home';
 import GuestGuidePage from './components/GuestGuidePage';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/guest-guide" element={<GuestGuidePage />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
+        <SpeedInsights />
       </div>
     </Router>
   );
