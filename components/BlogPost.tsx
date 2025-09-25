@@ -1,17 +1,25 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Calendar, Clock, Tag, ArrowLeft, Share2 } from 'lucide-react';
 import { BlogPost as BlogPostType } from '../types';
 import { BLOG_POSTS } from '../constants';
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
+import BlogCard from './BlogCard';
 
 const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+    const { t } = useTranslation();
     
     const post = BLOG_POSTS.find(p => p.id === id);
+
+    // Função para obter traduções dos posts do blog
+    const getBlogTranslation = (postId: string, field: 'title' | 'excerpt' | 'content') => {
+        return t(`blogData.${postId}.${field}`, { defaultValue: '' });
+    };
 
     // Scroll para o topo quando o componente é montado ou o ID muda
     useEffect(() => {
@@ -23,13 +31,13 @@ const BlogPost: React.FC = () => {
             <div className="min-h-screen bg-background-beige">
                 <Header />
                 <div className="container mx-auto px-4 py-16 text-center">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-4">Post não encontrado</h1>
-                    <p className="text-gray-600 mb-8">O post que você está procurando não existe.</p>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('blog.postNotFound')}</h1>
+                    <p className="text-gray-600 mb-8">{t('blog.postNotFoundDescription')}</p>
                     <button 
                         onClick={() => navigate('/')}
                         className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200"
                     >
-                        Voltar ao Início
+                        {t('blog.backToHome')}
                     </button>
                 </div>
                 <Footer />
@@ -64,13 +72,13 @@ const BlogPost: React.FC = () => {
     const getCategoryLabel = (category: string) => {
         switch (category) {
             case 'passeios':
-                return 'Passeios';
+                return t('blog.categories.tours');
             case 'dicas':
-                return 'Dicas';
+                return t('blog.categories.tips');
             case 'eventos':
-                return 'Eventos';
+                return t('blog.categories.events');
             case 'curiosidades':
-                return 'Curiosidades';
+                return t('blog.categories.curiosities');
             default:
                 return category;
         }
@@ -89,13 +97,21 @@ const BlogPost: React.FC = () => {
             } catch (error) {
                 // Fallback para copiar URL
                 navigator.clipboard.writeText(url);
-                alert('Link copiado para a área de transferência!');
+                alert(t('blog.linkCopied'));
             }
         } else {
             // Fallback para navegadores que não suportam Web Share API
             navigator.clipboard.writeText(url);
-            alert('Link copiado para a área de transferência!');
+            alert(t('blog.linkCopied'));
         }
+    };
+
+    const handleViewAllPosts = () => {
+        navigate('/');
+        // Aguarda um pequeno delay para garantir que a navegação aconteça antes do scroll
+        setTimeout(() => {
+            document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
     };
 
     return (
@@ -109,7 +125,7 @@ const BlogPost: React.FC = () => {
                     className="flex items-center space-x-2 text-green-600 hover:text-green-700 mb-8 transition-colors duration-200"
                 >
                     <ArrowLeft className="w-5 h-5" />
-                    <span>Voltar ao Blog</span>
+                    <span>{t('blog.backToBlog')}</span>
                 </button>
 
                 {/* Cabeçalho do Post */}
@@ -123,12 +139,12 @@ const BlogPost: React.FC = () => {
                             className="flex items-center space-x-2 text-gray-600 hover:text-green-600 transition-colors duration-200 bg-gray-50 px-4 py-2 rounded-full hover:bg-green-50"
                         >
                             <Share2 className="w-5 h-5" />
-                            <span className="font-medium">Compartilhar</span>
+                            <span className="font-medium">{t('blog.share')}</span>
                         </button>
                     </div>
                     
                     <h1 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
-                        {post.title}
+                        {getBlogTranslation(post.id, 'title') || post.title}
                     </h1>
                     
                     <div className="flex items-center space-x-8 text-gray-600 mb-8 text-lg">
@@ -142,7 +158,7 @@ const BlogPost: React.FC = () => {
                             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                                 <Clock className="w-5 h-5 text-blue-600" />
                             </div>
-                            <span className="font-medium">{post.readTime} min de leitura</span>
+                            <span className="font-medium">{post.readTime} {t('blog.readTime')}</span>
                         </div>
                     </div>
                     
@@ -169,7 +185,7 @@ const BlogPost: React.FC = () => {
                 <div className="mb-12">
                     <img 
                         src={post.image} 
-                        alt={post.title}
+                        alt={getBlogTranslation(post.id, 'title') || post.title}
                         className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
                     />
                 </div>
@@ -177,7 +193,7 @@ const BlogPost: React.FC = () => {
                 {/* Conteúdo do Post */}
                 <article className="blog-content">
                     <div 
-                        dangerouslySetInnerHTML={{ __html: post.content }}
+                        dangerouslySetInnerHTML={{ __html: getBlogTranslation(post.id, 'content') || post.content }}
                         className="blog-text"
                     />
                 </article>
@@ -374,13 +390,13 @@ const BlogPost: React.FC = () => {
                                     <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span className="font-medium">Confirmação imediata</span>
+                                    <span className="font-medium">{t('blog.instantConfirmation')}</span>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
-                                    <span className="font-medium">Atendimento personalizado</span>
+                                    <span className="font-medium">{t('blog.personalizedService')}</span>
                                 </div>
                             </div>
                         </div>
@@ -391,18 +407,49 @@ const BlogPost: React.FC = () => {
                 <footer className="mt-12 pt-8 border-t border-gray-200">
                     <div className="flex items-center justify-between">
                         <div className="text-sm text-gray-600">
-                            Publicado em {formatDate(post.date)}
+                            {t('blog.publishedOn')} {formatDate(post.date)}
                         </div>
                         <button 
                             onClick={handleShare}
                             className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200"
                         >
                             <Share2 className="w-4 h-4" />
-                            <span>Compartilhar</span>
+                            <span>{t('blog.share')}</span>
                         </button>
                     </div>
                 </footer>
             </article>
+
+            {/* Seção de Posts Relacionados */}
+            <section className="container mx-auto px-4 py-16">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+                        {t('blog.continueReading')}
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        {t('blog.continueReadingDescription')}
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {BLOG_POSTS
+                        .filter(blogPost => blogPost.id !== post.id) // Exclui o post atual
+                        .slice(0, 3) // Mostra apenas 3 posts relacionados
+                        .map(blogPost => (
+                            <BlogCard key={blogPost.id} post={blogPost} />
+                        ))
+                    }
+                </div>
+                
+                <div className="text-center mt-12">
+                    <button 
+                        onClick={handleViewAllPosts}
+                        className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold"
+                    >
+                        {t('blog.viewAllPosts')}
+                    </button>
+                </div>
+            </section>
 
             <Footer />
             <WhatsAppButton />

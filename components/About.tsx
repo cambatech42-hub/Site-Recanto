@@ -1,8 +1,11 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from './ui/Button';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -12,15 +15,15 @@ const About: React.FC = () => {
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green mb-4 md:mb-6">
-              Nossa História
+              {t('about.title')}
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
-              Aninhada no coração de Cambará do Sul, a Pousada Recanto do Lago nasceu do sonho de compartilhar a beleza estonteante da Serra Gaúcha. Oferecemos um refúgio de paz e conforto, onde cada detalhe é pensado para proporcionar uma experiência autêntica e inesquecível.
+              {t('about.description1')}
             </p>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8">
-              Aqui, a hospitalidade calorosa se une à natureza exuberante. Nossos hóspedes podem relaxar à beira do lago, explorar paisagens de tirar o fôlego e criar memórias que durarão para sempre. Venha viver a magia dos cânions conosco.
+              {t('about.description2')}
             </p>
-            <Button href="#accommodations" variant="primary">Conheça Nossas Acomodações</Button>
+            <Button href="#accommodations" variant="primary">{t('about.button')}</Button>
           </div>
         </div>
       </div>

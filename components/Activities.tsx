@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ACTIVITIES_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
 import { Activity } from '../types';
 import Button from './ui/Button';
 import DetailModal from './DetailModal';
 
 const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ activity, onClick }) => {
+  const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,6 +34,17 @@ const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ a
     };
   }, []);
 
+  // Get translated activity data
+  const getActivityTranslation = (activityId: string) => {
+    return {
+      name: t(`activitiesData.${activityId}.name`),
+      description: t(`activitiesData.${activityId}.description`),
+      details: t(`activitiesData.${activityId}.details`)
+    };
+  };
+
+  const translatedActivity = getActivityTranslation(activity.id);
+
   return (
     <div 
       ref={cardRef} 
@@ -48,17 +61,17 @@ const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ a
       <div className="relative h-64 overflow-hidden">
         <img 
             src={activity.image} 
-            alt={activity.name} 
+            alt={translatedActivity.name} 
             className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
         />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300"></div>
-        <h3 className="absolute bottom-4 left-4 text-3xl font-serif font-bold text-white drop-shadow-md">{activity.name}</h3>
+        <h3 className="absolute bottom-4 left-4 text-3xl font-serif font-bold text-white drop-shadow-md">{translatedActivity.name}</h3>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <p className="text-gray-600 flex-grow">{activity.description}</p>
+        <p className="text-gray-600 flex-grow">{translatedActivity.description}</p>
         <div className="mt-auto pt-4">
             <span className="font-semibold text-accent-gold hover:text-yellow-700 transition-colors duration-300 inline-flex items-center group-hover:underline">
-                Ver galeria
+                {t('activities.viewGallery')}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </span>
         </div>
@@ -68,10 +81,17 @@ const ActivityCard: React.FC<{ activity: Activity; onClick: () => void }> = ({ a
 };
 
 const Activities: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
 
   const openModal = (activity: Activity) => {
-    setSelectedActivity(activity);
+    // Get translated activity data for modal
+    const translatedActivity = {
+      ...activity,
+      name: t(`activitiesData.${activity.id}.name`),
+      details: t(`activitiesData.${activity.id}.details`)
+    };
+    setSelectedActivity(translatedActivity);
   };
 
   const closeModal = () => {
@@ -83,9 +103,9 @@ const Activities: React.FC = () => {
       <section id="activities" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-primary-green">Explore Cambará do Sul</h2>
+            <h2 className="text-4xl font-serif font-bold text-primary-green">{t('activities.title')}</h2>
             <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-              Aventuras inesquecíveis esperam por você na terra dos cânions.
+              {t('activities.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,8 +114,8 @@ const Activities: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
-            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('activities.reserveButton')}</Button>
+            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('activities.contactButton')}</Button>
           </div>
         </div>
       </section>

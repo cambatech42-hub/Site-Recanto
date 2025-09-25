@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { WHATSAPP_URL } from '../constants';
 import Button from './ui/Button';
 
 const Breakfast: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const breakfastImages = [
@@ -23,8 +25,8 @@ const Breakfast: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: "Horário Flexível",
-      description: "Servido das 7h30 às 10h00"
+      title: t('breakfast.highlights.flexible.title'),
+      description: t('breakfast.highlights.flexible.description')
     },
     {
       icon: (
@@ -32,8 +34,8 @@ const Breakfast: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9a5.002 5.002 0 01-6.001 0M6 7l-3 9a5.002 5.002 0 006.001 0" />
         </svg>
       ),
-      title: "Produtos Caseiros",
-      description: "Pães, bolos e doces feitos na casa"
+      title: t('breakfast.highlights.homemade.title'),
+      description: t('breakfast.highlights.homemade.description')
     },
     {
       icon: (
@@ -41,8 +43,8 @@ const Breakfast: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      title: "Ingredientes Locais",
-      description: "Produtos frescos da região"
+      title: t('breakfast.highlights.local.title'),
+      description: t('breakfast.highlights.local.description')
     },
     {
       icon: (
@@ -50,8 +52,8 @@ const Breakfast: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
-      title: "Variedade Completa",
-      description: "Opções doces e salgadas para todos"
+      title: t('breakfast.highlights.variety.title'),
+      description: t('breakfast.highlights.variety.description')
     }
   ];
 
@@ -62,11 +64,10 @@ const Breakfast: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-green mb-4">
-              Café da Manhã Colonial
+              {t('breakfast.title')}
             </h2>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6">
-              Nosso grande diferencial: um café da manhã completo com produtos caseiros e ingredientes frescos da região. 
-              Uma experiência gastronômica que celebra os sabores autênticos da Serra Gaúcha.
+              {t('breakfast.subtitle')}
             </p>
             <div className="w-24 h-1 bg-primary-green mx-auto"></div>
           </div>

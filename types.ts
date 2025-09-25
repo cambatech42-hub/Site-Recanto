@@ -10,6 +10,7 @@ export interface Accommodation {
 }
 
 export interface Activity {
+  id: string;
   name: string;
   description: string;
   image: string;
@@ -23,12 +24,14 @@ export interface NavLink {
 }
 
 export interface Testimonial {
+  id: string;
   quote: string;
   author: string;
   avatar: string;
 }
 
 export interface LeisureActivity {
+  id: string;
   name: string;
   description: string;
   image: string;

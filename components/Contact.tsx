@@ -1,8 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from './ui/Button';
 import { WHATSAPP_URL, RESERVATION_URL, EMAIL_ADDRESS } from '../constants';
 
-const ContactInfoItem: React.FC<{ icon: JSX.Element; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
+const ContactInfoItem: React.FC<{ icon: React.ReactElement; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
     <div className="flex items-start mb-6">
         <div className="text-primary-green mr-4 mt-1">{icon}</div>
         <div>
@@ -13,26 +14,28 @@ const ContactInfoItem: React.FC<{ icon: JSX.Element; title: string; children: Re
 );
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-primary-green">Entre em Contato</h2>
+          <h2 className="text-4xl font-serif font-bold text-primary-green">{t('contact.title')}</h2>
           <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-            Estamos ansiosos para receber você. Fale conosco e planeje sua viagem!
+            {t('contact.subtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-background-beige p-8 md:p-12 rounded-lg shadow-lg">
           <div>
-            <h3 className="text-3xl font-serif font-bold text-primary-green mb-8">Informações de Contato</h3>
+            <h3 className="text-3xl font-serif font-bold text-primary-green mb-8">{t('contact.contactInfo')}</h3>
             <ContactInfoItem 
                 icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>} 
-                title="Endereço">
-                Estrada do Recanto, 123<br/>Cambará do Sul, RS, 95480-000
+                title={t('contact.address')}>
+                {t('contact.addressDetails')}
             </ContactInfoItem>
             <ContactInfoItem 
                 icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
-                title="Telefone / WhatsApp">
+                title={t('contact.phone')}>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold">+55 (54) 99930-0535</a>
             </ContactInfoItem>
             <ContactInfoItem 
@@ -41,7 +44,7 @@ const Contact: React.FC = () => {
                 <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-accent-gold">{EMAIL_ADDRESS}</a>
             </ContactInfoItem>
             <div className="mt-10">
-                <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Faça sua Reserva Online</Button>
+                <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('contact.reserveButton')}</Button>
             </div>
           </div>
           <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden">

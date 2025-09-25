@@ -8,16 +8,16 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}?text=${WHATSAPP_MESSA
 export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
 
 export const NAV_LINKS = [
-  { name: 'Início', href: '#home' },
-  { name: 'Acomodações', href: '#accommodations' },
-  { name: 'Café da Manhã', href: '#breakfast' },
-  { name: 'Lazer', href: '#leisure' },
-  { name: 'Passeios', href: '#activities' },
-  { name: 'Sobre', href: '#about' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Depoimentos', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contato', href: '#contact' },
+  { name: 'nav.home', href: '#home' },
+  { name: 'nav.accommodations', href: '#accommodations' },
+  { name: 'nav.breakfast', href: '#breakfast' },
+  { name: 'nav.leisure', href: '#leisure' },
+  { name: 'nav.activities', href: '#activities' },
+  { name: 'nav.about', href: '#about' },
+  { name: 'nav.blog', href: '#blog' },
+  { name: 'nav.testimonials', href: '#testimonials' },
+  { name: 'nav.faq', href: '#faq' },
+  { name: 'nav.contact', href: '#contact' },
 ];
 
 export const ACCOMMODATIONS_DATA: Accommodation[] = [
@@ -94,6 +94,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
 
 export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
     {
+        id: 'tennisCourt',
         name: 'Quadra de Tênis',
         description: 'Desafie seus amigos para uma partida emocionante em nossa quadra de tênis, cercada pela natureza exuberante da Serra Gaúcha.',
         image: 'https://picsum.photos/seed/tenis/600/400',
@@ -112,6 +113,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         ],
     },
     {
+        id: 'lakeFishing',
         name: 'Lago para Pesca e Pedalinho',
         description: 'Relaxe com uma pescaria esportiva em nosso lago sereno ou divirtas-se em um passeio de pedalinho com a família.',
         image: 'https://picsum.photos/seed/lago-lazer/600/400',
@@ -124,6 +126,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         ],
     },
     {
+        id: 'gameRoom',
         name: 'Sala de Jogos',
         description: 'Diversão garantida para todas as idades com sinuca e pebolim (fla-flu) em nossa acolhedora sala de jogos.',
         image: 'https://picsum.photos/seed/jogos/600/400',
@@ -135,6 +138,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         ],
     },
     {
+        id: 'bochaField',
         name: 'Cancha de Bocha',
         description: 'Aproveite um jogo tradicional e descontraído de bocha em nossa cancha profissional, um passatempo perfeito para a tarde.',
         image: 'https://picsum.photos/seed/bocha/600/400',
@@ -145,6 +149,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         ],
     },
     {
+        id: 'bbqArea',
         name: 'Espaço com Churrasqueira',
         description: 'Reúna seus amigos e família para um autêntico churrasco gaúcho em nosso espaço equipado e aconchegante.',
         image: 'https://picsum.photos/seed/churrasco/600/400',
@@ -159,6 +164,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
 
 export const ACTIVITIES_DATA: Activity[] = [
   {
+    id: 'balloonFlight',
     name: 'Voo de Balão',
     description: 'Desfrute de uma vista inesquecível dos cânions e da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.',
     image: 'https://picsum.photos/seed/balao/600/400',
@@ -170,6 +176,7 @@ export const ACTIVITIES_DATA: Activity[] = [
     ],
   },
   {
+    id: 'horseRiding',
     name: 'Cavalgadas',
     description: 'Explore trilhas exclusivas e campos verdejantes em uma cavalgada relaxante, conectando-se com a natureza local.',
     image: 'https://picsum.photos/seed/cavalo/600/400',
@@ -180,6 +187,7 @@ export const ACTIVITIES_DATA: Activity[] = [
     ],
   },
   {
+    id: 'atvTour',
     name: 'Passeio de Quadriciclo',
     description: 'Prepare-se para uma experiência única e emocionante! Nosso passeio de quadriciclo combina adrenalina e natureza em uma aventura inesquecível que leva você até uma das mais belas cachoeiras da região.',
     image: 'https://picsum.photos/seed/canion/600/400',
@@ -194,16 +202,19 @@ export const ACTIVITIES_DATA: Activity[] = [
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
     {
+        id: 'mariana',
         quote: "Uma experiência simplesmente mágica! A Pousada Recanto do Lago superou todas as nossas expectativas. O atendimento é impecável e a vista do chalé é de tirar o fôlego. Voltaremos com certeza!",
         author: "Mariana Costa",
         avatar: "https://picsum.photos/seed/avatar1/100/100",
     },
     {
+        id: 'joao',
         quote: "Lugar perfeito para se desconectar e recarregar as energias. A paz que encontramos aqui é indescritível. Café da manhã delicioso e equipe muito atenciosa. Recomendo a todos!",
         author: "João Almeida",
         avatar: "https://picsum.photos/seed/avatar2/100/100",
     },
     {
+        id: 'familia',
         quote: "A localização é privilegiada, bem no coração de paisagens incríveis. Fizemos o passeio de balão e foi inesquecível. A pousada oferece todo o conforto necessário para uma estadia perfeita.",
         author: "Família Oliveira",
         avatar: "https://picsum.photos/seed/avatar3/100/100",
@@ -303,5 +314,38 @@ export const BLOG_POSTS: BlogPost[] = [
         date: '2024-01-01',
         readTime: 5,
         tags: ['clima', 'estações', 'temperatura', 'planejamento', 'quando visitar']
+    },
+    {
+        id: '7',
+        title: 'Gastronomia Local: Sabores Únicos da Serra Gaúcha',
+        excerpt: 'Descubra os pratos típicos e restaurantes imperdíveis de Cambará do Sul. Uma jornada gastronômica pelos sabores autênticos da região.',
+        content: 'A gastronomia de Cambará do Sul reflete a rica herança cultural da região, combinando influências italiana, alemã e gaúcha em pratos únicos e saborosos.\n\n<img src="/cafe/cafe15.jpg" alt="Café da manhã colonial Cambará do Sul - Gastronomia regional pousada" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO café colonial é uma tradição imperdível na região. Servido geralmente aos finais de semana, inclui pães caseiros, geleias artesanais, queijos coloniais, cucas, bolachas e muito mais. É uma experiência gastronômica completa que representa a hospitalidade serrana.\n\nEntre os pratos típicos, destaca-se o cordeiro assado, preparado de forma tradicional em fogo de chão. A carne de cordeiro da região é reconhecida pela qualidade excepcional, resultado da criação em campos nativos. Outros pratos tradicionais incluem o churrasco gaúcho, a paella de frutos do mar e pratos com truta, peixe muito comum nos rios da região.\n\n<img src="/cafe/cafe20.jpg" alt="Pratos típicos Cambará do Sul - Culinária regional serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA região também é famosa pelos seus doces caseiros, especialmente as cucas alemãs, strudels e tortas de frutas vermelhas. No inverno, não deixe de experimentar o quentão e o vinho quente, perfeitos para aquecer nas noites frias.\n\nPara uma experiência gastronômica completa, visite os restaurantes locais que servem pratos com ingredientes frescos da região. Muitos estabelecimentos oferecem vista panorâmica dos cânions, proporcionando uma refeição inesquecível.\n\n<img src="/cafe/cafe25.jpg" alt="Restaurante vista cânions Cambará do Sul - Gastronomia com paisagem" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nDica especial: experimente os produtos artesanais locais, como mel, geleias, queijos e embutidos. Muitos produtores oferecem degustação e venda direta, permitindo levar um pedacinho dos sabores da serra para casa.',
+        image: '/cafe/cafe1.jpg',
+        category: 'dicas',
+        date: '2024-01-15',
+        readTime: 6,
+        tags: ['gastronomia', 'culinária', 'restaurantes', 'café colonial', 'pratos típicos']
+    },
+    {
+        id: '8',
+        title: 'Aventura de Quadriciclo pelos Campos de Cambará',
+        excerpt: 'Explore a natureza selvagem de Cambará do Sul em uma emocionante aventura de quadriciclo. Paisagens incríveis e muita adrenalina te esperam.',
+        content: 'O passeio de quadriciclo é uma das atividades mais emocionantes que você pode fazer em Cambará do Sul. Esta aventura combina adrenalina, natureza exuberante e paisagens de tirar o fôlego.\n\n<img src="/quadriciclo/quadri1.jpg" alt="Passeio quadriciclo Cambará do Sul - Aventura campos serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nOs passeios são conduzidos por guias experientes que conhecem profundamente a região. O roteiro inclui trilhas pelos campos nativos, passagem por arroios cristalinos e paradas estratégicas para contemplar as vistas panorâmicas dos cânions.\n\nA atividade é adequada para iniciantes e experientes. Antes do passeio, você recebe todas as instruções de segurança e equipamentos necessários, incluindo capacete e óculos de proteção. Os quadriciclos são automáticos e fáceis de conduzir.\n\nDurante o percurso, você atravessará diferentes tipos de terreno: campos abertos, trilhas na mata, subidas e descidas suaves. A velocidade é controlada para garantir segurança e permitir que todos apreciem a paisagem. O passeio dura aproximadamente 2 horas.\n\n<img src="/aereas/aerea5.jpg" alt="Vista aérea campos Cambará do Sul - Paisagem quadriciclo aventura" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nUm dos pontos altos do passeio é a parada no mirante natural, onde você pode descer do quadriciclo e contemplar a imensidão dos campos sulinos. É o momento perfeito para fotos e para sentir a grandiosidade da natureza local.\n\nA fauna local também é um atrativo especial. Durante o passeio, é comum avistar diferentes espécies de aves, além de outros animais nativos da região. Os guias compartilham conhecimentos sobre a flora e fauna, tornando o passeio também educativo.\n\n<img src="/lago/lago30.jpg" alt="Natureza Cambará do Sul quadriciclo - Ecoturismo aventura serra" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nRecomendações: use roupas confortáveis que podem sujar, calçados fechados, protetor solar e leve uma garrafa de água. A atividade funciona em qualquer época do ano, mas é especialmente prazerosa nos dias ensolarados.',
+        image: '/quadriciclo/IMG_8997.JPG',
+        category: 'passeios',
+        date: '2024-01-20',
+        readTime: 5,
+        tags: ['quadriciclo', 'aventura', 'campos', 'adrenalina', 'natureza']
+    },
+    {
+        id: '9',
+        title: 'Festival de Inverno: Cultura e Tradição em Cambará do Sul',
+        excerpt: 'Conheça o tradicional Festival de Inverno de Cambará do Sul, um evento que celebra a cultura local com música, dança, gastronomia e muito mais.',
+        content: 'O Festival de Inverno de Cambará do Sul é um dos eventos mais aguardados do ano na região. Realizado tradicionalmente em julho, o festival celebra a cultura local e atrai visitantes de todo o Brasil.\n\n<img src="/geralexterna/portico1.jpg" alt="Festival Inverno Cambará do Sul - Evento cultural serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO evento acontece no centro da cidade e conta com uma programação diversificada que inclui shows musicais, apresentações de dança tradicional gaúcha, exposições de artesanato local e uma feira gastronômica com pratos típicos da região.\n\nUma das principais atrações é o concurso de dança tradicionalista, onde grupos de diferentes cidades apresentam coreografias típicas do Rio Grande do Sul. As apresentações acontecem no palco principal e são sempre muito aplaudidas pelo público.\n\nA feira gastronômica é outro destaque do festival. Barracas espalhadas pela praça central oferecem desde o tradicional churrasco gaúcho até pratos mais elaborados da culinária italiana e alemã, herança dos imigrantes que colonizaram a região.\n\n<img src="/cafe/cafe30.jpg" alt="Feira gastronômica Festival Inverno - Culinária tradicional Cambará" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO artesanato local ganha destaque especial durante o festival. Artesãos da região expõem e vendem seus trabalhos, incluindo peças em lã, madeira, couro e outros materiais típicos. É uma excelente oportunidade para adquirir lembranças autênticas da viagem.\n\nPara as crianças, há uma área especial com atividades recreativas, oficinas de artesanato e apresentações teatrais. O festival é verdadeiramente um evento para toda a família.\n\n<img src="/neve/neve30.jpg" alt="Inverno Cambará do Sul festival - Tradição cultura serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nAlém da programação cultural, o festival também promove atividades esportivas, como torneios de bocha e competições de laço. Essas atividades reforçam as tradições gaúchas e proporcionam momentos de confraternização entre moradores e visitantes.\n\nO Festival de Inverno é gratuito e acontece durante três dias consecutivos. Para quem planeja visitar Cambará do Sul nesta época, é recomendável fazer reservas de hospedagem com antecedência, pois a cidade recebe muitos visitantes durante o evento.',
+        image: '/neve/geada30.jpg',
+        category: 'eventos',
+        date: '2024-01-25',
+        readTime: 4,
+        tags: ['festival', 'inverno', 'cultura', 'tradição', 'música', 'gastronomia']
     }
 ];

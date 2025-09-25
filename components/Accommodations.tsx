@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ACCOMMODATIONS_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
 import { Accommodation } from '../types';
 import DetailModal from './DetailModal';
@@ -22,6 +23,7 @@ const AmenityIcon: React.FC<{ amenity: string }> = ({ amenity }) => {
 
 
 const AccommodationCard: React.FC<{ accommodation: Accommodation; onClick: () => void }> = ({ accommodation, onClick }) => {
+  const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -77,7 +79,7 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation; onClick: () =>
         </div>
         <div className="mt-auto pt-4">
             <Button onClick={onClick} variant="secondary" className="w-full">
-                Saiba Mais
+                {t('accommodations.learnMore')}
             </Button>
         </div>
       </div>
@@ -86,6 +88,7 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation; onClick: () =>
 };
 
 const Accommodations: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedAccommodation, setSelectedAccommodation] = useState<Accommodation | null>(null);
 
   const openModal = (accommodation: Accommodation) => {
@@ -101,9 +104,9 @@ const Accommodations: React.FC = () => {
       <section id="accommodations" className="py-16 md:py-20 bg-background-beige">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">Nossas Acomodações</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">{t('accommodations.title')}</h2>
             <p className="text-base md:text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-              Conforto e charme em meio à natureza. Escolha o refúgio perfeito para sua estadia.
+              {t('accommodations.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -112,8 +115,8 @@ const Accommodations: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
-            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.reserveButton')}</Button>
+            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.contactButton')}</Button>
           </div>
         </div>
       </section>

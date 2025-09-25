@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { BlogPost } from '../types';
 import { Calendar, Clock, Tag } from 'lucide-react';
 
@@ -8,6 +9,12 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
+    const { t } = useTranslation();
+
+    // Função para obter traduções dos posts do blog
+    const getBlogTranslation = (postId: string, field: 'title' | 'excerpt' | 'content') => {
+        return t(`blogData.${postId}.${field}`, { defaultValue: '' });
+    };
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('pt-BR', {
@@ -35,13 +42,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
     const getCategoryLabel = (category: string) => {
         switch (category) {
             case 'passeios':
-                return 'Passeios';
+                return t('blog.categories.tours');
             case 'dicas':
-                return 'Dicas';
+                return t('blog.categories.tips');
             case 'eventos':
-                return 'Eventos';
+                return t('blog.categories.events');
             case 'curiosidades':
-                return 'Curiosidades';
+                return t('blog.categories.curiosities');
             default:
                 return category;
         }
@@ -55,7 +62,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             <div className="relative overflow-hidden">
                 <img 
                     src={post.image} 
-                    alt={post.title}
+                    alt={getBlogTranslation(post.id, 'title') || post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
@@ -67,11 +74,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             
             <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">
-                    {post.title}
+                    {getBlogTranslation(post.id, 'title') || post.title}
                 </h3>
                 
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
+                    {getBlogTranslation(post.id, 'excerpt') || post.excerpt}
                 </p>
                 
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-4">

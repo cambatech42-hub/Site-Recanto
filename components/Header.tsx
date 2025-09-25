@@ -1,13 +1,16 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
+import LanguageSelector from './LanguageSelector';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
@@ -59,7 +62,7 @@ const Header: React.FC = () => {
           onClick={() => setIsOpen(false)}
           className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
         >
-          {link.name}
+          {t(link.name)}
         </Link>
       );
     } else {
@@ -70,7 +73,7 @@ const Header: React.FC = () => {
           onClick={(e) => handleNavClick(e, link.href)}
           className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
         >
-          {link.name}
+          {t(link.name)}
         </a>
       );
     }
@@ -92,8 +95,9 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
-        <div className="hidden md:block">
-            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
+        <div className="hidden md:flex items-center space-x-4">
+          <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+          <LanguageSelector />
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
@@ -112,7 +116,8 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
             {NAV_LINKS.map((link) => renderNavLink(link))}
-            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
+            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+            <LanguageSelector />
           </nav>
         </div>
       )}

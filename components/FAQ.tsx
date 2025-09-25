@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FAQ_DATA } from '../constants';
 import { FAQItem as FAQItemType } from '../types';
 
@@ -42,6 +43,7 @@ const FAQItem: React.FC<{
 };
 
 const FAQ: React.FC = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0); // Começa com o primeiro item aberto
 
   const handleItemClick = (index: number) => {
@@ -52,9 +54,9 @@ const FAQ: React.FC = () => {
     <section id="faq" className="py-20 bg-background-beige">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-primary-green">Perguntas Frequentes</h2>
+          <h2 className="text-4xl font-serif font-bold text-primary-green">{t('faq.title')}</h2>
           <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-            Tire suas dúvidas e prepare-se para uma estadia inesquecível.
+            {t('faq.subtitle')}
           </p>
         </div>
         <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">

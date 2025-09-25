@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { LEISURE_ACTIVITIES_DATA, RESERVATION_URL } from '../constants';
 import { LeisureActivity } from '../types';
 import DetailModal from './DetailModal';
 import Button from './ui/Button';
 
 const LeisureCard: React.FC<{ activity: LeisureActivity; onClick: () => void }> = ({ activity, onClick }) => {
+  const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  // Get translated activity data
+  const getLeisureTranslation = (leisureId: string, field: string) => {
+    return t(`leisureData.${leisureId}.${field}`);
+  };
 
   // Intersection Observer for fade-in animation
   useEffect(() => {
@@ -56,11 +63,11 @@ const LeisureCard: React.FC<{ activity: LeisureActivity; onClick: () => void }> 
         <div className="bg-accent-gold/10 text-accent-gold p-3 rounded-full -mt-12 mb-4 shadow-md">
           {activity.icon}
         </div>
-        <h3 className="text-2xl font-serif font-bold text-primary-green mb-2">{activity.name}</h3>
-        <p className="text-gray-600 flex-grow">{activity.description}</p>
+        <h3 className="text-2xl font-serif font-bold text-primary-green mb-2">{getLeisureTranslation(activity.id, 'name')}</h3>
+        <p className="text-gray-600 flex-grow">{getLeisureTranslation(activity.id, 'description')}</p>
         <div className="mt-auto pt-4">
             <span className="font-semibold text-accent-gold hover:text-yellow-700 transition-colors duration-300 inline-flex items-center group-hover:underline">
-                Ver galeria
+                {t('leisure.viewGallery')}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </span>
         </div>
@@ -70,10 +77,22 @@ const LeisureCard: React.FC<{ activity: LeisureActivity; onClick: () => void }> 
 };
 
 const Leisure: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedActivity, setSelectedActivity] = useState<LeisureActivity | null>(null);
 
+  // Get translated leisure data
+  const getLeisureTranslation = (leisureId: string, field: string) => {
+    return t(`leisureData.${leisureId}.${field}`);
+  };
+
   const openModal = (activity: LeisureActivity) => {
-    setSelectedActivity(activity);
+    // Create translated activity for modal
+    const translatedActivity = {
+      ...activity,
+      name: getLeisureTranslation(activity.id, 'name'),
+      details: getLeisureTranslation(activity.id, 'details')
+    };
+    setSelectedActivity(translatedActivity);
   };
 
   const closeModal = () => {
@@ -85,9 +104,9 @@ const Leisure: React.FC = () => {
       <section id="leisure" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">Lazer e Estrutura</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green">{t('leisure.title')}</h2>
             <p className="text-base md:text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
-              Atividades para todas as idades, sem precisar sair da Pousada.
+              {t('leisure.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -96,7 +115,7 @@ const Leisure: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora</Button>
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
           </div>
         </div>
       </section>
