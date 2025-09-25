@@ -119,7 +119,7 @@
     "reserveButton": "Hacer Reserva"
   },
   "footer": {
-    "title": "Pousada Recanto do Lago",
+    "title": "Recanto do Lago",
     "description": "Tu experiencia única en Serra Gaúcha",
     "navigation": "Navegación",
     "quickLinks": "Enlaces Rápidos",
@@ -127,6 +127,21 @@
     "followUs": "Síguenos",
     "rights": "Todos los derechos reservados",
     "copyright": "Pousada Recanto do Lago. Todos los derechos reservados."
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Recibe noticias, promociones exclusivas y consejos sobre Cambará do Sul",
+    "namePlaceholder": "Tu nombre (opcional)",
+    "phonePlaceholder": "Tu teléfono (opcional)",
+    "emailPlaceholder": "Tu mejor email",
+    "subscribe": "Suscribirse",
+    "subscribing": "Suscribiendo...",
+    "success": "¡Suscripción realizada con éxito! Gracias por unirte a nosotros.",
+    "error": "Error al realizar la suscripción. Inténtalo de nuevo.",
+    "emailRequired": "Por favor, ingresa tu email.",
+    "emailInvalid": "Por favor, ingresa un email válido.",
+    "emailExists": "Este email ya está registrado en nuestro newsletter.",
+    "privacy": "Respetamos tu privacidad. Puedes cancelar la suscripción en cualquier momento."
   },
   "guestGuide": {
     "title": "Guía del Huésped",

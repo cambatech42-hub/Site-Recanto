@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NAV_LINKS } from '../constants';
+import Newsletter from './Newsletter';
 
 const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className="text-background-beige/70 hover:text-white transition-colors">
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1: Logo & About */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <h3 className="text-2xl font-serif font-bold mb-4">{t('footer.title')}</h3>
             <p className="text-background-beige/80 max-w-md">
               {t('footer.description')}
@@ -48,6 +49,11 @@ const Footer: React.FC = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z" /></svg>
                 </SocialIcon>
             </div>
+          </div>
+
+          {/* Column 4: Newsletter */}
+          <div>
+            <Newsletter />
           </div>
         </div>
         

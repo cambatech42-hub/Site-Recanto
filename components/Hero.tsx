@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold mb-4 md:mb-6 drop-shadow-lg leading-tight">
           {t('hero.title')}
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-sans drop-shadow-md max-w-4xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 font-sans drop-shadow-md max-w-4xl mx-auto">
           {t('hero.subtitle')}
         </p>
         <Button 
