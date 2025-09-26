@@ -150,6 +150,7 @@ const Breakfast: React.FC = () => {
             </p>
             <Button 
               variant="primary" 
+              size="lg"
               href={WHATSAPP_URL} 
               target="_blank" 
               rel="noopener noreferrer"

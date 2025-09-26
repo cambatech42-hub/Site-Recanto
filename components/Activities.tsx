@@ -94,8 +94,8 @@ const Activities: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
-            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
+            <Button variant="secondary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
           </div>
         </div>
       </section>

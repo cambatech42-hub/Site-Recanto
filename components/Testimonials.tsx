@@ -48,7 +48,7 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
+            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
         </div>
       </div>
     </section>

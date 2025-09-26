@@ -115,8 +115,8 @@ const Accommodations: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.reserveButton')}</Button>
-            <Button variant="secondary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.contactButton')}</Button>
+            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.reserveButton')}</Button>
+            <Button variant="secondary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.contactButton')}</Button>
           </div>
         </div>
       </section>

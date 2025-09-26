@@ -96,7 +96,7 @@ const Header: React.FC = () => {
           {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+          <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
           <LanguageSelector />
         </div>
         <div className="md:hidden">
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
             {NAV_LINKS.map((link) => renderNavLink(link))}
-            <Button variant="secondary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
             <LanguageSelector />
           </nav>
         </div>

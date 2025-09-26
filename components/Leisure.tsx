@@ -60,9 +60,6 @@ const LeisureCard: React.FC<{ activity: LeisureActivity; onClick: () => void }> 
         />
       </div>
       <div className="p-6 text-center flex-grow flex flex-col items-center">
-        <div className="bg-accent-gold/10 text-accent-gold p-3 rounded-full -mt-12 mb-4 shadow-md">
-          {activity.icon}
-        </div>
         <h3 className="text-2xl font-serif font-bold text-primary-green mb-2">{getLeisureTranslation(activity.id, 'name')}</h3>
         <p className="text-gray-600 flex-grow">{getLeisureTranslation(activity.id, 'description')}</p>
         <div className="mt-auto pt-4">
@@ -115,7 +112,7 @@ const Leisure: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
+            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
           </div>
         </div>
       </section>

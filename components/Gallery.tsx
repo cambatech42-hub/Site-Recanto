@@ -146,7 +146,7 @@ const Gallery: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora e Viva Esses Momentos</Button>
+            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora e Viva Esses Momentos</Button>
           </div>
         </div>
       </section>
