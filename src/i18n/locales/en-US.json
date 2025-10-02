@@ -129,21 +129,6 @@
     "rights": "All rights reserved",
     "copyright": "Pousada Recanto do Lago. All rights reserved."
   },
-  "newsletter": {
-    "title": "Newsletter",
-    "description": "Receive news, exclusive promotions and tips about Cambará do Sul",
-    "namePlaceholder": "Your name (optional)",
-    "phonePlaceholder": "Your phone (optional)",
-    "emailPlaceholder": "Your best email",
-    "subscribe": "Subscribe",
-    "subscribing": "Subscribing...",
-    "success": "Successfully subscribed! Thank you for joining us.",
-    "error": "Error subscribing. Please try again.",
-    "emailRequired": "Please enter your email.",
-    "emailInvalid": "Please enter a valid email.",
-    "emailExists": "This email is already registered in our newsletter.",
-    "privacy": "We respect your privacy. You can unsubscribe at any time."
-  },
   "guestGuide": {
     "title": "Guest Guide",
     "subtitle": "Everything you need to know to make the most of your stay"

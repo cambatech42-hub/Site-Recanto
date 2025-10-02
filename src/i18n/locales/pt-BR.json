@@ -129,21 +129,6 @@
     "rights": "Todos os direitos reservados",
     "copyright": "Pousada Recanto do Lago. Todos os direitos reservados."
   },
-  "newsletter": {
-    "title": "Newsletter",
-    "description": "Receba novidades, promoções exclusivas e dicas sobre Cambará do Sul",
-    "namePlaceholder": "Seu nome (opcional)",
-    "phonePlaceholder": "Seu telefone (opcional)",
-    "emailPlaceholder": "Seu melhor e-mail",
-    "subscribe": "Inscrever-se",
-    "subscribing": "Inscrevendo...",
-    "success": "Inscrição realizada com sucesso! Obrigado por se juntar a nós.",
-    "error": "Erro ao realizar inscrição. Tente novamente.",
-    "emailRequired": "Por favor, informe seu e-mail.",
-    "emailInvalid": "Por favor, informe um e-mail válido.",
-    "emailExists": "Este e-mail já está cadastrado em nossa newsletter.",
-    "privacy": "Respeitamos sua privacidade. Você pode cancelar a inscrição a qualquer momento."
-  },
   "guestGuide": {
     "title": "Guia do Hóspede",
     "subtitle": "Tudo que você precisa saber para aproveitar ao máximo sua estadia"
