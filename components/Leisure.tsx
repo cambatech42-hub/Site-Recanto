@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LEISURE_ACTIVITIES_DATA, RESERVATION_URL } from '../constants';
+import { LEISURE_ACTIVITIES_DATA, WHATSAPP_URL } from '../constants';
 import { LeisureActivity } from '../types';
 import DetailModal from './DetailModal';
 import Button from './ui/Button';
@@ -112,7 +112,7 @@ const Leisure: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16">
-            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
           </div>
         </div>
       </section>

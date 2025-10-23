@@ -9,7 +9,7 @@ const Blog: React.FC = () => {
   const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [postsPerPage, setPostsPerPage] = useState<number>(6); // Controle de posts por página
+  const [postsPerPage, setPostsPerPage] = useState<number>(3); // Controle de posts por página
   const [showSettings, setShowSettings] = useState<boolean>(false); // Controle do painel de configurações
 
   const categories = [
@@ -188,41 +188,8 @@ const Blog: React.FC = () => {
             ))}
           </div>
           
-          {/* Botão de configurações */}
-          <div className="relative">
-            <button
-              onClick={() => setShowSettings(!showSettings)}
-              className="flex items-center px-3 py-2 rounded-full text-sm font-medium bg-white text-gray-700 hover:bg-gray-100 transition-colors border border-gray-200"
-            >
-              <Settings className="w-4 h-4 mr-1" />
-              Configurações
-            </button>
-            
-            {/* Painel de configurações */}
-            {showSettings && (
-              <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 p-4 z-10 min-w-[200px]">
-                <h4 className="text-sm font-medium text-gray-900 mb-3">Posts por página</h4>
-                <div className="space-y-2">
-                  {[3, 6, 9, 12].map((count) => (
-                    <button
-                      key={count}
-                      onClick={() => {
-                        handlePostsPerPageChange(count);
-                        setShowSettings(false);
-                      }}
-                      className={`w-full text-left px-3 py-2 rounded text-sm transition-colors ${
-                        postsPerPage === count
-                          ? 'bg-blue-100 text-blue-700 font-medium'
-                          : 'text-gray-700 hover:bg-gray-100'
-                      }`}
-                    >
-                      {count} posts
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          {/* Configurações ocultas temporariamente */}
+          <div className="relative hidden" />
         </div>
 
         {/* Informações de paginação */}

@@ -116,13 +116,13 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         id: 'lakeFishing',
         name: 'Lago para Pesca e Pedalinho',
         description: 'Relaxe com uma pescaria esportiva em nosso lago sereno ou divirtas-se em um passeio de pedalinho com a família.',
-        image: 'https://picsum.photos/seed/lago-lazer/600/400',
+        image: '/lago/lago.jpg',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 13l-4 4m0 0l4-4m-4 4h14m0 0l-4-4m4 4v-4m0 4h-4" })),
         details: 'O lago é o coração da nossa pousada. Oferecemos varas e iscas para pesca esportiva (pesque e solte) de espécies como tilápia e carpa. O pedalinho em formato de cisne é uma atração para as crianças e casais. Coletes salva-vidas são fornecidos.',
         gallery: [
-            'https://picsum.photos/seed/lago-lazer-g1/800/600',
-            'https://picsum.photos/seed/lago-lazer-g2/800/600',
-            'https://picsum.photos/seed/lago-lazer-g3/800/600',
+            '/lago/lago.jpg',
+            '/lago/lago1.jpg',
+            '/lago/IMG_8991.JPG',
         ],
     },
     {
@@ -141,7 +141,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         id: 'bochaField',
         name: 'Cancha de Bocha',
         description: 'Aproveite um jogo tradicional e descontraído de bocha em nossa cancha profissional, um passatempo perfeito para a tarde.',
-        image: 'https://picsum.photos/seed/bocha/600/400',
+        image: '/bocha/bocha1.jpg',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M18 18c-3.314 0-6-2.686-6-6s2.686-6 6-6" })),
         details: 'Resgate a tradição italiana com uma partida de bocha em nossa cancha oficial. É um esporte que une gerações e garante boas risadas. As regras estão afixadas ao lado da cancha para quem quiser aprender.',
         gallery: [
@@ -167,35 +167,22 @@ export const ACTIVITIES_DATA: Activity[] = [
     id: 'balloonFlight',
     name: 'Voo de Balão',
     description: 'Desfrute de uma vista inesquecível dos cânions e da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.',
-    image: 'https://picsum.photos/seed/balao/600/400',
+    image: '/balao/balaocidade.JPG',
     details: 'Uma experiência que fica para a vida toda. O voo de balão sobre os aparados da serra oferece uma perspectiva única dos Cânions Itaimbezinho e Fortaleza. A atividade dura cerca de 1 hora e termina com um brinde de espumante. Realizado por parceiros certificados e experientes.',
     gallery: [
-      'https://picsum.photos/seed/balao-g1/800/600',
-      'https://picsum.photos/seed/balao-g2/800/600',
-      'https://picsum.photos/seed/balao-g3/800/600',
+      '/balao/balaocidade.JPG',
     ],
   },
-  {
-    id: 'horseRiding',
-    name: 'Cavalgadas',
-    description: 'Explore trilhas exclusivas e campos verdejantes em uma cavalgada relaxante, conectando-se com a natureza local.',
-    image: 'https://picsum.photos/seed/cavalo/600/400',
-    details: 'Nossas cavalgadas são guiadas por um peão local e utilizam cavalos crioulos, dóceis e adaptados à região. Os passeios variam de 1 a 4 horas, passando por campos, matas de araucárias e riachos. Não é necessário ter experiência prévia.',
-    gallery: [
-      'https://picsum.photos/seed/cavalo-g1/800/600',
-      'https://picsum.photos/seed/cavalo-g2/800/600',
-    ],
-  },
+
   {
     id: 'atvTour',
     name: 'Passeio de Quadriciclo',
     description: 'Prepare-se para uma experiência única e emocionante! Nosso passeio de quadriciclo combina adrenalina e natureza em uma aventura inesquecível que leva você até uma das mais belas cachoeiras da região.',
-    image: 'https://picsum.photos/seed/canion/600/400',
+    image: '/quadriciclo/IMG_8997.JPG',
     details: 'Durante o percurso, você atravessará paisagens deslumbrantes até chegar ao destino final: uma cachoeira cristalina cercada por vegetação exuberante, perfeita para relaxar e se conectar com a natureza. Inclui: quadriciclo equipado, equipamentos de segurança e instrutor experiente. Venha viver esta aventura única conosco!',
     gallery: [
-      'https://picsum.photos/seed/canion-g1/800/600',
-      'https://picsum.photos/seed/canion-g2/800/600',
-      'https://picsum.photos/seed/canion-g3/800/600',
+      '/quadriciclo/IMG_8997.JPG',
+      '/quadriciclo/quadri1.jpg',
     ],
   },
 ];
@@ -251,9 +238,9 @@ export const FAQ_DATA: FAQItem[] = [
 export const BLOG_POSTS: BlogPost[] = [
     {
         id: '1',
-        title: 'Cânion Itaimbezinho: Guia Completo para sua Visita',
+        title: 'Cânion Itaimbezinho – Parque Nacional Aparados da Serra.',
         excerpt: 'Descubra tudo sobre o famoso Cânion Itaimbezinho, uma das principais atrações de Cambará do Sul. Dicas de trilhas, horários e como aproveitar ao máximo sua visita.',
-        content: 'O Cânion Itaimbezinho é uma das maravilhas naturais mais impressionantes do Brasil, localizado no Parque Nacional de Aparados da Serra. Com seus 5,8 km de extensão e até 720 metros de profundidade, oferece vistas espetaculares que deixam qualquer visitante sem palavras.\n\nPara chegar ao cânion, você pode optar por diferentes trilhas. A Trilha do Vértice é a mais popular e acessível, com apenas 1,4 km de caminhada leve, ideal para toda a família. Já a Trilha da Cachoeira do Véu de Noiva oferece uma experiência mais aventureira, com 3 km de caminhada que leva até uma das cachoeiras mais bonitas da região.\n\nO parque funciona de terça a domingo, das 8h às 17h. Recomendamos chegar cedo para evitar multidões e aproveitar a melhor luz para fotografias. Não esqueça de levar água, protetor solar e usar calçados adequados para trilha.\n\nA entrada custa R$ 17 para adultos e é gratuita para crianças até 11 anos e idosos acima de 60 anos. O estacionamento é gratuito e fica a poucos metros da entrada do parque.',
+        content: '<p>A charmosa cidade de Cambará do Sul, no Rio Grande do Sul, é o principal ponto de partida para quem deseja conhecer o imponente Cânion Itaimbezinho, situado no Parque Nacional de Aparados da Serra, a cerca de 18 km do centro da cidade.</p>\n\n<p>Entre os mais de sessenta cânions existentes na região, o Itaimbezinho é o mais conhecido e único com paredes retilíneas e extremamente íngremes, o que dá a impressão de terem sido cortadas a faca. A origem do nome vem do tupi-guarani, em que “Ita” significa pedra e “Aimbé” quer dizer afiada ou cortante — um nome que descreve com perfeição o visual impressionante do local.</p>\n\n<h3>Trilhas e Experiências</h3>\n<p>Na parte superior do cânion, o visitante pode escolher entre duas trilhas:</p>\n<ul>\n  <li><strong>Trilha do Vértice (2 km)</strong> – percurso curto, com mirantes e vistas panorâmicas incríveis.</li>\n  <li><strong>Trilha do Cotovelo (6 km)</strong> – trajeto mais longo e envolvente, ideal para cerca de 3 horas de caminhada leve.</li>\n</ul>\n<p>Já na parte inferior, há a desafiadora <strong>Trilha do Rio do Boi</strong>, com 8 km de extensão, que acompanha o leito do rio entre os paredões. Por segurança, essa atividade só pode ser realizada com o acompanhamento de um guia e é recomendada apenas para quem tem bom preparo físico.</p>\n\n<h3>Características do Cânion Itaimbezinho</h3>\n<ul>\n  <li><strong>Extensão:</strong> 5,8 km</li>\n  <li><strong>Largura:</strong> 600 metros</li>\n  <li><strong>Altitude:</strong> cerca de 900 metros</li>\n</ul>\n\n<h3>Horário de Funcionamento</h3>\n<ul>\n  <li><strong>Itaimbezinho:</strong> de terça-feira a domingo, das 8h às 17h (fechado às segundas-feiras).</li>\n  <li><strong>Cânion Fortaleza:</strong> de quarta a segunda-feira, das 8h às 17h (fechado às terças-feiras).</li>\n</ul>\n\n<h3>Valores dos Ingressos (Urbia Cânions Verdes)</h3>\n<p>O ingresso dá acesso aos dois cânions – Itaimbezinho e Fortaleza – e é válido por 7 dias, permitindo até 3 acessos dentro desse período.</p>\n<p><strong>⚠️ Atenção:</strong> o ingresso não inclui a Trilha do Rio do Boi, que é cobrada separadamente e deve ser feita com guia credenciado.</p>\n\n<h4>Valores</h4>\n<ul>\n  <li><strong>Inteiro:</strong> R$ 107,00 – valor padrão de acesso ao parque.</li>\n  <li><strong>Melhor Idade:</strong> R$ 75,00 – para visitantes com 60 anos ou mais, mediante apresentação de documento (RG, CPF ou CNH).</li>\n  <li><strong>Crianças até 6 anos:</strong> entrada gratuita, com apresentação obrigatória de documento (identidade ou certidão de nascimento).</li>\n</ul>\n\n<h4>Política de Ingressos</h4>\n<ul>\n  <li>Ingressos nominais e intransferíveis.</li>\n  <li>É obrigatória a apresentação do documento de identificação junto ao ingresso.</li>\n  <li>Após a utilização, não há reembolso ou estorno.</li>\n  <li>Isenção também para guias e condutores cadastrados junto à Urbia Cânions Verdes.</li>\n</ul>\n\n<h3>Estacionamento (por acesso)</h3>\n<ul>\n  <li><strong>Moto:</strong> R$ 13,00</li>\n  <li><strong>Carro:</strong> R$ 20,00</li>\n  <li><strong>Van / Motorhome:</strong> R$ 34,00</li>\n  <li><strong>Ônibus:</strong> R$ 78,00</li>\n</ul>\n\n<h3>O que Levar para Fazer as Trilhas</h3>\n<p>Por se tratar de uma região de serra, o clima muda rapidamente e o terreno pode ser irregular.</p>\n<ul>\n  <li><strong>Roupas adequadas:</strong> leve jaquetas corta-vento e impermeáveis.</li>\n  <li><strong>Calçados apropriados:</strong> tênis ou botas de caminhada com boa aderência.</li>\n  <li><strong>Água e lanches:</strong> mantenha-se hidratado e energizado.</li>\n  <li><strong>Protetor solar e chapéu:</strong> proteção contra a exposição ao sol.</li>\n  <li><strong>Repelente:</strong> para afastar insetos, especialmente na parte inferior.</li>\n  <li><strong>Mochila:</strong> confortável para carregar os itens.</li>\n  <li><strong>Câmera:</strong> para capturar as paisagens deslumbrantes com segurança.</li>\n</ul>',
         image: '/aereas/aerea1.jpg',
         category: 'passeios',
         date: '2024-01-15',
@@ -273,79 +260,13 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     {
         id: '3',
-        title: 'Festival de Inverno de Cambará do Sul 2024',
-        excerpt: 'O tradicional Festival de Inverno está chegando! Confira a programação completa com shows, gastronomia e atividades para toda a família durante o mês de julho.',
-        content: 'O Festival de Inverno de Cambará do Sul é um dos eventos mais aguardados do ano na região. Durante todo o mês de julho, a cidade se transforma em um grande palco cultural, oferecendo uma programação diversificada para todos os gostos.\n\nEste ano, o festival contará com shows de artistas nacionais e regionais, apresentações de dança folclórica, exposições de arte local e uma feira gastronômica com o melhor da culinária serrana.\n\nEntre os destaques da programação estão os shows de música gaúcha no anfiteatro natural da cidade, as apresentações de dança alemã que celebram a herança cultural da região, e os workshops de artesanato local.\n\nA feira gastronômica funcionará todos os fins de semana do mês, oferecendo desde pratos típicos gaúchos até opções vegetarianas e veganas. Não perca a oportunidade de experimentar o famoso "quentão serrano" e os doces coloniais.\n\nPara as crianças, haverá atividades especiais como oficinas de pintura, contação de histórias e apresentações teatrais. O evento é gratuito e acontece em diversos pontos da cidade.\n\nRecomendamos fazer reservas antecipadas nas pousadas, pois julho é alta temporada na região devido ao festival e às férias de inverno.',
-        image: '/geralexterna/entrada.jpg',
-        category: 'eventos',
+        title: 'Cânion Fortaleza – Parque Nacional da Serra Geral',
+        excerpt: 'Descubra o Cânion Fortaleza: características, curiosidades, ingressos e o que levar.',
+        content: '<p>O Cânion Fortaleza é considerado um dos atrativos naturais mais exuberantes da região. Juntamente com o Cânion Itaimbezinho, está entre os principais pontos turísticos do Estado. Localizado no Parque Nacional da Serra Geral, a aproximadamente 23 km do centro de Cambará do Sul, seu nome remete ao formato dos rochedos, que lembram as muralhas de um forte gigante.</p>\n\n<p>A vegetação agarrada às rochas apresenta uma tonalidade de verde mais escura e é composta por folhas de <em>gunnera manicata</em> (urtigão), que podem chegar a 1,5 metro de diâmetro.</p>\n\n<h3>Características</h3>\n<ul>\n  <li><strong>Extensão:</strong> 7,5 km</li>\n  <li><strong>Largura:</strong> 2.000 metros</li>\n  <li><strong>Altitude:</strong> 1.240 metros</li>\n</ul>\n\n<h3>Importante</h3>\n<p>Os dias de visitação são de quarta-feira a segunda-feira. Na terça-feira, o parque permanece fechado para visitação.</p>\n\n<h3>Curiosidade</h3>\n<p>No Cânion Fortaleza, um dos pontos de visitação mais interessantes é a Pedra do Segredo: um bloco de rocha de 5 metros de altura, que pesa cerca de 30 toneladas e está equilibrado sobre uma base de apenas 50 centímetros.</p>\n\n<h3>Valores dos Ingressos (Urbia Cânions Verdes)</h3>\n<p>O ingresso dá acesso aos dois cânions – Itaimbezinho e Fortaleza – e é válido por 7 dias, permitindo até 3 acessos dentro desse período.</p>\n<p><strong>⚠️ Atenção:</strong> o ingresso não inclui a Trilha do Rio do Boi, que é cobrada separadamente e deve ser feita com guia credenciado.</p>\n\n<h4>Valores</h4>\n<ul>\n  <li><strong>Inteiro:</strong> R$ 107,00</li>\n  <li><strong>Melhor Idade:</strong> R$ 75,00 (60+ mediante documento)</li>\n  <li><strong>Crianças até 6 anos:</strong> entrada gratuita (com documento)</li>\n</ul>\n\n<h4>Política de Ingressos</h4>\n<ul>\n  <li>Ingressos nominais e intransferíveis.</li>\n  <li>Apresentação de documento de identificação é obrigatória.</li>\n  <li>Após a utilização, não há reembolso ou estorno.</li>\n  <li>Isenção para guias e condutores cadastrados na Urbia Cânions Verdes.</li>\n</ul>\n\n<h3>Estacionamento (por acesso)</h3>\n<ul>\n  <li><strong>Moto:</strong> R$ 13,00</li>\n  <li><strong>Carro:</strong> R$ 20,00</li>\n  <li><strong>Van / Motorhome:</strong> R$ 34,00</li>\n  <li><strong>Ônibus:</strong> R$ 78,00</li>\n</ul>\n\n<h3>O que Levar para Fazer as Trilhas</h3>\n<p>Por se tratar de uma região de serra, o clima muda rapidamente e o terreno pode ser irregular.</p>\n<ul>\n  <li><strong>Roupas adequadas:</strong> jaquetas corta-vento e impermeáveis.</li>\n  <li><strong>Calçados apropriados:</strong> tênis ou botas de caminhada com boa aderência.</li>\n  <li><strong>Água e lanches:</strong> mantenha-se hidratado e energizado.</li>\n  <li><strong>Protetor solar e chapéu:</strong> proteção contra o sol.</li>\n  <li><strong>Repelente:</strong> especialmente para áreas inferiores.</li>\n  <li><strong>Mochila:</strong> confortável para carregar itens.</li>\n  <li><strong>Câmera:</strong> para registrar as paisagens com segurança.</li>\n</ul>',
+        image: '/Fortaleza/fortaleza11.jpg',
+        category: 'passeios',
         date: '2024-01-08',
-        readTime: 3,
-        tags: ['festival', 'inverno', 'música', 'cultura', 'julho']
-    },
-    {
-        id: '4',
-        title: 'A História dos Cânions: Como se Formaram essas Maravilhas',
-        excerpt: 'Entenda o processo geológico fascinante que deu origem aos cânions de Cambará do Sul há milhões de anos. Uma viagem no tempo através da ciência.',
-        content: 'Os cânions de Cambará do Sul são resultado de um processo geológico fascinante que começou há mais de 130 milhões de anos. Sua formação está intimamente ligada à separação dos continentes sul-americano e africano.\n\nTudo começou durante o período Cretáceo, quando intensas atividades vulcânicas cobriram a região com espessas camadas de basalto. Essas rochas vulcânicas formaram o que hoje conhecemos como Planalto da Serra Geral.\n\nO processo de formação dos cânions propriamente dito iniciou-se há cerca de 10 milhões de anos, quando mudanças climáticas e tectônicas causaram o soerguimento da região. Os rios que antes corriam tranquilamente sobre o planalto começaram a escavar profundamente as rochas basálticas.\n\nA erosão diferencial foi fundamental neste processo. As camadas mais resistentes de basalto formaram as paredes verticais dos cânions, enquanto as rochas mais moles foram carregadas pelas águas, criando os vales profundos que vemos hoje.\n\nO Cânion Itaimbezinho, por exemplo, foi esculpido principalmente pelo Rio do Boi, que ao longo de milhões de anos cavou um desfiladeiro de até 720 metros de profundidade. As cachoeiras que vemos hoje são resultado deste processo contínuo de erosão.\n\nEsta formação geológica única torna os cânions de Cambará do Sul verdadeiros museus a céu aberto, onde podemos observar milhões de anos da história da Terra gravados nas rochas.',
-        image: '/aereas/aerea5.jpg',
-        category: 'curiosidades',
-        date: '2024-01-05',
-        readTime: 6,
-        tags: ['geologia', 'formação', 'história', 'ciência', 'basalto']
-    },
-    {
-        id: '5',
-        title: 'Trilha da Cachoeira Véu de Noiva: Aventura Garantida',
-        excerpt: 'Uma das trilhas mais bonitas da região leva até a impressionante Cachoeira Véu de Noiva. Saiba como se preparar para esta aventura inesquecível.',
-        content: 'A Trilha da Cachoeira Véu de Noiva é considerada uma das mais belas e desafiadoras de Cambará do Sul. Com aproximadamente 3 km de extensão (ida), a trilha oferece paisagens espetaculares e termina em uma das cachoeiras mais impressionantes da região.\n\n<img src="/aereas/aerea8.jpg" alt="Vista aérea dos cânions Cambará do Sul - Turismo natureza perto da Pousada Recanto do Lago" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA trilha tem início próximo ao centro da cidade e possui nível de dificuldade moderado. O percurso leva aproximadamente 2 horas para ser completado (ida), passando por diferentes tipos de vegetação típica da região serrana.\n\nDurante o caminho, você atravessará riachos cristalinos, caminhará por trechos de mata nativa e terá vistas panorâmicas dos campos e morros característicos da região. É importante usar calçados adequados para trilha, pois alguns trechos podem estar escorregadios, especialmente após chuvas.\n\n<img src="/lago/lago2.jpg" alt="Paisagem natural trilhas Cambará do Sul - Ecoturismo perto dos cânions" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA Cachoeira Véu de Noiva possui uma queda impressionante e forma uma piscina natural na base, onde é possível se refrescar (quando as condições climáticas permitirem). O nome da cachoeira vem do formato de sua queda d\'água, que lembra um véu de noiva esvoaçante.\n\nRecomendações importantes: leve água suficiente, protetor solar, repelente e lanche. A trilha não possui estrutura de apoio ao longo do percurso, então é essencial estar bem preparado. Recomenda-se sempre informar alguém sobre seu roteiro e horário previsto de retorno.\n\n<img src="/lago/lago33.jpg" alt="Cachoeira Véu de Noiva Cambará do Sul - Trilhas e natureza perto da pousada" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA melhor época para fazer a trilha é durante os meses mais secos (abril a setembro), quando as chances de chuva são menores e a visibilidade é melhor.',
-        image: '/lago/lago1.jpg',
-        category: 'passeios',
-        date: '2024-01-03',
         readTime: 4,
-        tags: ['trilha', 'cachoeira', 'aventura', 'natureza', 'véu de noiva']
-    },
-    {
-        id: '6',
-        title: 'Clima em Cambará do Sul: O que Esperar em Cada Estação',
-        excerpt: 'Planeje sua viagem conhecendo o clima de Cambará do Sul ao longo do ano. Dicas de quando visitar e o que levar na mala para cada estação.',
-        content: 'O clima de Cambará do Sul é subtropical úmido, com características bem definidas em cada estação do ano. Entender essas variações é fundamental para planejar sua viagem e aproveitar ao máximo a região.\n\nNo verão (dezembro a março), as temperaturas variam entre 15°C e 28°C. É a época mais chuvosa do ano, com chuvas frequentes à tarde. Apesar disso, é uma excelente época para visitar cachoeiras e fazer trilhas pela manhã. Leve roupas leves, capa de chuva e calçados impermeáveis.\n\nO outono (março a junho) é considerado uma das melhores épocas para visitar a região. As temperaturas ficam entre 8°C e 22°C, com menos chuvas e dias mais ensolarados. As cores da vegetação ficam especialmente bonitas nesta época. É ideal para todas as atividades ao ar livre.\n\nO inverno (junho a setembro) é a estação mais fria, com temperaturas entre 2°C e 18°C. Pode ocorrer geada e, em anos excepcionais, até neve. É a época mais seca do ano, perfeita para trilhas e passeios aos cânions. A visibilidade costuma ser excelente. Leve roupas bem quentes, incluindo casacos impermeáveis.\n\nA primavera (setembro a dezembro) traz o renascimento da natureza, com temperaturas entre 10°C e 25°C. As chuvas voltam gradualmente, mas ainda há muitos dias ensolarados. É uma época linda para fotografias, com flores silvestres colorindo a paisagem.\n\nIndependente da época, sempre leve protetor solar, pois a altitude (cerca de 1000m) intensifica os raios UV. Roupas em camadas são sempre uma boa opção devido às variações de temperatura.',
-        image: '/neve/neve1.JPG',
-        category: 'dicas',
-        date: '2024-01-01',
-        readTime: 5,
-        tags: ['clima', 'estações', 'temperatura', 'planejamento', 'quando visitar']
-    },
-    {
-        id: '7',
-        title: 'Gastronomia Local: Sabores Únicos da Serra Gaúcha',
-        excerpt: 'Descubra os pratos típicos e restaurantes imperdíveis de Cambará do Sul. Uma jornada gastronômica pelos sabores autênticos da região.',
-        content: 'A gastronomia de Cambará do Sul reflete a rica herança cultural da região, combinando influências italiana, alemã e gaúcha em pratos únicos e saborosos.\n\n<img src="/cafe/cafe15.jpg" alt="Café da manhã colonial Cambará do Sul - Gastronomia regional pousada" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO café colonial é uma tradição imperdível na região. Servido geralmente aos finais de semana, inclui pães caseiros, geleias artesanais, queijos coloniais, cucas, bolachas e muito mais. É uma experiência gastronômica completa que representa a hospitalidade serrana.\n\nEntre os pratos típicos, destaca-se o cordeiro assado, preparado de forma tradicional em fogo de chão. A carne de cordeiro da região é reconhecida pela qualidade excepcional, resultado da criação em campos nativos. Outros pratos tradicionais incluem o churrasco gaúcho, a paella de frutos do mar e pratos com truta, peixe muito comum nos rios da região.\n\n<img src="/cafe/cafe20.jpg" alt="Pratos típicos Cambará do Sul - Culinária regional serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nA região também é famosa pelos seus doces caseiros, especialmente as cucas alemãs, strudels e tortas de frutas vermelhas. No inverno, não deixe de experimentar o quentão e o vinho quente, perfeitos para aquecer nas noites frias.\n\nPara uma experiência gastronômica completa, visite os restaurantes locais que servem pratos com ingredientes frescos da região. Muitos estabelecimentos oferecem vista panorâmica dos cânions, proporcionando uma refeição inesquecível.\n\n<img src="/cafe/cafe25.jpg" alt="Restaurante vista cânions Cambará do Sul - Gastronomia com paisagem" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nDica especial: experimente os produtos artesanais locais, como mel, geleias, queijos e embutidos. Muitos produtores oferecem degustação e venda direta, permitindo levar um pedacinho dos sabores da serra para casa.',
-        image: '/cafe/cafe1.jpg',
-        category: 'dicas',
-        date: '2024-01-15',
-        readTime: 6,
-        tags: ['gastronomia', 'culinária', 'restaurantes', 'café colonial', 'pratos típicos']
-    },
-    {
-        id: '8',
-        title: 'Aventura de Quadriciclo pelos Campos de Cambará',
-        excerpt: 'Explore a natureza selvagem de Cambará do Sul em uma emocionante aventura de quadriciclo. Paisagens incríveis e muita adrenalina te esperam.',
-        content: 'O passeio de quadriciclo é uma das atividades mais emocionantes que você pode fazer em Cambará do Sul. Esta aventura combina adrenalina, natureza exuberante e paisagens de tirar o fôlego.\n\n<img src="/quadriciclo/quadri1.jpg" alt="Passeio quadriciclo Cambará do Sul - Aventura campos serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nOs passeios são conduzidos por guias experientes que conhecem profundamente a região. O roteiro inclui trilhas pelos campos nativos, passagem por arroios cristalinos e paradas estratégicas para contemplar as vistas panorâmicas dos cânions.\n\nA atividade é adequada para iniciantes e experientes. Antes do passeio, você recebe todas as instruções de segurança e equipamentos necessários, incluindo capacete e óculos de proteção. Os quadriciclos são automáticos e fáceis de conduzir.\n\nDurante o percurso, você atravessará diferentes tipos de terreno: campos abertos, trilhas na mata, subidas e descidas suaves. A velocidade é controlada para garantir segurança e permitir que todos apreciem a paisagem. O passeio dura aproximadamente 2 horas.\n\n<img src="/aereas/aerea5.jpg" alt="Vista aérea campos Cambará do Sul - Paisagem quadriciclo aventura" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nUm dos pontos altos do passeio é a parada no mirante natural, onde você pode descer do quadriciclo e contemplar a imensidão dos campos sulinos. É o momento perfeito para fotos e para sentir a grandiosidade da natureza local.\n\nA fauna local também é um atrativo especial. Durante o passeio, é comum avistar diferentes espécies de aves, além de outros animais nativos da região. Os guias compartilham conhecimentos sobre a flora e fauna, tornando o passeio também educativo.\n\n<img src="/lago/lago30.jpg" alt="Natureza Cambará do Sul quadriciclo - Ecoturismo aventura serra" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nRecomendações: use roupas confortáveis que podem sujar, calçados fechados, protetor solar e leve uma garrafa de água. A atividade funciona em qualquer época do ano, mas é especialmente prazerosa nos dias ensolarados.',
-        image: '/quadriciclo/IMG_8997.JPG',
-        category: 'passeios',
-        date: '2024-01-20',
-        readTime: 5,
-        tags: ['quadriciclo', 'aventura', 'campos', 'adrenalina', 'natureza']
-    },
-    {
-        id: '9',
-        title: 'Festival de Inverno: Cultura e Tradição em Cambará do Sul',
-        excerpt: 'Conheça o tradicional Festival de Inverno de Cambará do Sul, um evento que celebra a cultura local com música, dança, gastronomia e muito mais.',
-        content: 'O Festival de Inverno de Cambará do Sul é um dos eventos mais aguardados do ano na região. Realizado tradicionalmente em julho, o festival celebra a cultura local e atrai visitantes de todo o Brasil.\n\n<img src="/geralexterna/portico1.jpg" alt="Festival Inverno Cambará do Sul - Evento cultural serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO evento acontece no centro da cidade e conta com uma programação diversificada que inclui shows musicais, apresentações de dança tradicional gaúcha, exposições de artesanato local e uma feira gastronômica com pratos típicos da região.\n\nUma das principais atrações é o concurso de dança tradicionalista, onde grupos de diferentes cidades apresentam coreografias típicas do Rio Grande do Sul. As apresentações acontecem no palco principal e são sempre muito aplaudidas pelo público.\n\nA feira gastronômica é outro destaque do festival. Barracas espalhadas pela praça central oferecem desde o tradicional churrasco gaúcho até pratos mais elaborados da culinária italiana e alemã, herança dos imigrantes que colonizaram a região.\n\n<img src="/cafe/cafe30.jpg" alt="Feira gastronômica Festival Inverno - Culinária tradicional Cambará" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nO artesanato local ganha destaque especial durante o festival. Artesãos da região expõem e vendem seus trabalhos, incluindo peças em lã, madeira, couro e outros materiais típicos. É uma excelente oportunidade para adquirir lembranças autênticas da viagem.\n\nPara as crianças, há uma área especial com atividades recreativas, oficinas de artesanato e apresentações teatrais. O festival é verdadeiramente um evento para toda a família.\n\n<img src="/neve/neve30.jpg" alt="Inverno Cambará do Sul festival - Tradição cultura serra gaúcha" class="w-full h-64 object-cover rounded-lg my-6 shadow-lg">\n\nAlém da programação cultural, o festival também promove atividades esportivas, como torneios de bocha e competições de laço. Essas atividades reforçam as tradições gaúchas e proporcionam momentos de confraternização entre moradores e visitantes.\n\nO Festival de Inverno é gratuito e acontece durante três dias consecutivos. Para quem planeja visitar Cambará do Sul nesta época, é recomendável fazer reservas de hospedagem com antecedência, pois a cidade recebe muitos visitantes durante o evento.',
-        image: '/neve/geada30.jpg',
-        category: 'eventos',
-        date: '2024-01-25',
-        readTime: 4,
-        tags: ['festival', 'inverno', 'cultura', 'tradição', 'música', 'gastronomia']
+        tags: ['cânion', 'fortaleza', 'trilha', 'serra geral']
     }
 ];

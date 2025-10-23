@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ACTIVITIES_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
+import { ACTIVITIES_DATA, WHATSAPP_URL } from '../constants';
 import { Activity } from '../types';
 import Button from './ui/Button';
 import DetailModal from './DetailModal';
@@ -83,19 +83,18 @@ const Activities: React.FC = () => {
       <section id="activities" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-primary-green">Explore Cambará do Sul</h2>
+            <h2 className="text-4xl font-serif font-bold text-primary-green">Atividades</h2>
             <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
               Aventuras inesquecíveis esperam por você na terra dos cânions.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {ACTIVITIES_DATA.map((activity, index) => (
               <ActivityCard key={index} activity={activity} onClick={() => openModal(activity)} />
             ))}
           </div>
           <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Quero Fazer Minha Reserva</Button>
-            <Button variant="secondary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Reserve agora</Button>
           </div>
         </div>
       </section>

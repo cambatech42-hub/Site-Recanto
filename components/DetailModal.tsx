@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import Button from './ui/Button';
+import { WHATSAPP_URL } from '../constants';
 
 interface DetailModalProps {
   isOpen: boolean;
@@ -123,6 +125,9 @@ const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, title, detai
         <div className="w-full md:w-2/5 h-1/2 md:h-full p-6 md:p-8 overflow-y-auto">
           <h3 id="modal-title" className="text-3xl font-serif font-bold text-primary-green mb-4">{title}</h3>
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">{details || "Mais detalhes em breve."}</p>
+          <div className="mt-6">
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Reserve agora</Button>
+          </div>
         </div>
       </div>
     </div>

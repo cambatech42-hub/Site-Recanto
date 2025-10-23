@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, WHATSAPP_URL } from '../constants';
+import Button from './ui/Button';
 
 const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className="text-background-beige/70 hover:text-white transition-colors">
@@ -54,6 +55,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">{t('contact.title')}</h4>
             <p className="text-background-beige/80 max-w-md">{t('contact.subtitle')}</p>
+            <div className="mt-4">
+              <Button variant="secondary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale Conosco</Button>
+            </div>
           </div>
         </div>
         

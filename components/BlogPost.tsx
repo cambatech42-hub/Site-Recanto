@@ -198,7 +198,7 @@ const BlogPost: React.FC = () => {
                     />
                 </article>
 
-                <style jsx>{`
+                <style>{`
                     .blog-content {
                         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                         line-height: 1.8;
