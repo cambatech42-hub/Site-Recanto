@@ -9,13 +9,13 @@ const galleryImages = [
   '/cafe/cafe10.jpg',
   '/cafe/cafe15.jpg',
   '/cafe/cafe20.jpg',
-  // Imagens do lago
+  // Imagens do lago (ajustadas para arquivos existentes)
   '/lago/IMG_8976.JPG',
   '/lago/IMG_8985.JPG',
   '/lago/IMG_8986.JPG',
-  '/lago/lago.jpg',
-  '/lago/lago1.jpg',
-  '/lago/lago30.jpg',
+  '/lago/IMG_8987.JPG',
+  '/lago/IMG_8991.JPG',
+  '/lago/IMG_8992.JPG',
   // Imagens das acomodações
   '/master/master.jpg',
   '/masterluxo/masterluxo1.jpg',
