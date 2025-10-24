@@ -65,15 +65,15 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   {
     name: 'Chalé Master Luxo',
     description: 'Chalé premium para casais com banheira de hidromassagem e mini cozinha equipada com utensílios.',
-    image: '/masterluxo/masterluxo1.jpg',
+    image: '/masterluxo/IMG_8978.JPG',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
     details: 'Os chalés Master Luxo são nossa opção mais sofisticada para casais. Acomodam até 2 pessoas em 1 cama de casal e possuem banheira de hidromassagem e mini cozinha com utensílios. Incluem ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
-        '/masterluxo/masterluxo1.jpg',
-        '/masterluxo/masterluxo2.jpg',
         '/masterluxo/IMG_8978.JPG',
         '/masterluxo/IMG_8979.JPG',
-        '/masterluxo/IMG_8980.JPG'
+        '/masterluxo/IMG_8980.JPG',
+        '/masterluxo/IMG_8993.JPG',
+        '/masterluxo/IMG_8994.JPG'
     ]
   },
   {
