@@ -30,6 +30,15 @@ export interface Testimonial {
   avatar: string;
 }
 
+export interface GoogleReview {
+  author_name: string;
+  profile_photo_url?: string;
+  rating: number;
+  text: string;
+  relative_time_description: string;
+  time?: number; // epoch seconds from Google Places API
+}
+
 export interface LeisureActivity {
   id: string;
   name: string;

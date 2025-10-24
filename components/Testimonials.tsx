@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TESTIMONIALS_DATA, RESERVATION_URL } from '../constants';
-import { Testimonial } from '../types';
+import { Testimonial, GoogleReview } from '../types';
 import Button from './ui/Button';
+import { Star } from 'lucide-react';
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   const { t } = useTranslation();
@@ -29,9 +30,67 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   );
 };
 
+const StarRow: React.FC<{ rating: number }> = ({ rating }) => {
+  const stars = Array.from({ length: 5 }, (_, i) => i < rating);
+  return (
+    <div className="flex items-center gap-1 mb-3" aria-label={`${rating} de 5 estrelas`}>
+      {stars.map((filled, idx) => (
+        <Star key={idx} className={`w-5 h-5 ${filled ? 'text-yellow-500' : 'text-gray-300'}`} fill={filled ? 'currentColor' : 'none'} stroke="currentColor" />
+      ))}
+    </div>
+  );
+};
+
+const GoogleReviewCard: React.FC<{ review: GoogleReview }> = ({ review }) => {
+  const { t } = useTranslation();
+  return (
+    <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+      <img 
+        src={review.profile_photo_url || '/outros/logo.PNG'} 
+        alt={`Foto de ${review.author_name}`}
+        className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-accent-gold/50 shadow-md"
+      />
+      <StarRow rating={review.rating} />
+      <blockquote className="text-gray-600 italic mb-6 relative">
+        <span className="absolute -top-4 -left-4 text-6xl text-primary-green/10 font-serif">"</span>
+        <p>{review.text}</p>
+        <span className="absolute -bottom-4 -right-4 text-6xl text-primary-green/10 font-serif">"</span>
+      </blockquote>
+      <cite className="font-bold text-primary-green not-italic text-lg">{review.author_name}</cite>
+      {review.relative_time_description && (
+        <span className="text-sm text-gray-500 mt-2">{review.relative_time_description}</span>
+      )}
+    </div>
+  );
+};
+
 
 const Testimonials: React.FC = () => {
   const { t } = useTranslation();
+  const [googleReviews, setGoogleReviews] = useState<GoogleReview[] | null>(null);
+
+  useEffect(() => {
+    const loadReviews = async () => {
+      try {
+        const res = await fetch('/api/google-reviews');
+        if (!res.ok) throw new Error('Failed to load Google reviews');
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const onlyFive = (data as GoogleReview[]).filter(r => r.rating === 5);
+          const sorted = onlyFive.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
+          const topThree = sorted.slice(0, 3);
+          if (topThree.length > 0) {
+            setGoogleReviews(topThree);
+          } else {
+            setGoogleReviews(null);
+          }
+        }
+      } catch (err) {
+        setGoogleReviews(null);
+      }
+    };
+    loadReviews();
+  }, []);
   
   return (
     <section id="testimonials" className="py-20 bg-white">
@@ -43,9 +102,15 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TESTIMONIALS_DATA.map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
-          ))}
+          {googleReviews && googleReviews.length > 0 ? (
+            googleReviews.map((review, index) => (
+              <GoogleReviewCard key={index} review={review} />
+            ))
+          ) : (
+            TESTIMONIALS_DATA.map((testimonial, index) => (
+              <TestimonialCard key={index} testimonial={testimonial} />
+            ))
+          )}
         </div>
         <div className="text-center mt-16">
             <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>

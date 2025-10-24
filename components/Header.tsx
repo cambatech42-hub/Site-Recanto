@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { NAV_LINKS, RESERVATION_URL } from '../constants';
 import Button from './ui/Button';
-import LanguageSelector from './LanguageSelector';
+
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,7 +97,6 @@ const Header: React.FC = () => {
         </nav>
         <div className="hidden md:flex items-center space-x-4">
           <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
-          <LanguageSelector />
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
@@ -117,7 +116,6 @@ const Header: React.FC = () => {
           <nav className="flex flex-col items-center space-y-4 py-6">
             {NAV_LINKS.map((link) => renderNavLink(link))}
             <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
-            <LanguageSelector />
           </nav>
         </div>
       )}
