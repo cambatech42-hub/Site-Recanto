@@ -9,7 +9,4 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Do NOT ignore dist/ (we need it in the image)
 dist-ssr
-src
-public

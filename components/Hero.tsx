@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+import Button from "./ui/Button";
+import { RESERVATION_URL } from "../constants";
 
 const Hero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
+  const { t } = useTranslation();
   return (
     <div className="relative w-full h-[75vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] overflow-hidden">
       {/* Video Background */}
@@ -28,23 +33,26 @@ const Hero: React.FC = () => {
       )}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
-            Bem-vindo ao Recanto Doce Vida
+            {t('hero.title')}
           </h1>
           <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 drop-shadow-md">
-            Refúgio perfeito em meio à natureza, conforto e tranquilidade.
+            {t('hero.subtitle')}
           </p>
-          <a
-            href="#accommodations"
-            className="inline-block mt-6 sm:mt-8 px-6 sm:px-8 py-3 sm:py-4 bg-white/90 text-black font-semibold rounded-lg shadow-lg hover:bg-white transition duration-300"
+          <Button 
+            variant="primary" 
+            href={RESERVATION_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xl md:text-2xl px-6 md:px-10 py-3 md:py-5 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
           >
-            Explorar Acomodações
-          </a>
+            {t('hero.reserveButton')}
+          </Button>
         </div>
       </div>
     </div>
