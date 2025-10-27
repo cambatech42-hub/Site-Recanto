@@ -129,7 +129,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         id: 'gameRoom',
         name: 'Sala de Jogos',
         description: 'Diversão garantida para todas as idades com sinuca e pebolim (fla-flu) em nossa acolhedora sala de jogos.',
-        image: 'https://picsum.photos/seed/jogos/600/400',
+        image: '/bocha/bocha1.jpg',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 2a10 10 0 100 20 10 10 0 000-20z" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 12a3 3 0 100-6 3 3 0 000 6z" })),
         details: 'Nossa sala de jogos é o ponto de encontro perfeito para dias chuvosos ou para o lazer noturno. Conta com uma mesa de sinuca profissional, pebolim, e uma seleção de jogos de tabuleiro para toda a família.',
         gallery: [
