@@ -75,7 +75,7 @@ const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, title, detai
             <>
               {/* Main Image Viewer */}
               <div className="flex-grow relative w-full h-full flex items-center justify-center">
-                <img src={gallery[currentIndex]} alt={`${title} - Pousada Recanto do Lago Cambará do Sul - foto ${currentIndex + 1}`} className="w-auto h-auto max-w-full max-h-full object-contain" />
+                <img src={gallery[currentIndex]} alt={`${title} - Pousada Recanto do Lago Cambará do Sul - foto ${currentIndex + 1}`} decoding="async" className="w-auto h-auto max-w-full max-h-full object-contain" />
                 {gallery.length > 1 && (
                   <>
                     <button onClick={prevImage} aria-label="Imagem anterior" className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition">
@@ -110,6 +110,8 @@ const DetailModal: React.FC<DetailModalProps> = ({ isOpen, onClose, title, detai
                         <img
                           src={imgSrc}
                           alt={`Thumbnail ${index + 1}`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                         />
                       </button>

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/aereas/aerea1.jpg"
           onError={() => setVideoError(true)}
         >

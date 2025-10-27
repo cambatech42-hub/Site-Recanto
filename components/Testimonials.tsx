@@ -47,7 +47,9 @@ const GoogleReviewCard: React.FC<{ review: GoogleReview }> = ({ review }) => {
     <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
       <img 
         src={review.profile_photo_url || '/outros/logo.PNG'} 
-        alt={`Foto de ${review.author_name}`}
+        alt={`Foto de ${review.author_name}`} 
+        loading="lazy"
+        decoding="async"
         className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-accent-gold/50 shadow-md"
       />
       <StarRow rating={review.rating} />

@@ -140,6 +140,8 @@ const Gallery: React.FC = () => {
                   <img 
                       src={src} 
                       alt={`Galeria de fotos da pousada ${index + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105"
                   />
               </div>

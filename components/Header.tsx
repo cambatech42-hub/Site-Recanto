@@ -60,7 +60,7 @@ const Header: React.FC = () => {
           key={link.name}
           to={link.href}
           onClick={() => setIsOpen(false)}
-          className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
+          className="text-base text-dark-text font-medium cursor-pointer transition-colors hover:text-primary-green px-1 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent-gold after:transition-all after:duration-300 hover:after:w-full"
         >
           {t(link.name)}
         </Link>
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
           key={link.name}
           href={link.href}
           onClick={(e) => handleNavClick(e, link.href)}
-          className="text-base text-dark-text font-medium hover:text-primary-green transition-colors cursor-pointer"
+          className="text-base text-dark-text font-medium cursor-pointer transition-colors hover:text-primary-green px-1 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent-gold after:transition-all after:duration-300 hover:after:w-full"
         >
           {t(link.name)}
         </a>
@@ -89,6 +89,9 @@ const Header: React.FC = () => {
           <img 
             src="/outros/logo.PNG" 
             alt="Pousada Recanto do Lago - Hospedagem em Cambará do Sul perto dos Cânions" 
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="h-28 md:h-36 w-auto object-contain mt-1 md:mt-2"
           />
         </Link>

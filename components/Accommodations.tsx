@@ -64,6 +64,8 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation; onClick: () =>
         <img 
           src={accommodation.image} 
           alt={accommodation.name} 
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
