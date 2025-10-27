@@ -81,9 +81,9 @@ const Testimonials: React.FC = () => {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
           const sorted = (data as GoogleReview[]).sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
-          const topSix = sorted.slice(0, 6);
-          if (topSix.length > 0) {
-            setGoogleReviews(topSix);
+          const topThree = sorted.slice(0, 3);
+          if (topThree.length > 0) {
+            setGoogleReviews(topThree);
             setReviewsStatus('google');
             setReviewsNote(null);
           } else {

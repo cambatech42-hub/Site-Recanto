@@ -24,18 +24,18 @@ export default async function handler(req: any, res: any) {
     const response = await fetch(url);
     const data = await response.json();
 
-    const reviews = data?.result?.reviews || [];
-    const fourPlus = reviews.filter((r: any) => r.rating >= 4);
-    const sortedDesc = fourPlus.sort((a: any, b: any) => (b.time ?? 0) - (a.time ?? 0));
-    const topSix = sortedDesc.slice(0, 6);
-    const simplified = topSix.map((r: any) => ({
-      author_name: r.author_name,
-      profile_photo_url: r.profile_photo_url,
-      rating: r.rating,
-      text: r.text,
-      relative_time_description: r.relative_time_description,
-      time: r.time,
-    }));
+  const reviews = data?.result?.reviews || [];
+  const fiveStar = reviews.filter((r: any) => r.rating === 5);
+  const sortedDesc = fiveStar.sort((a: any, b: any) => (b.time ?? 0) - (a.time ?? 0));
+  const topThree = sortedDesc.slice(0, 3);
+  const simplified = topThree.map((r: any) => ({
+    author_name: r.author_name,
+    profile_photo_url: r.profile_photo_url,
+    rating: r.rating,
+    text: r.text,
+    relative_time_description: r.relative_time_description,
+    time: r.time,
+  }));
 
     // Cache at the edge/CDN for 1h; allow stale for 24h
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');

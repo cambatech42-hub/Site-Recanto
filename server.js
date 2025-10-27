@@ -41,10 +41,10 @@ app.get('/api/google-reviews', async (req, res) => {
     const data = await response.json();
 
     const reviews = data?.result?.reviews || [];
-    const fourPlus = reviews.filter((r) => r.rating >= 4);
-    const sortedDesc = fourPlus.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
-    const topSix = sortedDesc.slice(0, 6);
-    const simplified = topSix.map((r) => ({
+    const fiveStar = reviews.filter((r) => r.rating === 5);
+    const sortedDesc = fiveStar.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
+    const topThree = sortedDesc.slice(0, 3);
+    const simplified = topThree.map((r) => ({
       author_name: r.author_name,
       profile_photo_url: r.profile_photo_url,
       rating: r.rating,
