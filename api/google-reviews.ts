@@ -1,7 +1,7 @@
 export default async function handler(req: any, res: any) {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
-  const language = 'pt-BR';
+  const language = process.env.GOOGLE_REVIEWS_LANGUAGE; // se não definido, não envia parâmetro
 
   // If envs are missing, return empty list to let frontend fallback
   if (!apiKey || !placeId) {
@@ -9,7 +9,16 @@ export default async function handler(req: any, res: any) {
     return;
   }
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&language=${language}&key=${apiKey}`;
+  const params = new URLSearchParams({
+    place_id: placeId,
+    fields: 'reviews,rating,user_ratings_total',
+    key: apiKey,
+    reviews_sort: 'newest'
+  });
+  if (language && language.trim() !== '') {
+    params.set('language', language.trim());
+  }
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?${params.toString()}`;
 
   try {
     const response = await fetch(url);
