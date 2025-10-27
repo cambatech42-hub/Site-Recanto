@@ -21,9 +21,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
         className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-accent-gold/50 shadow-md"
       />
       <blockquote className="text-gray-600 italic mb-6 relative">
-        <span className="absolute -top-4 -left-4 text-6xl text-primary-green/10 font-serif">"</span>
         <p>{getTestimonialTranslation(testimonial.id, 'quote')}</p>
-        <span className="absolute -bottom-4 -right-4 text-6xl text-primary-green/10 font-serif">"</span>
       </blockquote>
       <cite className="font-bold text-primary-green not-italic text-lg">{getTestimonialTranslation(testimonial.id, 'author')}</cite>
     </div>
@@ -54,9 +52,7 @@ const GoogleReviewCard: React.FC<{ review: GoogleReview }> = ({ review }) => {
       />
       <StarRow rating={review.rating} />
       <blockquote className="text-gray-600 italic mb-6 relative">
-        <span className="absolute -top-4 -left-4 text-6xl text-primary-green/10 font-serif">"</span>
         <p>{review.text}</p>
-        <span className="absolute -bottom-4 -right-4 text-6xl text-primary-green/10 font-serif">"</span>
       </blockquote>
       <cite className="font-bold text-primary-green not-italic text-lg">{review.author_name}</cite>
       {review.relative_time_description && (
