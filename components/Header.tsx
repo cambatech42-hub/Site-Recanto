@@ -15,6 +15,19 @@ const Header: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
+      // Caso específico: Início deve rolar para o topo
+      if (href === '#home') {
+        if (location.pathname.startsWith('/blog/')) {
+          navigate('/');
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 100);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        setIsOpen(false);
+        return;
+      }
       
       // Se estamos em uma página de blog post, navega para home e depois faz scroll
       if (location.pathname.startsWith('/blog/')) {
@@ -53,6 +66,19 @@ const Header: React.FC = () => {
     setIsOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname.startsWith('/blog/') || location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const renderNavLink = (link: { name: string; href: string }) => {
     if (link.href.startsWith('/')) {
       return (
@@ -84,6 +110,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 h-20 md:h-24 flex justify-between items-center relative overflow-visible">
         <Link 
           to="/" 
+          onClick={handleLogoClick}
           className="cursor-pointer relative z-10"
         >
           <img 
