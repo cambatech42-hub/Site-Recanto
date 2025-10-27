@@ -70,6 +70,8 @@ const GoogleReviewCard: React.FC<{ review: GoogleReview }> = ({ review }) => {
 const Testimonials: React.FC = () => {
   const { t } = useTranslation();
   const [googleReviews, setGoogleReviews] = useState<GoogleReview[] | null>(null);
+  const [reviewsStatus, setReviewsStatus] = useState<'loading' | 'google' | 'fallback'>('loading');
+  const [reviewsNote, setReviewsNote] = useState<string | null>(null);
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -78,17 +80,22 @@ const Testimonials: React.FC = () => {
         if (!res.ok) throw new Error('Failed to load Google reviews');
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
-          const onlyFive = (data as GoogleReview[]).filter(r => r.rating === 5);
-          const sorted = onlyFive.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
-          const topThree = sorted.slice(0, 3);
-          if (topThree.length > 0) {
-            setGoogleReviews(topThree);
+          const sorted = (data as GoogleReview[]).sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
+          const topSix = sorted.slice(0, 6);
+          if (topSix.length > 0) {
+            setGoogleReviews(topSix);
+            setReviewsStatus('google');
+            setReviewsNote(null);
           } else {
             setGoogleReviews(null);
+            setReviewsStatus('fallback');
+            setReviewsNote('Não foi possível carregar as avaliações do Google no momento. Exibindo depoimentos da pousada.');
           }
         }
       } catch (err) {
         setGoogleReviews(null);
+        setReviewsStatus('fallback');
+        setReviewsNote('Não foi possível carregar as avaliações do Google no momento. Exibindo depoimentos da pousada.');
       }
     };
     loadReviews();
@@ -102,6 +109,11 @@ const Testimonials: React.FC = () => {
           <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
             {t('testimonials.subtitle')}
           </p>
+          {reviewsStatus === 'fallback' && reviewsNote && (
+            <p className="text-sm text-gray-500 mt-3" role="status" aria-live="polite">
+              {reviewsNote}
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {googleReviews && googleReviews.length > 0 ? (

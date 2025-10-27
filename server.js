@@ -32,10 +32,10 @@ app.get('/api/google-reviews', async (req, res) => {
     const data = await response.json();
 
     const reviews = data?.result?.reviews || [];
-    const fiveStar = reviews.filter((r) => r.rating === 5);
-    const sortedDesc = fiveStar.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
-    const topThree = sortedDesc.slice(0, 3);
-    const simplified = topThree.map((r) => ({
+    const fourPlus = reviews.filter((r) => r.rating >= 4);
+    const sortedDesc = fourPlus.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
+    const topSix = sortedDesc.slice(0, 6);
+    const simplified = topSix.map((r) => ({
       author_name: r.author_name,
       profile_photo_url: r.profile_photo_url,
       rating: r.rating,
@@ -49,6 +49,18 @@ app.get('/api/google-reviews', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'failed_to_fetch_reviews' });
   }
+});
+
+// Diagnóstico: verifica se as variáveis de ambiente estão presentes (não expõe valores)
+app.get('/api/debug-env', (req, res) => {
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const placeId = process.env.GOOGLE_PLACE_ID;
+  res.setHeader('Cache-Control', 'no-store');
+  res.status(200).json({
+    hasApiKey: Boolean(apiKey),
+    hasPlaceId: Boolean(placeId),
+    nodeEnv: process.env.NODE_ENV || 'unknown'
+  });
 });
 
 // Static files
