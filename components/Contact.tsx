@@ -1,0 +1,68 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import Button from './ui/Button';
+import { WHATSAPP_URL, RESERVATION_URL, EMAIL_ADDRESS } from '../constants';
+
+const ContactInfoItem: React.FC<{ icon: React.ReactElement; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
+    <div className="flex items-start mb-6">
+        <div className="text-primary-green mr-4 mt-1">{icon}</div>
+        <div>
+            <h4 className="font-bold text-lg text-primary-green">{title}</h4>
+            <div className="text-gray-600">{children}</div>
+        </div>
+    </div>
+);
+
+const Contact: React.FC = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <section id="contact" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-serif font-bold text-primary-green">{t('contact.title')}</h2>
+          <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+            {t('contact.subtitle')}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-background-beige p-8 md:p-12 rounded-lg shadow-lg">
+          <div>
+            <h3 className="text-3xl font-serif font-bold text-primary-green mb-8">{t('contact.contactInfo')}</h3>
+            <ContactInfoItem 
+                icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>} 
+                title={t('contact.address')}>
+                {t('contact.addressDetails')}
+            </ContactInfoItem>
+            <ContactInfoItem 
+                icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
+                title={t('contact.phone')}>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold">+55 (54) 99930-0535</a>
+            </ContactInfoItem>
+            <ContactInfoItem 
+                icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
+                title="Email">
+                <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-accent-gold">{EMAIL_ADDRESS}</a>
+            </ContactInfoItem>
+            <div className="mt-10">
+                <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('contact.reserveButton')}</Button>
+            </div>
+          </div>
+          <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden">
+             <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.289112932903!2d-50.0810182244874!3d-28.99986597548171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951f55910ef285a1%3A0xdcc7c88c97fd21d!2sPousada%20Recanto%20do%20Lago%20-%20Cambar%C3%A1%20do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1672856262451!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Pousada Recanto do Lago no Google Maps"
+              ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
