@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           poster="/aereas/aerea1.jpg"
           onError={() => setVideoError(true)}
         >
-          <source src="/geralexterna/videobanner.mp4" type="video/mp4" />
+          <source src="/geralexterna/RECANTODOLAGO_BANNER_OPTIMIZED.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       ) : (
