@@ -44,7 +44,7 @@ const GoogleReviewCard: React.FC<{ review: GoogleReview }> = ({ review }) => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
       <img 
-        src={review.profile_photo_url || '/outros/logo.PNG'} 
+        src={review.profile_photo_url || '/outros/logo.webp'} 
         alt={`Foto de ${review.author_name}`} 
         loading="lazy"
         decoding="async"

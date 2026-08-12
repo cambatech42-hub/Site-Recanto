@@ -11,7 +11,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="w-full h-64 sm:h-80 md:h-full overflow-hidden rounded-lg shadow-xl">
-            <img src="/aereas/aerea1.jpg" alt="Pousada rural Recanto do Lago em Cambará do Sul - Vista aérea da propriedade na natureza" className="w-full h-full object-cover" />
+            <img src="/aereas/aerea1.webp" alt="Pousada rural Recanto do Lago em Cambará do Sul - Vista aérea da propriedade na natureza" className="w-full h-full object-cover" />
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-green mb-4 md:mb-6">

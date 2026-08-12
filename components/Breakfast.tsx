@@ -8,14 +8,14 @@ const Breakfast: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const breakfastImages = [
-    '/cafe/cafe1.jpg',
-    '/cafe/cafe2.jpg',
-    '/cafe/cafe3.jpg',
-    '/cafe/cafe4.jpg',
-    '/cafe/cafe5.jpg',
-    '/cafe/cafe6.jpg',
-    '/cafe/cafe7.jpg',
-    '/cafe/cafe8.jpg'
+    '/cafe/cafe1.webp',
+    '/cafe/cafe2.webp',
+    '/cafe/cafe3.webp',
+    '/cafe/cafe4.webp',
+    '/cafe/cafe5.webp',
+    '/cafe/cafe6.webp',
+    '/cafe/cafe7.webp',
+    '/cafe/cafe8.webp'
   ];
 
   const breakfastHighlights = [

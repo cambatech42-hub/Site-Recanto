@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           loop
           playsInline
           preload="none"
-          poster="/aereas/aerea1.jpg"
+          poster="/aereas/aerea1.webp"
           onError={() => setVideoError(true)}
         >
           <source src="/geralexterna/RECANTODOLAGO_BANNER_OPTIMIZED.mp4" type="video/mp4" />
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       ) : (
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/aereas/aerea1.jpg')" }}
+          style={{ backgroundImage: "url('/aereas/aerea1.webp')" }}
           aria-label="Hero background fallback"
         />
       )}

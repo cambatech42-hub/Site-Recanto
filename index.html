@@ -3,7 +3,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/outros/logoredondo.jpg" />
+    <link rel="icon" type="image/webp" href="/outros/logoredondo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO Meta Tags -->
@@ -19,9 +19,9 @@
     <meta property="og:title" content="Pousada Recanto do Lago - Hospedagem em Cambará do Sul perto dos Cânions" />
     <meta property="og:description" content="Pousada rural em Cambará do Sul com chalés, café da manhã colonial e vista para os cânions. Hospedagem ideal para turismo na natureza." />
     <meta property="og:url" content="https://recantodolagopousada.com.br" />
-    <meta property="og:image" content="/aereas/aerea1.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://recanto-site.3jespm.easypanel.host/aereas/aerea1.webp" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="788" />
     <meta property="og:site_name" content="Pousada Recanto do Lago" />
     <meta property="og:locale" content="pt_BR" />
     
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pousada Recanto do Lago - Hospedagem em Cambará do Sul" />
     <meta name="twitter:description" content="Pousada rural próxima aos cânions com chalés, café da manhã colonial e atividades na natureza." />
-    <meta name="twitter:image" content="/aereas/aerea1.jpg" />
+    <meta name="twitter:image" content="https://recanto-site.3jespm.easypanel.host/aereas/aerea1.webp" />
     <meta name="theme-color" content="#3c5244" />
     <meta http-equiv="content-language" content="pt-BR" />
     
@@ -39,20 +39,26 @@
     <meta name="geo.position" content="-28.999865;-50.081018" />
     <meta name="ICBM" content="-28.999865, -50.081018" />
     
-    <!-- Structured Data JSON-LD -->
+    <!-- Structured Data JSON-LD: LodgingBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
       "name": "Pousada Recanto do Lago",
-      "description": "Pousada rural em Cambará do Sul próxima aos cânions Itaimbezinho e Fortaleza, oferecendo chalés com lareira, café da manhã colonial e atividades na natureza.",
+      "description": "Pousada rural em Cambará do Sul próxima aos cânions Itaimbezinho e Fortaleza, com chalés e cabanas com lareira, café da manhã colonial incluso e lago particular. Ideal para casais e famílias que buscam natureza e tranquilidade na Serra Gaúcha.",
       "url": "https://recantodolagopousada.com.br",
       "telephone": "+55-54-99930-0535",
+      "image": "https://recanto-site.3jespm.easypanel.host/aereas/aerea1.webp",
+      "checkInTime": "14:00",
+      "checkOutTime": "12:00",
+      "numberOfRooms": 10,
+      "petsAllowed": false,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Estrada da Reserva, 200 - Osvaldo Kroeff, Cambará do Sul - RS, 95480-000",
+        "streetAddress": "Estrada da Reserva, 200 - Osvaldo Kroeff",
         "addressLocality": "Cambará do Sul",
         "addressRegion": "RS",
+        "postalCode": "95480-000",
         "addressCountry": "BR"
       },
       "geo": {
@@ -61,37 +67,100 @@
         "longitude": -50.081018
       },
       "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Café da manhã colonial"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Chalés com lareira"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Vista para os cânions"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Atividades rurais"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Estacionamento gratuito"
-        }
+        { "@type": "LocationFeatureSpecification", "name": "Café da manhã colonial incluso", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Chalés e cabanas com lareira", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Lago particular com pedalinho", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Estacionamento gratuito", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Quadra de tênis", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Sala de jogos", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Fogueira", "value": true }
       ],
       "priceRange": "$$",
-      "starRating": {
-        "@type": "Rating",
-        "ratingValue": "4.5"
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
         "reviewCount": "150"
-      }
+      },
+      "sameAs": [
+        "https://www.instagram.com/recantodalago",
+        "https://www.booking.com/hotel/br/recanto-do-lago-cambara-do-sul.html"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O café da manhã está incluso na diária?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O café da manhã colonial está incluso em todas as diárias. É servido com produtos artesanais da região, incluindo pães, geleias, queijos, embutidos e frutas da estação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é a distância da pousada para os cânions Itaimbezinho e Fortaleza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Pousada Recanto do Lago fica a aproximadamente 10 km do Parque Nacional de Aparados da Serra (Cânion Itaimbezinho) e a 18 km do Cânion Fortaleza, ambos acessíveis de carro em menos de 30 minutos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais tipos de acomodação estão disponíveis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "@type": "Answer",
+            "text": "A pousada oferece cinco categorias de acomodação: Chalé Standard, Chalé Deluxe, Chalé Master, Chalé Master Luxo e Chalé Prime. Todos possuem lareira, banheiro privativo e varanda. As categorias superiores incluem hidromassagem e decoração diferenciada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A pousada aceita pets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não aceitamos animais de estimação nas acomodações."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o horário de check-in e check-out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O check-in é a partir das 14h e o check-out até as 12h."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tem Wi-Fi na pousada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a pousada oferece Wi-Fi gratuito em todas as acomodações e áreas comuns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que tem para fazer na pousada além de visitar os cânions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A pousada conta com lago particular para pesca e pedalinho, quadra de tênis, sala de jogos, área de fogueira e trilhas na natureza. Para arredores, oferecemos indicações de passeios como cavalgada, quadriciclo e balão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como faço uma reserva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As reservas podem ser feitas pelo nosso site diretamente, pelo Booking.com, Airbnb ou pelo WhatsApp (54) 99930-0535."
+          }
+        }
+      ]
     }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -106,7 +175,7 @@
     <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     <!-- Preload hero poster to avoid layout shift when video defers -->
-    <link rel="preload" as="image" href="/aereas/aerea1.jpg" />
+    <link rel="preload" as="image" href="/aereas/aerea1.webp" />
     <style>
       /* Adiciona rolagem suave e compensa a altura do header fixo */
       html {

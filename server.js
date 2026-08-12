@@ -72,12 +72,21 @@ app.get('/api/debug-env', (req, res) => {
   });
 });
 
-// Static files
+// Static files — assets com hash recebem cache longo; HTML nunca cacheado
 const distPath = path.resolve(__dirname, 'dist');
-app.use(express.static(distPath));
+app.use(express.static(distPath, {
+  maxAge: '1y',
+  immutable: true,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  }
+}));
 
 // SPA fallback
 app.get('*', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.join(distPath, 'index.html'));
 });
 

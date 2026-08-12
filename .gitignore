@@ -34,3 +34,6 @@ dist-ssr
 *.zip
 recanto-deploy.zip
 recanto-deploy-lite.zip
+
+# Credenciais — nunca commitar
+.credentials

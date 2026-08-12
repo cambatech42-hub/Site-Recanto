@@ -121,7 +121,7 @@ const Header: React.FC = () => {
           className="cursor-pointer relative z-10"
         >
           <img
-            src="/outros/logo.PNG"
+            src="/outros/logo.webp"
             alt="Pousada Recanto do Lago - Hospedagem em Cambará do Sul perto dos Cânions"
             loading="eager"
             decoding="async"

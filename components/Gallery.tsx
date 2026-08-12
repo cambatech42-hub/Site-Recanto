@@ -4,50 +4,50 @@ import { RESERVATION_URL } from '../constants';
 
 const galleryImages = [
   // Imagens aéreas
-  '/aereas/DJI_0046.jpg',
-  '/aereas/DJI_0048.jpg',
-  '/aereas/DJI_0050.jpg',
-  '/aereas/DJI_0052.jpg',
-  '/aereas/DJI_0053.jpg',
-  '/aereas/DJI_0055.jpg',
-  '/aereas/DJI_0060.jpg',
-  '/aereas/DJI_0062.jpg',
-  '/aereas/DJI_0063.jpg',
-  '/aereas/DJI_0064.jpg',
-  '/aereas/DSC00028.jpg',
-  '/aereas/DSC00029.jpg',
-  '/aereas/DSC00031.jpg',
-  '/aereas/DSC00032.jpg',
+  '/aereas/DJI_0046.webp',
+  '/aereas/DJI_0048.webp',
+  '/aereas/DJI_0050.webp',
+  '/aereas/DJI_0052.webp',
+  '/aereas/DJI_0053.webp',
+  '/aereas/DJI_0055.webp',
+  '/aereas/DJI_0060.webp',
+  '/aereas/DJI_0062.webp',
+  '/aereas/DJI_0063.webp',
+  '/aereas/DJI_0064.webp',
+  '/aereas/DSC00028.webp',
+  '/aereas/DSC00029.webp',
+  '/aereas/DSC00031.webp',
+  '/aereas/DSC00032.webp',
   // Imagens do café da manhã
-  '/cafe/1NIN9064.jpg',
-  '/cafe/1NIN9066.jpg',
-  '/cafe/1NIN9068.jpg',
-  '/cafe/1NIN9070.jpg',
-  '/cafe/1NIN9072.jpg',
-  '/cafe/1NIN9074.jpg',
-  '/cafe/cafe1.jpg',
-  '/cafe/cafe2.jpg',
-  '/cafe/cafe3.jpg',
-  '/cafe/cafe5.jpg',
+  '/cafe/1NIN9064.webp',
+  '/cafe/1NIN9066.webp',
+  '/cafe/1NIN9068.webp',
+  '/cafe/1NIN9070.webp',
+  '/cafe/1NIN9072.webp',
+  '/cafe/1NIN9074.webp',
+  '/cafe/cafe1.webp',
+  '/cafe/cafe2.webp',
+  '/cafe/cafe3.webp',
+  '/cafe/cafe5.webp',
   // Imagens do lago
-  '/lago/1NIN6673.jpg',
-  '/lago/1NIN6699.jpg',
-  '/lago/1NIN6703.jpg',
-  '/lago/1NIN6717.jpg',
-  '/lago/1NIN6722.jpg',
-  '/lago/1NIN6728.jpg',
-  '/lago/1NIN6736.jpg',
-  '/lago/1NIN6744.jpg',
-  '/lago/1NIN6750.jpg',
-  '/lago/1NIN6756.jpg',
+  '/lago/1NIN6673.webp',
+  '/lago/1NIN6699.webp',
+  '/lago/1NIN6703.webp',
+  '/lago/1NIN6717.webp',
+  '/lago/1NIN6722.webp',
+  '/lago/1NIN6728.webp',
+  '/lago/1NIN6736.webp',
+  '/lago/1NIN6744.webp',
+  '/lago/1NIN6750.webp',
+  '/lago/1NIN6756.webp',
   // Imagens das acomodações
-  '/master/1NIN6686.jpg',
-  '/masterluxo/1NIN9189.jpg',
-  '/deluxe/1NIN6793.jpg',
-  '/Prime/1NIN9326.jpg',
-  '/Standard/1NIN9288.jpg',
+  '/master/1NIN6686.webp',
+  '/masterluxo/1NIN9189.webp',
+  '/deluxe/1NIN6793.webp',
+  '/Prime/1NIN9326.webp',
+  '/Standard/1NIN9288.webp',
   // Outras imagens
-  '/quadriciclo/IMG_8997.JPG',
+  '/quadriciclo/IMG_8997.webp',
 ];
 
 interface ImageModalProps {
@@ -155,15 +155,15 @@ const Gallery: React.FC = () => {
               Inspire-se com as paisagens e a beleza do nosso recanto.
             </p>
           </div>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryImages.map((src, index) => (
-              <div key={index} className="mb-4 break-inside-avoid" onClick={() => openModal(index)}>
-                  <img 
-                      src={src} 
-                      alt={`Galeria de fotos da pousada ${index + 1}`} 
+              <div key={index} className="aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer" onClick={() => openModal(index)}>
+                  <img
+                      src={src}
+                      alt={`Galeria de fotos da pousada ${index + 1}`}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105"
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   />
               </div>
             ))}

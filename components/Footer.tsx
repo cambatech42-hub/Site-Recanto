@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             <a href="#home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block">
               <div className="bg-white rounded-xl p-3">
                 <img
-                  src="/outros/logo.PNG"
+                  src="/outros/logo.webp"
                   alt="Pousada Recanto do Lago"
                   className="h-64 w-auto object-contain"
                 />
