@@ -35,8 +35,7 @@ const Ingressos: React.FC = () => {
           Ingressos dos Cânions
         </h2>
         <p className="font-sans text-white/75 text-base md:text-lg mb-10">
-          Itaimbezinho e Fortaleza — compre online com desconto e garanta sua
-          vaga.
+          Itaimbezinho e Fortaleza — compre online com desconto.
         </p>
 
         {/* Steps */}
