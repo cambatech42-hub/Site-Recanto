@@ -5,7 +5,7 @@ export const PHONE_NUMBER = '5554999300535';
 export const EMAIL_ADDRESS = 'recantodolagopousada@hotmail.com';
 export const WHATSAPP_MESSAGE = encodeURIComponent('Olá! Gostaria de mais informações sobre a Pousada Recanto do Lago.');
 export const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-export const RESERVATION_URL = 'https://hotels.cloudbeds.com/reservas/HgoiJE';
+export const RESERVATION_URL = 'https://hotels.cloudbeds.com/pt-br/reservas/HgoiJE';
 
 export const NAV_LINKS = [
   { name: 'nav.home', href: '#home' },
@@ -23,6 +23,7 @@ export const NAV_LINKS = [
 export const ACCOMMODATIONS_DATA: Accommodation[] = [
   {
     name: 'Chalé Deluxe',
+    capacity: 'Até 3 pessoas',
     description: 'Acomoda até 3 pessoas com 1 cama de casal e opção de cama extra (solteiro). Perfeito para casais ou pequenas famílias.',
     image: '/deluxe/1NIN6793.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
@@ -40,6 +41,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   },
   {
     name: 'Chalé Standard',
+    capacity: 'Até 4 pessoas',
     description: 'Ideal para famílias, acomoda até 4 pessoas com 1 cama de casal e 2 camas de solteiro.',
     image: '/Standard/1NIN9288.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
@@ -59,6 +61,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   },
   {
     name: 'Chalé Master',
+    capacity: 'Até 2 pessoas',
     description: 'Acomodação romântica para casais, com 1 cama de casal e chuveiro a gás para maior conforto.',
     image: '/master/1NIN6686.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Chuveiro a gás'],
@@ -76,6 +79,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   },
   {
     name: 'Chalé Master Luxo',
+    capacity: 'Até 2 pessoas',
     description: 'Chalé premium para casais com banheira de hidromassagem e mini cozinha equipada com utensílios.',
     image: '/masterluxo/1NIN9189.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
@@ -102,6 +106,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   },
   {
     name: 'Chalé Prime',
+    capacity: 'Até 2 pessoas',
     description: 'Nossa acomodação mais exclusiva com banheira de hidromassagem e mini cozinha completa para uma experiência única.',
     image: '/Prime/1NIN9326.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],

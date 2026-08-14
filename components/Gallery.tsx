@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Button from './ui/Button';
-import { RESERVATION_URL } from '../constants';
+import { RESERVATION_URL, WHATSAPP_URL } from '../constants';
 
 const galleryImages = [
   // Imagens aéreas
@@ -169,7 +169,8 @@ const Gallery: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Reservar Agora e Viva Esses Momentos</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+            <Button variant="secondary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Ver disponibilidade</Button>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { NAV_LINKS, RESERVATION_URL } from '../constants';
+import { NAV_LINKS, WHATSAPP_URL } from '../constants';
 import Button from './ui/Button';
 
 
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
           {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+          <Button variant="primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
@@ -152,7 +152,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
           <nav className="flex flex-col items-center space-y-4 py-6">
             {NAV_LINKS.map((link) => renderNavLink(link))}
-            <Button variant="primary" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('nav.reserveNow')}</Button>
+            <Button variant="primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
           </nav>
         </div>
       )}

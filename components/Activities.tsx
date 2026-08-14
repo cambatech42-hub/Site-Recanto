@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ACTIVITIES_DATA, WHATSAPP_URL } from '../constants';
+import { ACTIVITIES_DATA, WHATSAPP_URL, RESERVATION_URL } from '../constants';
 import { Activity } from '../types';
 import Button from './ui/Button';
 import DetailModal from './DetailModal';
@@ -94,7 +94,8 @@ const Activities: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Reserve agora</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+            <Button variant="secondary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Ver disponibilidade</Button>
           </div>
         </div>
       </section>

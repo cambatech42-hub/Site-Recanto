@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import Button from "./ui/Button";
-import { RESERVATION_URL } from "../constants";
+import { RESERVATION_URL, WHATSAPP_URL } from "../constants";
 
 const Hero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
@@ -44,15 +44,26 @@ const Hero: React.FC = () => {
           <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 drop-shadow-md">
             {t('hero.subtitle')}
           </p>
-          <Button
-            variant="primary"
-            href={RESERVATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 text-base md:text-lg px-5 md:px-8 py-2.5 md:py-4 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
-          >
-            {t('hero.reserveButton')}
-          </Button>
+          <div className="mt-3 flex flex-wrap justify-center gap-3">
+            <Button
+              variant="primary"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base md:text-lg px-5 md:px-8 py-2.5 md:py-4 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
+            >
+              Fale conosco
+            </Button>
+            <Button
+              variant="secondary"
+              href={RESERVATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base md:text-lg px-5 md:px-8 py-2.5 md:py-4 font-bold shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300"
+            >
+              Ver disponibilidade
+            </Button>
+          </div>
         </div>
       </div>
     </div>

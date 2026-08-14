@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from './ui/Button';
+import { WHATSAPP_URL, RESERVATION_URL } from '../constants';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -23,7 +24,10 @@ const About: React.FC = () => {
             <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8">
               {t('about.description2')}
             </p>
-            <Button href="#accommodations" variant="primary" size="lg">{t('about.button')}</Button>
+            <div className="flex flex-wrap gap-3">
+              <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="lg">Fale conosco</Button>
+              <Button href={RESERVATION_URL} target="_blank" rel="noopener noreferrer" variant="secondary" size="lg">Ver disponibilidade</Button>
+            </div>
           </div>
         </div>
       </div>

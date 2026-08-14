@@ -115,7 +115,7 @@ const Leisure: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16">
-            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
           </div>
         </div>
       </section>

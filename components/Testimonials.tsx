@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TESTIMONIALS_DATA, RESERVATION_URL } from '../constants';
+import { TESTIMONIALS_DATA, RESERVATION_URL, WHATSAPP_URL } from '../constants';
 import { Testimonial, GoogleReview } from '../types';
 import Button from './ui/Button';
 import { Star } from 'lucide-react';
@@ -122,8 +122,9 @@ const Testimonials: React.FC = () => {
             ))
           )}
         </div>
-        <div className="text-center mt-16">
-            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('common.reserveNow')}</Button>
+        <div className="text-center mt-16 flex justify-center items-center flex-wrap gap-4">
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+            <Button variant="secondary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Ver disponibilidade</Button>
         </div>
       </div>
     </section>

@@ -354,7 +354,7 @@ const BlogPost: React.FC = () => {
                         
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <a
-                                href="https://hotels.cloudbeds.com/reservas/HgoiJE"
+                                href="https://hotels.cloudbeds.com/pt-br/reservas/HgoiJE"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3 min-w-[200px] justify-center"

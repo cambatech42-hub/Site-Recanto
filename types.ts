@@ -7,6 +7,7 @@ export interface Accommodation {
   amenities: string[];
   gallery?: string[];
   details?: string;
+  capacity?: string;
 }
 
 export interface Activity {

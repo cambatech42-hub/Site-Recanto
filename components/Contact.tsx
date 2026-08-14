@@ -43,8 +43,9 @@ const Contact: React.FC = () => {
                 title="Email">
                 <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-accent-gold">{EMAIL_ADDRESS}</a>
             </ContactInfoItem>
-            <div className="mt-10">
-                <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('contact.reserveButton')}</Button>
+            <div className="mt-10 flex flex-wrap gap-4">
+                <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+                <Button variant="secondary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Ver disponibilidade</Button>
             </div>
           </div>
           <div className="w-full h-80 lg:h-full bg-gray-300 rounded-lg shadow-inner overflow-hidden">

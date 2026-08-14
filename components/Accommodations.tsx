@@ -117,8 +117,8 @@ const Accommodations: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12 md:mt-16 flex justify-center items-center flex-wrap gap-4">
-            <Button variant="primary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.reserveButton')}</Button>
-            <Button variant="secondary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t('accommodations.contactButton')}</Button>
+            <Button variant="primary" size="lg" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+            <Button variant="secondary" size="lg" href={RESERVATION_URL} target="_blank" rel="noopener noreferrer">Ver disponibilidade</Button>
           </div>
         </div>
       </section>
@@ -130,6 +130,8 @@ const Accommodations: React.FC = () => {
           title={selectedAccommodation.name}
           details={selectedAccommodation.details}
           gallery={selectedAccommodation.gallery}
+          amenities={selectedAccommodation.amenities}
+          capacity={selectedAccommodation.capacity}
         />
       )}
     </>
