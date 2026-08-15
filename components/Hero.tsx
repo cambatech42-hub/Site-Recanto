@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-6 md:px-8">
+      <div className="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-6 md:px-8 pt-20 md:pt-24">
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
             {t('hero.title')}
