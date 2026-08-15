@@ -99,7 +99,7 @@ const DetailModal: React.FC<DetailModalProps> = ({
         <div className="w-full md:w-3/5 h-1/2 md:h-full bg-gray-900 flex flex-col flex-shrink-0">
           {gallery.length > 0 ? (
             <>
-              <div className="flex-grow relative w-full h-full flex items-center justify-center">
+              <div className="flex-grow relative w-full min-h-0 overflow-hidden flex items-center justify-center">
                 <img
                   src={gallery[currentIndex]}
                   alt={`${title} - Pousada Recanto do Lago Cambará do Sul - foto ${currentIndex + 1}`}
