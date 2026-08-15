@@ -1,8 +1,14 @@
 # Multi-stage Dockerfile: build + runtime
 
 # --- Build stage ---
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
+
+# Install Chromium para o prerender com Puppeteer
+RUN apk add --no-cache chromium nss freetype harfbuzz ca-certificates ttf-freefont
+
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 # Install all deps (including dev) to run Vite build
 COPY package*.json ./

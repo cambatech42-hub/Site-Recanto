@@ -54,7 +54,14 @@ async function prerender() {
   const server = await startServer();
 
   console.log('🔄 Prerender: iniciando Puppeteer...');
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+  const launchOptions = {
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  };
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+  const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
 
   await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle0', timeout: 30000 });
