@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, WHATSAPP_URL } from '../constants';
+import Button from './ui/Button';
 
 
 const Header: React.FC = () => {
@@ -131,6 +132,9 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-5">
           {NAV_LINKS.map((link) => renderNavLink(link))}
         </nav>
+        <div className="hidden md:flex items-center space-x-4">
+          <Button variant="primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</Button>
+        </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-primary-green focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
