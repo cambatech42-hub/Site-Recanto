@@ -14,7 +14,7 @@ export const NAV_LINKS = [
   { name: 'nav.leisure', href: '#leisure' },
   { name: 'nav.activities', href: '#activities' },
   { name: 'nav.about', href: '#about' },
-  { name: 'nav.blog', href: '#blog' },
+  // { name: 'nav.blog', href: '#blog' }, // temporariamente oculto
   { name: 'nav.testimonials', href: '#testimonials' },
   { name: 'nav.faq', href: '#faq' },
   { name: 'nav.contact', href: '#contact' },
@@ -24,7 +24,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
   {
     name: 'Chalé Deluxe',
     capacity: 'Até 3 pessoas',
-    description: 'Acomoda até 3 pessoas com 1 cama de casal e opção de cama extra (solteiro). Perfeito para casais ou pequenas famílias.',
+    description: 'Acomoda até 3 pessoas com 1 cama de casal e 1 cama de solteiro. Perfeito para casais ou pequenas famílias.',
     image: '/deluxe/1NIN6793.webp',
     amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chaleira elétrica', 'Secador de cabelo'],
     details: 'Os chalés deluxe oferecem conforto e praticidade para até 3 pessoas. Equipados com ar-condicionado, Wi-Fi gratuito, televisão, frigobar, roupa de cama e banho incluídas, além de estacionamento privativo gratuito. O café da manhã é servido no galpão com um delicioso buffet colonial.',
@@ -82,7 +82,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     capacity: 'Até 2 pessoas',
     description: 'Chalé premium para casais com banheira de hidromassagem e mini cozinha equipada com utensílios.',
     image: '/masterluxo/1NIN9189.webp',
-    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chuveiro a gás', 'Hidromassagem', 'Mini cozinha'],
     details: 'Os chalés Master Luxo são nossa opção mais sofisticada para casais. Acomodam até 2 pessoas em 1 cama de casal e possuem banheira de hidromassagem e mini cozinha com utensílios. Incluem ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
         '/masterluxo/1NIN9189.webp',
@@ -109,7 +109,7 @@ export const ACCOMMODATIONS_DATA: Accommodation[] = [
     capacity: 'Até 2 pessoas',
     description: 'Nossa acomodação mais exclusiva com banheira de hidromassagem e mini cozinha completa para uma experiência única.',
     image: '/Prime/1NIN9326.webp',
-    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Hidromassagem', 'Mini cozinha'],
+    amenities: ['Ar condicionado', 'Wi-Fi', 'TV', 'Frigobar', 'Chuveiro a gás', 'Hidromassagem', 'Mini cozinha'],
     details: 'Os chalés Prime representam o máximo em conforto e exclusividade. Acomodam até 2 pessoas em 1 cama de casal e oferecem banheira de hidromassagem e mini cozinha com utensílios completos. Equipados com ar-condicionado, Wi-Fi, televisão, frigobar, roupa de cama e banho, chuveiro a gás e estacionamento privativo gratuito. O café da manhã é servido no galpão com um belo buffet.',
     gallery: [
         '/Prime/1NIN9326.webp',
@@ -143,7 +143,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
     {
         id: 'tennisCourt',
         name: 'Quadra de Tênis',
-        description: 'Desafie seus amigos para uma partida emocionante em nossa quadra de tênis, cercada pela natureza exuberante da Serra Gaúcha.',
+        description: 'Desafie seus amigos para uma partida emocionante em nossa quadra de tênis.',
         image: '/outros/quadratenis.webp',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, 
             React.createElement('path', { 
@@ -164,7 +164,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         description: 'Relaxe com uma pescaria esportiva em nosso lago sereno ou divirtas-se em um passeio de pedalinho com a família.',
         image: '/lago/1NIN6673.webp',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 13l-4 4m0 0l4-4m-4 4h14m0 0l-4-4m4 4v-4m0 4h-4" })),
-        details: 'O lago é o coração da nossa pousada. Oferecemos varas e iscas para pesca esportiva (pesque e solte) de espécies como tilápia e carpa. O pedalinho em formato de cisne é uma atração para as crianças e casais. Coletes salva-vidas são fornecidos.',
+        details: 'O lago é o coração da nossa pousada. NÃO fornecemos varas e iscas. O pedalinho em formato de cisne é uma atração para as crianças e casais. Coletes salva-vidas são fornecidos.',
         gallery: [
             '/lago/1NIN6673.webp',
             '/lago/1NIN6699.webp',
@@ -195,7 +195,7 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
         description: 'Diversão garantida para todas as idades com sinuca e pebolim (fla-flu) em nossa acolhedora sala de jogos.',
         image: '/outros/saladejogos.webp',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 2a10 10 0 100 20 10 10 0 000-20z" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 12a3 3 0 100-6 3 3 0 000 6z" })),
-        details: 'Nossa sala de jogos é o ponto de encontro perfeito para dias chuvosos ou para o lazer noturno. Conta com uma mesa de sinuca profissional, pebolim, e uma seleção de jogos de tabuleiro para toda a família.',
+        details: 'Nossa sala de jogos é o ponto de encontro perfeito para dias chuvosos ou para o lazer noturno. Conta com mesa de sinuca e pebolim.',
         gallery: [
             '/outros/saladejogos.webp',
         ],
@@ -203,11 +203,11 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
     {
         id: 'bochaField',
         name: 'Cancha de Bocha',
-        description: 'Aproveite um jogo tradicional e descontraído de bocha em nossa cancha profissional, um passatempo perfeito para a tarde.',
+        description: 'Aproveite um jogo tradicional e descontraído de bocha em nossa cancha, um passatempo perfeito para a tarde.',
         image: '/bocha/bocha1.webp',
         imagePosition: 'bottom',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M18 18c-3.314 0-6-2.686-6-6s2.686-6 6-6" })),
-        details: 'Resgate a tradição italiana com uma partida de bocha em nossa cancha oficial. É um esporte que une gerações e garante boas risadas. As regras estão afixadas ao lado da cancha para quem quiser aprender.',
+        details: 'Resgate a tradição italiana com uma partida de bocha em nossa cancha. É um esporte que une gerações e garante boas risadas.',
         gallery: [
             '/bocha/bocha1.webp',
         ],
@@ -215,13 +215,13 @@ export const LEISURE_ACTIVITIES_DATA: LeisureActivity[] = [
     {
         id: 'bbqArea',
         name: 'Espaço com Churrasqueira',
-        description: 'Reúna seus amigos e família para um autêntico churrasco gaúcho em nosso espaço equipado e aconchegante.',
-        image: 'https://picsum.photos/seed/churrasco/600/400',
+        description: 'Dois espaços disponíveis para churrasco: ao ar livre e na sala de jogos.',
+        image: '/churrasqueira1.jpg',
         icon: React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" }, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 3v18" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M15 3v18" }), React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M3 12h18" })),
-        details: 'Um quiosque rústico com churrasqueira, mesas e todos os utensílios necessários para preparar um delicioso churrasco. O espaço deve ser reservado com antecedência e está sujeito a uma taxa de utilização. Nós podemos fornecer os cortes de carne locais, se desejado.',
+        details: 'Dois espaços disponíveis para churrasco: ao ar livre e na sala de jogos. Oferecemos alguns itens básicos, mas deve ser consultado com antecedência. Não fornecemos cortes de carne. Sem reserva antecipada. Pode ser aplicada taxa de limpeza quando necessário.',
         gallery: [
-            'https://picsum.photos/seed/churrasco-g1/800/600',
-            'https://picsum.photos/seed/churrasco-g2/800/600',
+            '/churrasqueira1.jpg',
+            '/churrasqueira2.jpg',
         ],
     },
 ];
@@ -230,9 +230,9 @@ export const ACTIVITIES_DATA: Activity[] = [
   {
     id: 'balloonFlight',
     name: 'Voo de Balão',
-    description: 'Desfrute de uma vista inesquecível dos cânions e da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.',
+    description: 'Desfrute de uma vista inesquecível da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.',
     image: '/balao/balaocidade.webp',
-    details: 'Uma experiência que fica para a vida toda. O voo de balão sobre os aparados da serra oferece uma perspectiva única dos Cânions Itaimbezinho e Fortaleza. A atividade dura cerca de 1 hora e termina com um brinde de espumante. Realizado por parceiros certificados e experientes.',
+    details: 'Uma experiência que fica para a vida toda. O voo de balão sobre os aparados da serra oferece uma perspectiva única da paisagem. A atividade dura cerca de 1 hora e termina com um brinde de espumante. Realizado por parceiros certificados e experientes.',
     gallery: [
       '/balao/balaocidade.webp',
     ],
@@ -275,11 +275,11 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 export const FAQ_DATA: FAQItem[] = [
     {
         question: "Quais são os horários de check-in e check-out?",
-        answer: "Nosso check-in é realizado a partir das 14h e o check-out até às 12h. Caso precise de horários flexíveis, por favor, entre em contato conosco para verificarmos a possibilidade."
+        answer: "Nosso check-in é realizado a partir das 15h e o check-out até às 12h. Caso precise de horários flexíveis, por favor, entre em contato conosco para verificarmos a possibilidade."
     },
     {
         question: "O café da manhã está incluso?",
-        answer: "Sim! Nosso café da manhã colonial completo está incluso na diária e é um dos nossos grandes diferenciais. Servimos uma mesa farta com produtos caseiros: pães frescos assados diariamente, bolos e cucas tradicionais, geleias artesanais, queijos e embutidos locais, frutas da estação, sucos naturais e muito mais. Uma verdadeira experiência gastronômica da Serra Gaúcha das 7h30 às 10h00."
+        answer: "Sim! Um delicioso café da manhã com produtos caseiros e ingredientes frescos da região está incluso na diária. Um café que celebra os sabores autênticos da Serra Gaúcha, servido das 8h às 10h."
     },
     {
         question: "A pousada aceita animais de estimação?",
@@ -287,7 +287,7 @@ export const FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Qual a distância da pousada para os cânions?",
-        answer: "Estamos em uma localização privilegiada. A distância de carro até a entrada do Parque Nacional de Aparados da Serra (Cânion Itaimbezinho) é de aproximadamente 18 km. Já o Parque Nacional da Serra Geral (Cânion Fortaleza) fica a cerca de 23 km."
+        answer: "A pousada fica a 8 km do centro de Cambará do Sul. A distância de carro até a entrada do Parque Nacional de Aparados da Serra (Cânion Itaimbezinho) é de aproximadamente 26 km a partir da pousada. Já o Parque Nacional da Serra Geral (Cânion Fortaleza) fica a cerca de 31 km."
     },
     {
         question: "A pousada possui Wi-Fi?",

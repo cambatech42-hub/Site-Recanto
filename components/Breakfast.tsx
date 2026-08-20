@@ -66,36 +66,6 @@ const Breakfast: React.FC = () => {
             ))}
           </div>
 
-          {/* Description */}
-          <div className="bg-background-beige rounded-lg p-8 md:p-12 mb-12 md:mb-16">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary-green mb-6 text-center">
-                Uma Mesa Farta e Acolhedora
-              </h3>
-              <div className="flex flex-col md:flex-row justify-center gap-12 text-gray-700">
-                <div>
-                  <h4 className="text-xl font-bold text-primary-green mb-4">Produtos Caseiros:</h4>
-                  <ul className="space-y-2">
-                    <li>• Pães frescos assados diariamente</li>
-                    <li>• Bolos e cucas tradicionais</li>
-                    <li>• Geleias artesanais da casa</li>
-                    <li>• Queijos e embutidos locais</li>
-                    <li>• Doces caseiros variados</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-primary-green mb-4">Ingredientes Frescos:</h4>
-                  <ul className="space-y-2">
-                    <li>• Frutas da estação</li>
-                    <li>• Sucos naturais</li>
-                    <li>• Ovos caipiras</li>
-                    <li>• Leite fresco da região</li>
-                    <li>• Café completo</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Photo Gallery */}
           <div className="mb-12 md:mb-16">
@@ -122,10 +92,7 @@ const Breakfast: React.FC = () => {
 
           {/* Call to Action */}
           <div className="text-center">
-            <p className="text-lg text-gray-700 mb-6">
-              Desperte seus sentidos com nosso café da manhã. Uma experiência gastronômica inesquecível!
-            </p>
-            <Button 
+            <Button
               variant="primary" 
               size="lg"
               href={WHATSAPP_URL} 

@@ -17,13 +17,13 @@
   },
   "hero": {
     "title": "Bem-vindo ao Recanto do Lago",
-    "subtitle": "Seu lar em Cambará do Sul",
+    "subtitle": "Sua casa em Cambará do Sul",
     "reserveButton": "Reservar Agora"
   },
   "about": {
     "title": "Nossa História",
-    "description1": "Aninhada no coração de Cambará do Sul, a Pousada Recanto do Lago nasceu do sonho de compartilhar a beleza estonteante da Serra Gaúcha. Oferecemos um refúgio de paz e conforto, onde cada detalhe é pensado para proporcionar uma experiência autêntica e inesquecível.",
-    "description2": "Aqui, a hospitalidade calorosa se une à natureza exuberante. Nossos hóspedes podem relaxar à beira do lago, explorar paisagens de tirar o fôlego e criar memórias que durarão para sempre. Venha viver a magia dos cânions conosco.",
+    "description1": "A 8 km do centro de Cambará do Sul, a Recanto do Lago nasceu onde antes funcionava um viveiro de mudas para reflorestamento. Hoje, entre árvores, lago e muito verde, nossas cabanas convidam a desacelerar e aproveitar o melhor da vida no interior. Temos cabanas com vista para o lago, quadra esportiva, sala de jogos e amplos espaços ao ar livre.",
+    "description2": "Aqui, o dia começa com amanheceres especiais, termina com um pôr do sol encantador e ganha outro ritmo ao redor da fogueira, sob um dos céus mais estrelados do Sul do Brasil. Escolhemos voltar à simplicidade e criar uma hospedagem leve, acolhedora e com aquele gostinho bom de casa de vó.",
     "button": "Reservar Agora"
   },
   "accommodations": {
@@ -35,11 +35,11 @@
   },
   "breakfast": {
     "title": "Café da Manhã",
-    "subtitle": "Nosso grande diferencial: um café da manhã completo com produtos caseiros e ingredientes frescos da região. Uma experiência gastronômica que celebra os sabores autênticos da Serra Gaúcha.",
+    "subtitle": "Um delicioso café da manhã com produtos caseiros e ingredientes frescos da região. Um café que celebra os sabores autênticos da Serra Gaúcha.",
     "highlights": {
       "flexible": {
-        "title": "Horário Flexível",
-        "description": "Servido das 8h00 às 10h00, com possibilidade de antecipação"
+        "title": "Horário",
+        "description": "Servido das 8h às 10h"
       },
       "homemade": {
         "title": "Produtos Caseiros",
@@ -50,7 +50,7 @@
         "description": "Produtos frescos da região"
       },
       "variety": {
-        "title": "Variedade Completa",
+        "title": "Variedade",
         "description": "Opções doces e salgadas para todos"
       }
     }
@@ -136,8 +136,8 @@
   "activitiesData": {
     "balloonFlight": {
       "name": "Voo de Balão",
-      "description": "Desfrute de uma vista inesquecível dos cânions e da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.",
-      "details": "Uma experiência que fica para a vida toda. O voo de balão sobre os aparados da serra oferece uma perspectiva única dos Cânions Itaimbezinho e Fortaleza. A atividade dura cerca de 1 hora e termina com um brinde de espumante. Realizado por parceiros certificados e experientes."
+      "description": "Desfrute de uma vista inesquecível da paisagem de Cambará do Sul em um voo de balão ao nascer do sol.",
+      "details": "Uma experiência que fica para a vida toda. O voo de balão sobre os aparados da serra oferece uma perspectiva única da paisagem. A atividade dura cerca de 1 hora e termina com um brinde de espumante. Realizado por parceiros certificados e experientes."
     },
     "horseRiding": {
       "name": "Cavalgadas",
@@ -153,28 +153,28 @@
   "leisureData": {
     "tennisCourt": {
       "name": "Quadra de Tênis",
-      "description": "Desafie seus amigos para uma partida emocionante em nossa quadra de tênis, cercada pela natureza exuberante da Serra Gaúcha.",
+      "description": "Desafie seus amigos para uma partida emocionante em nossa quadra de tênis.",
       "details": "Nossa quadra de tênis está disponível para todos os hóspedes. O cenário natural proporciona uma experiência única para praticar o esporte. Agende seu horário na recepção."
     },
     "lakeFishing": {
       "name": "Lago para Pesca e Pedalinho",
       "description": "Relaxe com uma pescaria esportiva em nosso lago sereno ou divirtas-se em um passeio de pedalinho com a família.",
-      "details": "O lago é o coração da nossa pousada. Oferecemos varas e iscas para pesca esportiva (pesque e solte) de espécies como tilápia e carpa. O pedalinho em formato de cisne é uma atração para as crianças e casais. Coletes salva-vidas são fornecidos."
+      "details": "O lago é o coração da nossa pousada. NÃO fornecemos varas e iscas. O pedalinho em formato de cisne é uma atração para as crianças e casais. Coletes salva-vidas são fornecidos."
     },
     "gameRoom": {
       "name": "Sala de Jogos",
       "description": "Diversão garantida para todas as idades com sinuca e pebolim (fla-flu) em nossa acolhedora sala de jogos.",
-      "details": "Nossa sala de jogos é o ponto de encontro perfeito para dias chuvosos ou para o lazer noturno. Conta com uma mesa de sinuca profissional, pebolim, e uma seleção de jogos de tabuleiro para toda a família."
+      "details": "Nossa sala de jogos é o ponto de encontro perfeito para dias chuvosos ou para o lazer noturno. Conta com mesa de sinuca e pebolim."
     },
     "bochaField": {
       "name": "Cancha de Bocha",
-      "description": "Aproveite um jogo tradicional e descontraído de bocha em nossa cancha profissional, um passatempo perfeito para a tarde.",
-      "details": "Resgate a tradição italiana com uma partida de bocha em nossa cancha oficial. É um esporte que une gerações e garante boas risadas. As regras estão afixadas ao lado da cancha para quem quiser aprender."
+      "description": "Aproveite um jogo tradicional e descontraído de bocha em nossa cancha, um passatempo perfeito para a tarde.",
+      "details": "Resgate a tradição italiana com uma partida de bocha em nossa cancha. É um esporte que une gerações e garante boas risadas."
     },
     "bbqArea": {
       "name": "Espaço com Churrasqueira",
-      "description": "Reúna seus amigos e família para um autêntico churrasco gaúcho em nosso espaço equipado e aconchegante.",
-      "details": "Um quiosque rústico com churrasqueira, mesas e todos os utensílios necessários para preparar um delicioso churrasco. O espaço deve ser reservado com antecedência e está sujeito a uma taxa de utilização. Nós podemos fornecer os cortes de carne locais, se desejado."
+      "description": "Dois espaços disponíveis para churrasco: ao ar livre e na sala de jogos.",
+      "details": "Dois espaços disponíveis para churrasco: ao ar livre e na sala de jogos. Oferecemos alguns itens básicos, mas deve ser consultado com antecedência. Não fornecemos cortes de carne. Sem reserva antecipada. Pode ser aplicada taxa de limpeza quando necessário."
     }
   },
   "testimonialsData": {
