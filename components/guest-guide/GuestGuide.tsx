@@ -236,7 +236,7 @@ const GuestGuide: React.FC = () => {
                 massas de fermentação natural e longa maturação.
               </p>
               <a
-                href="https://wa.me/5454999966401"
+                href="https://wa.me/5554999300535?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20pizzaria%20parceira%20do%20Recanto%20do%20Lago."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
@@ -319,7 +319,7 @@ const GuestGuide: React.FC = () => {
         <div className="text-center py-4 text-gray-500 text-sm">
           <p>Dúvidas? A recepção está à disposição.</p>
           <a
-            href="https://wa.me/5554999300535"
+            href="https://wa.me/5554999300535?text=Ol%C3%A1!%20Estou%20hospedado%20no%20Recanto%20do%20Lago%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-green font-semibold hover:underline"

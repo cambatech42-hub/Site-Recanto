@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { NAV_LINKS, WHATSAPP_URL } from '../constants';
 import Button from './ui/Button';
 
@@ -13,6 +14,23 @@ const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ hre
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-primary-green text-background-beige">
@@ -37,7 +55,7 @@ const Footer: React.FC = () => {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {NAV_LINKS.map(link => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background-beige/80 hover:text-white transition-colors text-sm">{t(link.name)}</a>
+                  <a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-background-beige/80 hover:text-white transition-colors text-sm">{t(link.name)}</a>
                 </li>
               ))}
             </ul>
