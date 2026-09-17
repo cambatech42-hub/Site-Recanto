@@ -36,8 +36,8 @@ const Header: React.FC = () => {
         return;
       }
       
-      // Se estamos em uma página de blog post, navega para home e depois faz scroll
-      if (location.pathname.startsWith('/blog/')) {
+      // Se não estamos na home, navega para lá e depois faz scroll
+      if (location.pathname !== '/') {
         navigate('/');
         // Aguarda um pequeno delay para a página carregar e depois faz o scroll
         setTimeout(() => {
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
             const offset = headerHeight + 20;
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - offset;
-            
+
             window.scrollTo({
               top: offsetPosition,
               behavior: 'smooth'

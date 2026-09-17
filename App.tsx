@@ -22,6 +22,14 @@ const App: React.FC = () => {
             </>
           } />
           <Route path="/guest-guide" element={<GuestGuidePage />} />
+          <Route path="/about-1" element={
+            <>
+              <Header />
+              <GuestGuidePage />
+              <Footer />
+              <WhatsAppButton />
+            </>
+          } />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
         <SpeedInsights />
